@@ -28,7 +28,7 @@ teaser                   : "/assets/images/awesome-post-teaser.jpg"
 logo                     : "/assets/images/awesome-post-teaser.jpg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+words_per_minute         : 250
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
@@ -98,7 +98,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Wanna be backend engineer"
   location         : "Seoul, Republic of Korea"
-  email            : "wch18735@naver.com"
+  email            : # link below
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -146,6 +146,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - assets
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
