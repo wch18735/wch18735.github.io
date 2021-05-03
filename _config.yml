@@ -98,11 +98,11 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Wanna be backend engineer"
   location         : "Seoul, Republic of Korea"
-  email            : # link below
+  email            : "wch18735@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:wch18735@naver.com"
+      # url: "mailto:wch18735@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -147,6 +147,7 @@ include:
   - .htaccess
   - _pages
   - assets
+  - _img
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
