@@ -24,8 +24,8 @@ description              : "하루하루, 천천히, 그러나 꾸준히"
 url                      : "https://wch18735.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "wch18735/github.io"
-teaser                   : "/assets/images/awesome-post-teaser.png"
-logo                     : "/assets/images/awesome-post-teaser.png"
+teaser                   : "/assets/images/awesome-post-teaser.jpg"
+logo                     : "/assets/images/awesome-post-teaser.jpg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
