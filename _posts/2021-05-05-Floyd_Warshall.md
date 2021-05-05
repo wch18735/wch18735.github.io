@@ -31,17 +31,17 @@ shortestPath(i, j, k) = min(shortestPath(i, j, k-1), shortestPath(i, k, k-1) + s
 이 공식이 플로이드-와샬 알고리즘의 핵심입니다. 알고리즘을 많이 풀어보신 분들이라면 이러한 점화식을 효율적으로 푸는데 많이 사용되는 Dynamic Programming을 떠올리실 수 있을 겁니다. 이 역시 k 값을 변화시키며 이전의 최소값을 저장해 계산하는 방식을 취합니다.
 
 ## Pseudocode
-{% highlight %}
-let dist be a $\left | V \right | \times  \left | V \right |$ array of minimum distances initialized to $\infty$ (infinity)
+{% highlight python %}
+let dist be a |V| X |V| array of minimum distances initialized to infinity
 for each edge (u, v) do
-    dist\[u]\[v] $\leftarrow $ w(u, v)  // The weight of the edge (u, v)
+    dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
 for each vertex v do
-    dist\[v]\[v] $\leftarrow $ 0
-for k from 1 to $\left | V \right |$
-    for i from 1 to $\left | V \right |$
-        for j from 1 to $\left | V \right |$
-            if dist\[i]\[j] > dist\[i]\[k] + dist\[k]\[j] 
-                dist\[i]\[j] $\leftarrow $ dist\[i]\[k] + dist\[k]\[j]
+    dist[v][v] $\leftarrow $ 0
+for k from 1 to |V|
+    for i from 1 to |V|
+        for j from 1 to |V|
+            if dist[i][j] > dist[i][k] + dist[k][j] 
+                dist[i][j] ← dist[i]\[k] + dist[k][j]
             end if
 {% endhighlight %}
 
