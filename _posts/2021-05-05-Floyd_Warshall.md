@@ -36,7 +36,7 @@ let dist be a |V| X |V| array of minimum distances initialized to infinity
 for each edge (u, v) do
     dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
 for each vertex v do
-    dist[v][v] ← $ 0
+    dist[v][v] ← 0
 for k from 1 to |V|
     for i from 1 to |V|
         for j from 1 to |V|
@@ -57,10 +57,10 @@ let next be a |V| X |V| array of vertex indices initialized to null
 procedure FloydWarshallWithPathReconstruction() is
     for each edge (u, v) do
         dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
-        next[u][v] ← $ v
+        next[u][v] ← v
     for each vertex v do
-        dist[v][v] ← $ 0
-        next[v][v] ← $ v
+        dist[v][v] ← 0
+        next[v][v] ← v
     for k from 1 to |V| do // standard Floyd-Warshall implementation
         for i from 1 to |V|
             for j from 1 to |V|
