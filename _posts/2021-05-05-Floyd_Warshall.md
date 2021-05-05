@@ -32,16 +32,16 @@ shortestPath(i, j, k) = min(shortestPath(i, j, k-1), shortestPath(i, k, k-1) + s
 
 ## Pseudocode
 {% highlight %}
-let dist be a |V| × |V| array of minimum distances initialized to $\infty$ (infinity)
+let dist be a $\left | V \right | \times  \left | V \right |$ array of minimum distances initialized to $\infty$ (infinity)
 for each edge (u, v) do
     dist\[u]\[v] ← w(u, v)  // The weight of the edge (u, v)
 for each vertex v do
     dist\[v]\[v] ← 0
-for k from 1 to |V|
-    for i from 1 to |V|
-        for j from 1 to |V|
+for k from 1 to $\left | V \right |$
+    for i from 1 to $\left | V \right |$
+        for j from 1 to $\left | V \right |$
             if dist\[i]\[j] > dist\[i]\[k] + dist\[k]\[j] 
-                dist\[i]\[j] ← dist\[i]\[k] + dist\[k]\[j]
+                dist\[i]\[j] $\leftarrow $ dist\[i]\[k] + dist\[k]\[j]
             end if
 {% endhighlight %}
 
@@ -51,32 +51,32 @@ for k from 1 to |V|
 ## Path 추적
 경로를 추적하는 것은 기존 코드에 약간의 수정을 통해 얻어낼 수 있습니다. 처음 (i, j)에 해당하는 next\[i]\[j] 경로에는 j를 추가해줍니다. 이후 기존 코드에서 (i, k) + (k, j) 경로가 더욱 작은 값을 가져 기존 매트릭스 값을 수정할 때 다음 노드 값을 함께 수정해줍니다.  
 {% highlight %}
-let dist be a |V| X |V| array of minimum distances initialized to $\infty$
-let next be a |V| X |V| array of vertex indices initialized to null
+let dist be a $\left | V \right | \times  \left | V \right |$ array of minimum distances initialized to $\infty$
+let next be a $\left | V \right | \times  \left | V \right |$ array of vertex indices initialized to null
 
 procedure FloydWarshallWithPathReconstruction() is
     for each edge (u, v) do
-        dist\[u]\[v] ← w(u, v)  // The weight of the edge (u, v)
-        next\[u]\[v] ← v
+        dist\[u]\[v] $\leftarrow $ w(u, v)  // The weight of the edge (u, v)
+        next\[u]\[v] $\leftarrow $ v
     for each vertex v do
-        dist\[v]\[v] ← 0
-        next\[v]\[v] ← v
-    for k from 1 to |V| do // standard Floyd-Warshall implementation
-        for i from 1 to |V|
-            for j from 1 to |V|
+        dist\[v]\[v] $\leftarrow $ 0
+        next\[v]\[v] $\leftarrow $ v
+    for k from 1 to $\left | V \right |$ do // standard Floyd-Warshall implementation
+        for i from 1 to $\left | V \right |$
+            for j from 1 to $\left | V \right |$
                 if dist\[i]\[j] > dist\[i]\[k] + dist\[k]\[j] then
-                    dist\[i]\[j] ← dist\[i]\[k] + dist\[k]\[j]
-                    next\[i]\[j] ← next\[i]\[k]
+                    dist\[i]\[j] $\leftarrow $ dist\[i]\[k] + dist\[k]\[j]
+                    next\[i]\[j] $\leftarrow $ next\[i]\[k]
 {% endhighlight %}
 
 이렇게 저장된 행렬에서 (i, j) 에 해당하는 최소 경로를 반환하는 함수는 다음과 같이 구현할 수 있습니다.
 {% highlight %}
 procedure Path(u, v)
     if next[u][v] = null then
-        return []
+        return [ ]
     path = [u]
-    while u ≠ v
-        u ← next[u][v]
+    while u $\neq $ v
+        u $\leftarrow $ next[u][v]
         path.append(u)
     return path
 {% endhighlight %}
