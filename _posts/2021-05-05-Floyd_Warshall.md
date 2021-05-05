@@ -41,7 +41,7 @@ for k from 1 to |V|
     for i from 1 to |V|
         for j from 1 to |V|
             if dist[i][j] > dist[i][k] + dist[k][j] 
-                dist[i][j] ← dist[i]\[k] + dist[k][j]
+                dist[i][j] ← dist[i][k] + dist[k][j]
             end if
 {% endhighlight %}
 
