@@ -148,6 +148,7 @@ include:
   - _pages
   - assets
   - _img
+  - _includes
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
