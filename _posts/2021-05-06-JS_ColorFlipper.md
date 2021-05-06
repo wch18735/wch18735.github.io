@@ -28,7 +28,7 @@ Backend Roadmap에서 볼 수 있듯 백엔드 개발자가 되기 위해서는 
 참고한 영상에서는 고정된 색을 배치하고 랜덤한 index를 지정했으나 저는 조금 더 변화를 주어 rgb 모든 값에 임의성을 부여해봤습니다. 먼저 html 코드부터 보겠습니다.
 
 ### html code
-``` HTML
+``` html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,7 +83,7 @@ body의 nav 태그는 navigation을 나타내며 현재 웹을 기준으로 서�
 |#id|#btn|select all element with id="btn"|
 |\*|\*|select all element|
 
-``` CSS
+``` css
 /*
 =============== 
 Fonts
