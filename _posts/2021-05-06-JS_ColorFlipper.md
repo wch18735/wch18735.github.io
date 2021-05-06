@@ -67,7 +67,7 @@ Backend Roadmap에서 볼 수 있듯 백엔드 개발자가 되기 위해서는 
     <script src="app.js"></script>
   </body>
 </html>
-```
+```  
 
 가장 위에 **\<!DOCTYPE html>** 을 명시하여 해당 문서가 html 문서임을 나타냅니다. 이때 언어는 english로 설정되어있습니다. **\<head>\</head>** 에는 현재 html 문서 전체적으로 적용될 설정 값들이 나타납니다. 인코딩은 **UTF-8**을 따르고 아래는 어떤 비율로 표시할 것인지를 명시합니다.  
   
@@ -82,6 +82,7 @@ body의 nav 태그는 navigation을 나타내며 현재 웹을 기준으로 서�
 |.class|.container|select all element with class="container"|
 |#id|#btn|select all element with id="btn"|
 |\*|\*|select all element|
+
 
 ``` css
 /*
@@ -319,6 +320,7 @@ main {
   background: var(--clr-black);
 }
 ```
+  
 
 css는 다음에 더욱 자세히 다룰 기회가 있으면 좋겠습니다. 어떤 영역이나 마찬가지겠지만 저한테는 특히 css가 어렵게 느껴집니다. :root에서 설정한 변수들 중 하나인 --dark-shadow를 통해 nav 가 한 줄로 차지하는 아래 부분에 음영을 주어 마치 떠있는 것 처럼 나타냈다는 것만 확인하겠습니다. 어떻게 저런 생각을... 버튼에 마우스를 올려놓을 때 발생하는 이벤트로 버튼 크기가 일정하게 증가하며 음영이 짙어지면 버튼이 올라오는 것 처럼 만들 수 있다고 합니다. 대단해요...  
   
