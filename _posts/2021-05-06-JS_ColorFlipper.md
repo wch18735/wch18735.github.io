@@ -28,7 +28,7 @@ Backend Roadmap에서 볼 수 있듯 백엔드 개발자가 되기 위해서는 
 참고한 영상에서는 고정된 색을 배치하고 랜덤한 index를 지정했으나 저는 조금 더 변화를 주어 rgb 모든 값에 임의성을 부여해봤습니다. 먼저 html 코드부터 보겠습니다.
 
 ### html code
-{% highlight html %}
+``` HTML
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +67,7 @@ Backend Roadmap에서 볼 수 있듯 백엔드 개발자가 되기 위해서는 
     <script src="app.js"></script>
   </body>
 </html>
-{% endhighlight %}
+```
 
 가장 위에 **\<!DOCTYPE html>** 을 명시하여 해당 문서가 html 문서임을 나타냅니다. 이때 언어는 english로 설정되어있습니다. **\<head>\</head>** 에는 현재 html 문서 전체적으로 적용될 설정 값들이 나타납니다. 인코딩은 **UTF-8**을 따르고 아래는 어떤 비율로 표시할 것인지를 명시합니다.  
   
@@ -83,7 +83,7 @@ body의 nav 태그는 navigation을 나타내며 현재 웹을 기준으로 서�
 |#id|#btn|select all element with id="btn"|
 |\*|\*|select all element|
 
-{% highlight css %}
+``` CSS
 /*
 =============== 
 Fonts
@@ -318,14 +318,14 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
-{% endhighlight %}
+```
 
 css는 다음에 더욱 자세히 다룰 기회가 있으면 좋겠습니다. 어떤 영역이나 마찬가지겠지만 저한테는 특히 css가 어렵게 느껴집니다. :root에서 설정한 변수들 중 하나인 --dark-shadow를 통해 nav 가 한 줄로 차지하는 아래 부분에 음영을 주어 마치 떠있는 것 처럼 나타냈다는 것만 확인하겠습니다. 어떻게 저런 생각을... 버튼에 마우스를 올려놓을 때 발생하는 이벤트로 버튼 크기가 일정하게 증가하며 음영이 짙어지면 버튼이 올라오는 것 처럼 만들 수 있다고 합니다. 대단해요...  
   
 ### JavaScript code
 마지막으로 자바스크립트 코드입니다. HTML이 화면에 어떠한 것들을 넣을 것인지 결정하고 CSS를 통해 이들의 모양, 형태, 배치 등을 결정했다면 실제 구동 중 발생하는 이벤트를 처리하는 것을 Javascript가 담당하게 됩니다.
 
-{% highlight javascript %}
+``` javascript
 const colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
 
 const btn = document.getElementById("btn");
@@ -355,7 +355,7 @@ function getRandomRGB(){
     const B = Math.floor(Math.random() * 255);
     return `rgba(${R}, ${G}, ${B})`
 }
-{% endhighlight %}
+```
 
 HTML 문서가 web browser에 로드되면 이것이 **document object**가 됩니다. **document object**는 HTML document의 루트 노드이며 JavaScript file에서 이 document를 사용합니다. 오브젝트 트리는 아래 그림과 같이 나타냅니다.  
 ![document object tree](/_img/2021-05-06/document_object_tree.jpg){: .align-center}  
