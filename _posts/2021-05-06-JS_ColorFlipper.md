@@ -75,8 +75,9 @@ Backend Roadmap에서 볼 수 있듯 백엔드 개발자가 되기 위해서는 
 body의 nav 태그는 navigation을 나타내며 현재 웹을 기준으로 서로 다른 페이지가 어떻게 구성되어있는가를 간접적으로 보여줍니다. 그 안은 **h4** 태그와 **ul** 태그로 구성되고 **ul**태그는 다시 두 개의 링크로 나눠집니다. 이들의 배치와 화면에서의 그래픽적 요소는 css 파일에서 처리하게 됩니다.  
   
 마찬가지로 아래 main 태그에서도 각각의 요소들만을 정의하고 이들의 배치나 글자색, 테두리와 같은 그래픽적인 요소는 모두 css 파일에서 처리하게 됩니다. 이때, 각각의 요소와 성질을 매칭시키기 위해 사용하는 것이 바로 **div**, **class**, **id**, **data-id** 등과 같은 **selector(셀렉터)**입니다.  
+
 |Selector|Example|Description|
-|---|---|---|
+|--------|--------|--------|
 |tag|div|select all tag with \<div>|
 |.class|.container|select all element with class="container"|
 |#id|#btn|select all element with id="btn"|
