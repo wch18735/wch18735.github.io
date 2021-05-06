@@ -12,7 +12,9 @@ tag:
     - javascript
     - Codding Addict
     - freeCodeCamp
-toc: false
+toc: true
+toc_label: "Unique Title"
+toc_icon: "heart"
 author: 1FeS
 comments: true
 ---
