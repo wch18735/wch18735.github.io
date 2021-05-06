@@ -355,7 +355,7 @@ function getRandomRGB(){
 {% endhighlight %}
 
 HTML 문서가 web browser에 로드되면 이것이 **document object**가 됩니다. **document object**는 HTML document의 루트 노드이며 JavaScript file에서 이 document를 사용합니다. 오브젝트 트리는 아래 그림과 같이 나타냅니다.  
-![document object tree](/_img/2021-05-06/document_object_tree.jpg).{: .align-center}  
+![document object tree](/_img/2021-05-06/document_object_tree.jpg){: .align-center}  
   
 **document.getElementById()** 와 **document.querySelector()**를 이용해 html의 요소를 지정할 수 있습니다. 그리고 각 요소에 CSS에 미리 추가해 둔 class를 추가하여 성질을 변화시킬 수 있으며 직접적으로 **color.textContent**에 요소를 삽입하거나 **document.body.style.backgroundColor**를 통해 html body의 배경색에 직접 관여할 수 있습니다. 그리고 이러한 동작들이 발생하는 이벤트를 **addEventListener(event, callback function)** 으로 등록할 수 있습니다.
 
