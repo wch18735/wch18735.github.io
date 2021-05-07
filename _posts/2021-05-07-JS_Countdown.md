@@ -1,5 +1,5 @@
 ---
-title: "[Front-end] Counter"
+title: "[Front-end] Countdown"
 excerpt: "남은 기한을 1초 단위로 연산해 보여주는 웹"
 date: 2021-05-07
 layout: single
@@ -19,7 +19,7 @@ author: 1FeS
 comments: true
 ---
 
-# Counter project
+# Countdown project
 
 이번 프로젝트는 간단한 HTML, CSS, Javascript를 활용해 정해진 기한까지 남은 일, 시, 분, 초를 보여주는 기능을 구현했습니다. 참고한 강의는 [Javascript 15 projects](https://www.youtube.com/watch?v=3PHXvlpOkf4)입니다. 자바스크립트를 다루는 데 초점이 맞춰져있지만 유용한 HTML과 CSS 요소도 한꺼번에 포스팅하여, 나중에 css와 html 기초를 공부할 때 다시 한 번 확인하려고 합니다. 아래는 웹의 동작을 보여줍니다. 첫 번째는 일반적으로 구동하는 모습을, 두 번째는 웹이 만기됐을 때를 보여줍니다.
 
