@@ -13,7 +13,7 @@ tag:
     - Codding Addict
     - freeCodeCamp
 toc: true
-toc_label: "Unique Title"
+toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
