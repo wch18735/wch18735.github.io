@@ -5,7 +5,7 @@ date: 2021-05-08
 layout: single
 classes: wide
 category:
-    - algorithm
+    - algorithm problem
 tag:
     - C++
     - Python

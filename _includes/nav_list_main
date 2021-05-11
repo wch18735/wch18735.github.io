@@ -1,0 +1,26 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label}}</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <!-- 전체 글 수 -->
+        <li>
+            <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold">전체 글 수</span> <span style="font-family: Arial, Helvetica, sans-serif; font-size: 16; font-weight: bold;">{{sum}} 개</span>
+        </li>
+        
+        <!-- 카테고리 대분류: Algorithms -->
+        <span class="nav__sub-title">Algorithms</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "algorithm" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "algorithm problem" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+
+        <!-- 카테고리 대분류: Algorithms -->
+        <span class="nav__sub-title">Web</span>
+    </ul>
+</nav>
