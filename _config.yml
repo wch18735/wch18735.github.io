@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "default", "air", "aqua", "contrast", "dark",
 
 # Site Settings
 locale                   : "en-US"
-title                    : "1FeS 공부일지"
+title                    : "1FeS Notes"
 title_separator          : "-"
 subtitle                 : "All is well"
 name                     : "1FeS의 공부일지"
