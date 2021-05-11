@@ -95,7 +95,7 @@ analytics:
 # Site Author
 author:
   name             : "Won Cheol Hwang"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar.jpg"
   bio              : "Wanna be backend engineer"
   location         : "Seoul, Republic of Korea"
   email            : "wch18735@naver.com"
