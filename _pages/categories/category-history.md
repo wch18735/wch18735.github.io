@@ -1,5 +1,5 @@
 ---
-title: "Front-end Categories"
+title: "Blog Categories"
 permalink: /categories/blog-history/
 layout: category
 author_profile: true
