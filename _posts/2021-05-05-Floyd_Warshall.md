@@ -5,7 +5,7 @@ date: 2021-05-05
 layout: single
 classes: wide
 category:
-    - algorithms
+    - algorithm
 tag:
     - algorithm
     - floyd-warshall
