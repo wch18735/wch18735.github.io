@@ -20,7 +20,24 @@
             {% endfor %} 
         </ul>
 
-        <!-- 카테고리 대분류: Algorithms -->
+        <!-- 카테고리 대분류: WEB -->
         <span class="nav__sub-title">Web</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "front-end" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+
+        <!-- 카테고리 대분류: BLOG -->
+        <span class="nav__sub-title">BLOG</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "blog-history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
     </ul>
 </nav>
