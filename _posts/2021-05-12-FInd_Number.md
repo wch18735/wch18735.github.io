@@ -1,6 +1,6 @@
 ---
 title: "[Algorithm Problem] 수 찾기 (BAEKJOON: 1920번)"
-excerpt: "Floyd-Warshall 알고리즘을 이용해 루프를 찾는 문제"
+excerpt: "이분탐색을 이용해 배열에 수가 있는지 확인하는 문제"
 date: 2021-05-12
 layout: single
 classes: wide
