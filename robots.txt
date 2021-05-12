@@ -1,0 +1,3 @@
+ser-agent: *
+Allow: /
+Sitemap: https://wch18735.github.io/sitemap.xml
