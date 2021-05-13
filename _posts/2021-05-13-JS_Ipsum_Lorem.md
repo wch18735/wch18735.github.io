@@ -1,6 +1,6 @@
 ---
 title: "[Front-end] Lorem Ipsum"
-excerpt: "클릭 이벤트로 값을 더하고 빼는 기능을 구현한 웹"
+excerpt: "map과 innerHTML을 이용해 화면을 업데이트하는 웹"
 date: 2021-05-13
 layout: single
 classes: wide
