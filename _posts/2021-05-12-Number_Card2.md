@@ -19,7 +19,7 @@ comments: true
 
 # Number Card 2 (숫자 카드2)
 
-배열에 **Target**에 따른 **left most**와 **right most**의 위치를 알아보겠습니다.  
+배열에 속한 **Target 개수**에 따른 **left most**와 **right most**의 위치를 알아보겠습니다.  
   
 ### 배열에 Target이 한 개일 때
 
