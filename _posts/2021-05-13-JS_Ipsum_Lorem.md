@@ -85,8 +85,14 @@ form.addEventListener('submit', function(e){
 > forEach | map | filter | reduce | find
 
 이 포스트에서 가장 중요한 내용이라고 생각됩니다. 이전부터 꼭!! 한 번 정리하고 싶었던 내용이고 JavaScript를 처음 접하는 많은 분들도 비슷한 고민을 하셨을 것 같습니다. 똑같이 배열의 요소들을 순회하며 동작하는 것 같은데 어떤 기능들이 있기에 이렇게 나뉘었을까요.  
-  
+
+
+
+<br>
+
+
 <span style="color:#fddx54; font-weight: bold; font-size: 25px;">■ forEach</span>
+
 먼저 **forEach()** 부터 살펴보겠습니다. `.forEach()`는 `for`와 마찬가지로 배열을 순회할 때 사용됩니다. 이름에서 보시는 것처럼 정확하게 `for`와 동일한 기능을 한다고 생각하시면 편할 것 같습니다. **array**에 대하여 두 구문은 완벽히 같은 동작을 수행합니다.
 
 ```javascript
@@ -105,7 +111,12 @@ array.forEach(function(i){
 
 이 `forEach()`에 대한 더욱 자세한 설명은 [이곳](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)을 참고해주시면 되겠습니다. 지금은 간단하게 `for`과 동일하게 동작하는 메소드라고 생각해주시면 편할 것 같습니다.
 
+
+
+<br>
+
 <span style="color:#fddx54; font-weight: bold; font-size: 25px;">■ map</span>
+
 다음은 **map()** 에 관해 알아보도록 하겠습니다. `.map()`은 각 요소를 **array**로 변환할 때 사용됩니다. 예시를 보겠습니다.
 
 ``` javascript
@@ -123,7 +134,12 @@ tempText = tempText.map(function(item){
 
 위의 예시에서 `tempText.map(callback function)`을 통해 반환된 배열에 `join`을 사용하여 하나의 **string**을 만들어 다시 한 번 **let** 으로 선언된 가변적인 **tempText**에 할당하는 것을 확인할 수 있습니다.
 
+
+<br>
+
+
 <span style="color:#fddx54; font-weight: bold; font-size: 25px;">■ filter</span>
+
 다음은 **filter()** 입니다. 이전 **map()** 이 `callback function`에서 모든 값을 반환해야 했다면, `.filter()`는 조건을 통해 값들을 **걸러내고** 유효한 값들만 `return`하여 생성한 배열을 반환합니다. 아래는 그 예시입니다.
 
 ```javascript
@@ -131,7 +147,11 @@ var arr = [4, 15, 377, 395, 400, 1024, 3000]
 var arr2 = arr.filter((v) => (v % 5 === 0))
 ```
 
+
+<br>
+
 <span style="color:#fddx54; font-weight: bold; font-size: 25px;">■ reduce</span>
+
 마지막으로 **reduce()** 에 대해 알아보겠습니다. `.reduce()`는 여러 요소를 가진 배열에서 특정한 하나의 값을 도출할 때 사용됩니다. 이때 **single value**는 array가 될 수도 있고 단 하나의 값이 될 수도 있습니다. `.reduce()`는 지금까지 배운 모든 것들을 대체할 수 있다고 생각하시면 편할 것 같습니다.
 
 **reducer** 함수는 아래 네 가지를 순서대로 인자로 받습니다.
@@ -180,7 +200,12 @@ console.log(arr2)
 
 추후 이곳에 사용된 **Arror Function**에 관해서도 꼭 포스팅 할 수 있는 기회가 있으면 좋겠습니다.
 
+
+<br>
+
+
 <span style="color:#fddx54; font-weight: bold; font-size: 25px;">■ find</span>
+
 **find()** 메소드는 배열의 여러 요소들 중 조건에 맞는 한 원소 한 가지를 반환합니다. 조건에 부합하는 원소가 여러 개라면 가장 먼저 발견되는 요소를 반환합니다.
 
 함께 많이 사용되는 것으로 아래와 같은 메소드들이 있습니다.
