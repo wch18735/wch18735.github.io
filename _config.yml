@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "Won Cheol Hwang"
   avatar           : "/assets/images/avatar.jpg"
-  bio              : "Wanna be backend engineer"
+  bio              : # your script
   location         : "Seoul, Republic of Korea"
   email            : "wch18735@naver.com"
   links:
