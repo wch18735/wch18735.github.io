@@ -19,6 +19,16 @@
             {% endfor %} 
         </ul>
 
+        <!-- 카테고리 대분류: OS -->
+        <span class="nav__sub-title">Operating System</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "os" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+
         <!-- 카테고리 대분류: Algorithms -->
         <span class="nav__sub-title">Algorithms</span>
         <ul>
