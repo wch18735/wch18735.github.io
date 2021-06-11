@@ -1,5 +1,5 @@
 ---
-title: "[OS] 프로세스 스케쥴링"
+title: "[OS] 프로세스 스케쥴링(1)"
 excerpt: "process scheduling"
 date: 2021-06-10
 layout: single
