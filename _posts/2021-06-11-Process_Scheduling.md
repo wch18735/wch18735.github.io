@@ -1,7 +1,7 @@
 ---
 title: "[OS] 프로세스 스케쥴링(2)"
 excerpt: "process scheduling"
-date: 2021-06-10
+date: 2021-06-11
 layout: single
 classes: wide
 category:
