@@ -59,8 +59,16 @@
             {% endfor %} 
         </ul>
 
-        <!-- 카테고리 대분류: BLOG -->
-        <span class="nav__sub-title">BLOG</span>
+        <!-- 카테고리 대분류: RECORD -->
+        <span class="nav__sub-title">RECORD</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
