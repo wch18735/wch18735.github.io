@@ -65,3 +65,6 @@ with open("file path", "wb") as file_pointer:
 ![download result](/_img/2021-06-20/download_result.jpg){: .align-center}
 
 결과는 위와 같은 형식으로 나타나게 됩니다! 나중에는 GUI 형태로 URL을 입력받아 다운로드를 진행하는 프로그램을 짜보는 것도 재미있을 것 같습니다.
+
+# References
+- [file download over http](https://www.tutorialspoint.com/downloading-files-from-web-using-python)
