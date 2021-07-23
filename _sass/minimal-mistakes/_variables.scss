@@ -6,7 +6,7 @@
    Typography
    ========================================================================== */
 
-$doc-font-size: 16 !default;
+$doc-font-size: 12 !default;
 
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
@@ -42,6 +42,9 @@ $type-size-5: 1em !default; // ~16px
 $type-size-6: 0.75em !default; // ~12px
 $type-size-7: 0.6875em !default; // ~11px
 $type-size-8: 0.625em !default; // ~10px
+
+/* type scale hover*/
+$type-size-3_hover: 1.564em !default;
 
 /* headline scale */
 $h-size-1: 1.563em !default; // ~25.008px
@@ -155,9 +158,9 @@ $max-width: $x-large !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 400px !default;
+$right-sidebar-width-narrow: 100px !default; // default 200px
+$right-sidebar-width: 250px !default;        // default 300px
+$right-sidebar-width-wide: 300px !default;   // default 400px
 
 /*
    Other

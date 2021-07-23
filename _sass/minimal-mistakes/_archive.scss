@@ -24,6 +24,12 @@
   a {
     position: relative;
     z-index: 10;
+    color: black;
+  }
+
+  a:hover {
+      font-size: $type-size-4;
+      transition: 0.5s;
   }
 
   a[rel="permalink"] {
@@ -32,11 +38,12 @@
 }
 
 .archive__subtitle {
+  text-align: center;
   margin: 1.414em 0 0.5em;
   padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  font-size: $type-size-3;
   color: $muted-text-color;
-  border-bottom: 1px solid $border-color;
+  // border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
@@ -57,10 +64,6 @@
     top: 0;
     right: 0;
     bottom: 0;
-  }
-
-  a + a {
-    opacity: 0.5;
   }
 }
 
