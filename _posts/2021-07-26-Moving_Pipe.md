@@ -15,6 +15,8 @@ toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/2021-07-26/pipe.jpg"
 ---
 
 # 파이프 옮기기 (BAEKJOON: 17070번)
