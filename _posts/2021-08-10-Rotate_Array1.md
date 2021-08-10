@@ -21,7 +21,7 @@ header:
 
 # 배열 돌리기 1 (BAEKJOON: 16926)
 
-이번 문제는 주어진 배열을 다음과 같이 돌리는 문제입니다. 저는 가장 바깥 쪽부터 **한 층씩 공략한다**는 개념으로 접근했습니다.
+[이번 문제](https://www.acmicpc.net/problem/16926)는 주어진 배열을 다음과 같이 돌리는 문제입니다. 저는 가장 바깥 쪽부터 **한 층씩 공략한다**는 개념으로 접근했습니다.
 
 ![rotate concept](/_img/2021-08-10/rotate_concept.jpg){: .align-center}
 
