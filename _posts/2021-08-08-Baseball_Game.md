@@ -16,6 +16,8 @@ toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/2021-08-09/baseball.jpg"
 ---
 
 # 야구 (BAEKJOON: 17281)

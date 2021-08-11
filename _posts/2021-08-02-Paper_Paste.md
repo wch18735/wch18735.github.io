@@ -16,6 +16,8 @@ toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/2021-08-09/paper.jpg"
 ---
 
 # 색종이 붙이기 (BAEKJOON: 17136)

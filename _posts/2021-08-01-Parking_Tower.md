@@ -15,6 +15,8 @@ toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/2021-08-09/parking.jpg"
 ---
 
 # 진용이네 주차타워 (SWEA: 9280)

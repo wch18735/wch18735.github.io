@@ -17,6 +17,8 @@ toc_label: "Contents"
 toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/2021-08-09/gerrymandering.jpg"
 ---
 
 # 게리맨더링 (BAEKJOON: 17471)
