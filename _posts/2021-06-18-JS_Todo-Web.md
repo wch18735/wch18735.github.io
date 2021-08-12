@@ -5,7 +5,7 @@ date: 2021-06-18
 layout: single
 classes: wide
 category:
-    - front-end
+    - javascript
 tag:
     - html
     - css
