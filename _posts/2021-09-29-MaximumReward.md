@@ -1,5 +1,5 @@
 ---
-title: "[Coding Test] 암호코드 스캔 (SWEA: 1244)"
+title: "[Coding Test] 최대 상금 (SWEA: 1244)"
 excerpt: "brute force with dynamic programming memoization"
 date: 2021-09-29
 layout: single
