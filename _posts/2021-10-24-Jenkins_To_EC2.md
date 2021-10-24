@@ -45,17 +45,27 @@ AWS Console 에서 Security - Inbound Rule 에 **8080 포트** 열어줘야 접�
 
 ## Github repository TOKEN 발행
 
-**Settings** → **Developer settings** → **Personal access token** 을 발행한다. 설정은 [이곳](https://bcho.tistory.com/1237)을 참고했다.
+**Settings** → **Developer settings** → **Personal access token** 을 발행한다. 설정은 [여기](https://bcho.tistory.com/1237)를 참고했다.
+
+## 계정 생성
+
+[여기](https://chati.tistory.com/23)를 참고해서 계정을 생성했다. 로그인 할 때, 모든 사용자가 들어올 수 있도록 설정 파일에 보안을 **false**로 해놓으면 큰일이니까.
 
 ## Project Item 생성
 
-[여기](https://kitty-geno.tistory.com/88)
+[여기](https://kitty-geno.tistory.com/88)를 참고해서 프로젝트를 생성했다. **Credential**은 생성할 때 Error 페이지가 나타나는데, 새로고침을 한 번 해주면 정상적으로 추가되는 것을 확인할 수 있다.
+
+각 속성이 의미하는 바가 뭔지 정리할 기회가 곧 올 것 같다.
 
 ## Add webhook
 
 이렇게 웹훅을 등록해 놓으면 Push 할 때, 자동으로 빌드되는 것을 확인할 수 있다.
 
-<img src="/_img/2021-10-24/adjust_webhook.jpg" style="margin: auto auto; display: block;"/>
+<br/><img src="/_img/2021-10-24/adjust_webhook.jpg" style="margin: auto auto; display: block;"/><br/>
 
-[여기](https://medium.com/hgmin/jenkins-github-webhook-3dc13efd2437)
+[여기](https://medium.com/hgmin/jenkins-github-webhook-3dc13efd2437)에서 웹훅 등록하는 법을 참고했다.
 
+## TO DO
+
+- [ ] Web_Front Repository Jenkins 연동
+- [ ] Build script 작성하기
