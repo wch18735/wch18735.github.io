@@ -53,5 +53,9 @@ AWS Console 에서 Security - Inbound Rule 에 **8080 포트** 열어줘야 접�
 
 ## Add webhook
 
+이렇게 웹훅을 등록해 놓으면 Push 할 때, 자동으로 빌드되는 것을 확인할 수 있다.
+
+<img src="/_img/2021-10-24/adjust_webhook.jpg" style="margin: auto auto; display: block;"/>
+
 [여기](https://medium.com/hgmin/jenkins-github-webhook-3dc13efd2437)
 
