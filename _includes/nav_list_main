@@ -19,7 +19,7 @@
         </ul>
         <ul> <!-- 카테고리 소분류: database -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "database" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
