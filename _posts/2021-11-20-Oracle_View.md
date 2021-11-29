@@ -1,6 +1,6 @@
 ---
-title: "[Oracle] Union"
-excerpt: "oracle union operator"
+title: "[Oracle] 집합 연산자 사용법과 VIEW"
+excerpt: "oracle union, minus, intersect, union all operator"
 date: 2021-11-20
 category:
     - oracle
@@ -14,9 +14,9 @@ toc_label: "Contents"
 toc_icon: "heart"
 ---
 
-# UNION (유니온)
+# OPERATOR LIKE SET
 
-레코드를 합치는 방법. 컬럼 개수만 맞다면 합칠 수 있다.
+Oracle 테이블을 집합이라고 생각했을 때, 레코드를 합치는 방법이 있다. Join 과 달리 컬럼명이 동일하지 않아도 컬럼 개수만 맞다면 합칠 수 있다.
 
 UNION 연산자들은 다음과 같다.
 
@@ -25,6 +25,7 @@ UNION 연산자들은 다음과 같다.
 - INTERSECT : 같은 부분만 나타낸다
 - UNION ALL : 같은 행도 중복을 허용한다
 
+이 연산자들은 아래 예제 SQL문의 `UNION` 자리에 삽입되어 사용된다. 결과는 예상하는대로 나타날 것이다. 두 테이블만 아니라 계속해서 그 아래 연산자를 추가하는 것도 가능하다.
 
 ```sql
 SELECT ID, NAME FROM MEMBER

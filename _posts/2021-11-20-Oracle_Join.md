@@ -1,5 +1,5 @@
 ---
-title: "[Oracle] Join"
+title: "[Oracle] Join 활용방법과 예제"
 excerpt: "inner join, outter join, etc."
 date: 2021-11-20
 category:
@@ -52,7 +52,7 @@ JOIN 에 참여하는 두 테이블은 SQL 문에 적힌 순서대로 LEFT, RIGH
 
 ## 연습
 
-일단 여기까지 이해하면 [이 문제]()는 5분 정도 걸리면 풀 수 있다. 자세한 내용은 YouTube 에 `NEWLEC` 검색해서 꼭 들어보길. 진짜 나만 알고싶은 강의다.
+일단 여기까지 이해하면 [이 문제](https://programmers.co.kr/learn/courses/30/lessons/59045)는 5분 정도 걸리면 풀 수 있다. 자세한 내용은 YouTube 에 `NEWLEC` 검색해서 꼭 들어보길. 진짜 나만 알고싶은 강의다.
 
 내 풀이는 아래와 같다.
 
