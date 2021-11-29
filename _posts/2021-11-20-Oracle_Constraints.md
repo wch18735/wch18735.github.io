@@ -1,6 +1,6 @@
 ---
-title: "[Oracle] 도메인 제약 조건"
-excerpt: "oracle constraints"
+title: "[Oracle] Constraints 예시와 사용법 (제약 조건)"
+excerpt: "oracle constraints examples"
 date: 2021-11-20
 category:
     - oracle
@@ -16,7 +16,7 @@ toc_icon: "heart"
 
 # Constraints (제약 조건)
 
-Oracle 의 다양한 제약 조건
+Oracle 의 다양한 제약 조건을 설명한다. 제약 조건은 데이터의 무결성을 지키기 위해 생성된다. 테이블이나 속성에 부적절한 값이 종속되지 않도록 미연에 방지하는 것을 목적으로 한다.
 
 ## Domain Constraints
 
