@@ -1,5 +1,5 @@
 ---
-title: "[JSP] Servlet 프로그램 만들기"
+title: "[JSP] 간단한 Servlet 프로그램 생성 예제"
 excerpt: "Servlet practical program example"
 date: 2021-07-16
 layout: single
