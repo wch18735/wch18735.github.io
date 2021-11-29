@@ -1,6 +1,6 @@
 ---
-title: "[JDBC] JDBC 기본 개념 및 설치"
-excerpt: "short jdbc history"
+title: "[JDBC] JDBC 기본 개념 및 설정 방법, 연결 예제"
+excerpt: "basic jdbc examples and history"
 date: 2021-10-19
 layout: single
 classes: wide
@@ -124,3 +124,31 @@ Oracle 21c Express를 다운 받아서 사용하려고 한다. [이곳](https://
 이렇게 해서 새로운 Oracle 접속을 생성한다.
 
 나머지는 DB에 SQL 작업들을 몇 가지 걸어줘야 하는데, DB 챕터를 따로 만들어야겠다.
+
+## JDBC를 이용하는 Java Code
+
+JDBC를 이용하는 자바 코드 기본 과정은 아래 네 단계로 요약 가능하다. 아래 기본 코드를 통해 앞에서 생성한 데이터베이스를 조작할 수 있는 연결을 만들 수 있다.
+
+1. **Class.forName("oracle.jdbc.driver.OracleDriver");**
+먼저 드라이버를 로드하는 과정. `new` 생성자를 사용하지 않고 메모리 상에 올린다.
+
+2. **Connection con = DriverManager.getConnection(...);**
+DBMS에 연결할 수 있는 연결 객체를 얻는다. JDBC 객체 집합 - 드라이버 - DBMS 연결 생성.
+
+3. **Statement st = con.createStatement();**
+실행도구를 생성한다. Statement를 실행도구라 한다.
+
+4. **ResultSet rs = st.executeQuery(sql);**
+SQL문을 실행하고, 결과를 **받아 올 수 있는** 객체로 만든다.
+
+이 과정은 순서를 꼭 지켜야 한다. 앞 단계가 완료되지 않으면 순차적 진행이 불가능하다. 연결도 되지 않았는데 실행도구를 생성할 수 없다.
+
+## JDBC ResultSet
+
+여기서 중요한 점! ResultSet은 결과가 아니라 결과를 저장할 수 있는 객체라는 것! 처음 받아온 객체는 커서가 **BOF (Before of File)** 를 가리키고 있는 상태다.
+
+**rs.next()** 를 호출하면 **커서(Cursor)** 가 한 칸씩 다음 행을 참조하며 데이터를 가져온다. 그러다가 **EOF (End of File)** 을 만나면 끝이 난다.
+
+## References
+- [newlec: 자바 JDBC 프로그래밍](https://www.youtube.com/watch?v=c0s7g7iVtwc&list=PLq8wAnVUcTFWxwoc41CqmwnO-ZyRDL0og)
+- [newlec](https://www.newlecture.com/index)
