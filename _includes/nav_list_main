@@ -53,7 +53,7 @@
 
         
         <!--------------------------------- 카테고리 대분류: Study -------------------------------------->
-        <span class="nav__sub-title">STUDY</span>
+        <span class="nav__sub-title">WEB</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
