@@ -1,6 +1,6 @@
 ---
-title: "[Oracle] Oracle SQL Data Types"
-excerpt: "Oracle SQL Data Types"
+title: "[Oracle] Data Types"
+excerpt: "oracle data types"
 date: 2021-11-14
 category:
     - oracle

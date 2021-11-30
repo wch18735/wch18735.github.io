@@ -1,5 +1,5 @@
 ---
-title: "[Oracle] 행 개수 제한"
+title: "[Oracle] ROWNUM 과 DISTINCT 키워드"
 excerpt: "rownum in oracle database"
 date: 2021-11-17
 category:

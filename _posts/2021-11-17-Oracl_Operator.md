@@ -1,5 +1,5 @@
 ---
-title: "[Oracle] 연산을 통한 데이터 조회"
+title: "[Oracle] Operator (산술, 문자열, 비교, 관계, 패턴)"
 excerpt: "select by using operator"
 date: 2021-11-17
 category:

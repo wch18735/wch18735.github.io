@@ -1,5 +1,5 @@
 ---
-title: "[Oracle] 테이블 생성 및 데이터 조작"
+title: "[Oracle] 테이블 생성 및 데이터 조작 예제 (CREATE, INSERT, SELECT, UPDATE, DELETE)"
 excerpt: "Query oriented structure and DML practice"
 date: 2021-11-16
 category:
