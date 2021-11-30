@@ -1,6 +1,6 @@
 ---
-title: "[Oracle] ROWNUM 과 DISTINCT 키워드"
-excerpt: "rownum in oracle database"
+title: "[Oracle] DISTINCT 사용법과 테스트 테이블"
+excerpt: "oracle distinct keyword"
 date: 2021-11-17
 category:
     - oracle
