@@ -17,7 +17,7 @@ author: 1FeS
 comments: true
 ---
 
-# HTTP 메소드 GET과 POST
+# HTTP 메소드 (GET, POST)
 
 **HTTP(Hyper Text Transfer Protocol)** 란 웹 상에서 클라이언트와 서버 간에 요청/응답으로 데이터를 주고 받을 수 있는 프로토콜을 뜻합니다. 클라이언트가 프로토콜을 통해 서버에게 요청을 보내면 서버는 요청에 맞는 응답을 클라이언트에게 전송합니다.
 

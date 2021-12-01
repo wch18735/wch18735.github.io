@@ -1,5 +1,5 @@
 ---
-title: "[JSP] Eclipse 이용한 개발환경 설정"
+title: "[JSP] Eclipse 이용한 웹 개발환경 설정"
 excerpt: "Eclipse for JSP development"
 date: 2021-07-18
 layout: single

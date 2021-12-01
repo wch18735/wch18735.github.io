@@ -1,5 +1,5 @@
 ---
-title: "[JSP] 사용자 입력을 통한 GET 요청"
+title: "[JSP] GET 요청 예제"
 excerpt: "GET Request by user input"
 date: 2021-07-20
 layout: single

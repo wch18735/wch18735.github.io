@@ -1,5 +1,5 @@
 ---
-title: "[JSP] Jasper"
+title: "[JSP] Jasper 활용 예제"
 excerpt: "JSP, Jasper를 이용한 서블릿 프로그래밍"
 date: 2021-10-11
 layout: single

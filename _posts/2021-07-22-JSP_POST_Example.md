@@ -1,5 +1,5 @@
 ---
-title: "[JSP] POST 요청"
+title: "[JSP] POST 요청 예제"
 excerpt: "POST Request"
 date: 2021-07-22
 layout: single

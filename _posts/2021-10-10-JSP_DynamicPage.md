@@ -1,5 +1,5 @@
 ---
-title: "[JSP] Dynamic page / Server page"
+title: "[JSP] Dynamic page / Server page 작성 예제"
 excerpt: "동적인 페이지(서버 페이지) 작성"
 date: 2021-10-10
 layout: single
@@ -85,7 +85,7 @@ response.sendRedirect("calcpage");
 ```
 `response.sendRedirect()` 는 HTML 페이지와 더불어 **Servlet** 으로의 우회도 가능합니다. 해당 메소드를 가장 마지막에 호출해주어 **calcpage** 서블릿을 실행해줍니다. 이때, **redirect**는 브라우저에서 해당 서블릿을 호출한 것과 동일한 효과를 내기 때문에 방금 전에 보낸 Cookie를 수신할 수 있습니다.
 
-아래는 해당 서블릿 소스 코드입니다.
+아래는 위 내용을 종합해 작성된 서블릿 소스 코드입니다.
 
 ```java
 package com.jsp_example.web;
@@ -111,12 +111,10 @@ public class Calc3 extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 		
-		// 사용자가 클릭한 내용 얻어옴
 		String value = request.getParameter("value");
 		String operator = request.getParameter("operator");
 		String dot = request.getParameter("dot");
 		
-		// 쿠키 정보 얻어오기
 		String expression = "";
 		if(cookies != null) {
 			for(Cookie c : cookies) {
@@ -128,34 +126,27 @@ public class Calc3 extends HttpServlet{
 		}
 		
 		if(operator != null && operator.equals("=")) {
-			// operation 이 = 이면 계산
 			ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
 			try {
 				expression = String.valueOf(engine.eval(expression));
 			} catch (ScriptException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		else if(operator != null && operator.equals("C")) {
-			// Cookie 지우기
 			expression = "";
 		}
 		else {
-			// operation 이 = 이 아닌 경우 string 누적
 			expression += (value == null) ? "" : value;
 			expression += (operator == null) ? "" : operator;
 			expression += (dot == null) ? "" : dot;
 		}
 		
-		// Cookie 생성
 		Cookie expCookie = new Cookie("expression", expression);
 		if(operator != null && operator.equals("C")) expCookie.setMaxAge(0);
 		
-		// expression 만들어서 redirection
 		response.addCookie(expCookie);
 
-		// servlet 재실행
 		response.sendRedirect("calcpage");
 	}
 }
@@ -199,75 +190,12 @@ public class CalcPage extends HttpServlet{
 		response.setContentType("text/html; charset=UTF-8;");
 		PrintWriter out = response.getWriter();
 		
-		out.write("<style>\r\n"
-				+ "	input{\r\n"
-				+ "		width: 50px;\r\n"
-				+ "		height:50px;\r\n"
-				+ "	}\r\n"
-				+ "	\r\n"
-				+ "	.output {\r\n"
-				+ "		height: 50px;\r\n"
-				+ "		background: #e9e9e9;\r\n"
-				+ "		font-size: 24px;\r\n"
-				+ "		font-weight: bold;\r\n"
-				+ "		text-align: right;\r\n"
-				+ "		padding: 0px 5px;\r\n"
-				+ "	}\r\n"
-				+ "</style>\r\n"
-				+ "\r\n"
-				+ "<!DOCTYPE html>\r\n"
-				+ "<html>\r\n"
-				+ "<head>\r\n"
-				+ "<meta charset=\"UTF-8\">\r\n"
-				+ "<title>Insert title here</title>\r\n"
-				+ "</head>\r\n"
-				+ "<body>\r\n"
-				+ " <form action=\"calc3\" method=\"post\">\r\n"
-				+ "		<table>\r\n"
-				+ "			<tr>\r\n");
-		out.printf("				<td colspan=\"4\" class=\"output\">%s</td>\r\n", expression);
-		out.write("			</tr>\r\n"
-				+ "			<tr>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"CE\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"C\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"←\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"/\"/></td>\r\n"
-				+ "			</tr>\r\n"
-				+ "			<tr>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"7\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"8\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"9\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"*\"/></td>\r\n"
-				+ "			</tr>\r\n"
-				+ "			<tr>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"4\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"5\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"6\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"-\"/></td>\r\n"
-				+ "			</tr>\r\n"
-				+ "			<tr>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"1\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"2\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"3\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"+\"/></td>\r\n"
-				+ "			</tr>\r\n"
-				+ "			<tr>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"value\" value=\"0\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"dot\" value=\".\"/></td>\r\n"
-				+ "				<td><input type=\"submit\" name=\"operator\" value=\"=\"/></td>\r\n"
-				+ "			</tr>\r\n"
-				+ "		</table>\r\n"
-				+ "		\r\n"
-				+ "		<div>\r\n"
-				+ "			result: 0\r\n"
-				+ "		</div>\r\n"
-				+ "	</form>\r\n"
-				+ "</body>\r\n"
-				+ "</html>");
+		/* 엄청나게 긴 출력문 */
 		}
 }
 ```
+
+코드 내부에 `out.write()` 를 이용한 엄청나게 긴 출력문이 삽입됩니다. 웹 화면에 html 소스를 출력하기 위함입니다. 다행히 화면을 출력할 때, 매번 이렇게 `print` 또는 `write` 를 사용하지 않아도 되는 방법이 존재합니다. 바로 다음 포스트에서 다룰 *Jasper* 입니다. 
 
 ### calc3.html
 
@@ -339,3 +267,51 @@ public class CalcPage extends HttpServlet{
 </body>
 </html>
 ```
+
+## GET과 POST 요청에 대한 서비스 메서드 구현
+
+위에서 모든 기능은 **HttpServlet**의 **service()** 함수 안에 구현되어 있습니다. 
+
+`GET` 또는 `POST` 요청에 따른 서로 다른 동작을 보여주려면 어떻게 해야 할까요. 모든 요청 형태에 따라 항상 **service()** 메서드를 동작시키고 내부에서 분기를 시키는 과정을 거쳐야 할까요. 아래처럼?
+
+```java
+@WebServlet("/calculator")
+public class Calculator extends HttpServlet{
+	@Override
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getMethod().equals("GET")) {
+			System.out.println("GET!\n");
+		} else if (request.getMethod().equals("POST")) {
+			System.out.println("POST!\n");
+		}
+	}
+}
+```
+
+아닙니다.
+
+처음 Override 를 제공받을 때, `super.service(req, res);` 가 자동으로 생성되는 것을 확인했을 겁니다. 이 메서드가 Override 가 되지 않았다면 해당 `요청에 따라` `아래 두 메서드 중 하나`를 찾아 동작시킵니다.
+
+- **GET :** doGet()
+- **POST :** doPost()
+
+따라서 우리는 service() 메서드를 사용하지 않고, 곧바로 요청에 따른 동작을 처리할 수 있습니다.
+
+```java
+@WebServlet("/calculator")
+public class Calculator extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doGet(req, resp);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		super.doPost(req, resp);
+	}
+}
+```
+
+이를 이용해 위에서 만들었던 계산기 웹 어플리케이션을 하나의 서블릿으로 합치는 리팩토링이 가능해집니다.

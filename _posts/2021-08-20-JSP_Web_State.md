@@ -1,5 +1,5 @@
 ---
-title: "[JSP] Web state remaining"
+title: "[JSP] Web 저장소 활용법 예시 (Application, Session, Cookie)"
 excerpt: "remaining result or data as global variables"
 date: 2021-08-20
 layout: single
