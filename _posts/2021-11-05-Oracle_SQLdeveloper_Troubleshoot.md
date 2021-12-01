@@ -8,6 +8,8 @@ tag:
     - database
     - oracle
     - sql
+    - trouble shoot
+    - sqldeveloper
 author: 1FeS
 toc: true
 toc_label: "Contents"

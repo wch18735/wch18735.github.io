@@ -8,6 +8,7 @@ tag:
     - database
     - oracle
     - sql
+    - transaction
 author: 1FeS
 toc: true
 toc_label: "Contents"

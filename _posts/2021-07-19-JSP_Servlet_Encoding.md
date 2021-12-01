@@ -10,6 +10,7 @@ tag:
     - java
     - jsp
     - servlet
+	- set character
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

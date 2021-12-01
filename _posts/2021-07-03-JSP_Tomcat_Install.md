@@ -9,6 +9,9 @@ category:
 tag:
     - java
     - jsp
+    - tomcat
+    - tomcat install
+    - startup.bat
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

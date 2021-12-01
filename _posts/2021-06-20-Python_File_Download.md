@@ -9,6 +9,7 @@ category:
 tag:
     - urllib
     - file download
+    - python
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

@@ -8,6 +8,7 @@ tag:
     - database
     - oracle
     - sql
+    - data type
 author: 1FeS
 toc: true
 toc_label: "Contents"

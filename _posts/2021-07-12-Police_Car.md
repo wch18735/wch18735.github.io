@@ -9,6 +9,8 @@ category:
 tag:
     - python
     - Beakjoon
+    - dynamic programming
+    - dp
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

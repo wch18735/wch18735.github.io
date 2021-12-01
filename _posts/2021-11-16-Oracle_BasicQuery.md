@@ -8,6 +8,11 @@ tag:
     - database
     - oracle
     - sql
+    - ddl
+    - dml
+    - dcl
+    - create
+    - alter
 author: 1FeS
 toc: true
 toc_label: "Contents"

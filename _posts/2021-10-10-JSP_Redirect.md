@@ -13,6 +13,7 @@ tag:
     - application
     - session
     - cookie
+	- redirect
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

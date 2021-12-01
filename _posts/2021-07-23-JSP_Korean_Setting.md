@@ -10,6 +10,8 @@ tag:
     - java
     - jsp
     - servlet
+	- korean
+	- post
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

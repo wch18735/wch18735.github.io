@@ -10,6 +10,8 @@ tag:
     - java
     - jsp
     - servlet
+    - maven
+    - maven error
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

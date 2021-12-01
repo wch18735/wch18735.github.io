@@ -8,6 +8,7 @@ tag:
     - database
     - oracle
     - sql
+    - rank
 author: 1FeS
 toc: true
 toc_label: "Contents"

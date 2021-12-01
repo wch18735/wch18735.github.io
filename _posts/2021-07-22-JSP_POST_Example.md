@@ -10,6 +10,8 @@ tag:
     - java
     - jsp
     - servlet
+	- post
+	- post request
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

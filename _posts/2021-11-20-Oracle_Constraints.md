@@ -8,6 +8,10 @@ tag:
     - database
     - oracle
     - sql
+    - constraints
+    - example
+    - not null
+    - default
 author: 1FeS
 toc: true
 toc_label: "Contents"

@@ -9,6 +9,7 @@ category:
 tag:
     - maven
     - eclipse
+    - directory structure
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

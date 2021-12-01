@@ -9,6 +9,8 @@ category:
 tag:
     - java
     - jsp
+    - client
+    - server
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

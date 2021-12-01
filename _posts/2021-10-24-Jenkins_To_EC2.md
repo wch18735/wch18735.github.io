@@ -8,6 +8,7 @@ tag:
     - web development
     - ubuntu
     - jenkins
+    - ci/cd
 author: 1FeS
 toc: true
 toc_label: "Contents"

@@ -8,6 +8,10 @@ category:
     - os
 tag:
     - operating system
+    - process scheduling
+    - long-term scheduler
+    - process lifecycle
+    - preeptive
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

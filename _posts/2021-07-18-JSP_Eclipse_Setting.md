@@ -10,6 +10,7 @@ tag:
     - java
     - jsp
     - servlet
+	- eclipse
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

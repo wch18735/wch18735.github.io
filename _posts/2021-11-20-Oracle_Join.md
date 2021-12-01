@@ -8,6 +8,8 @@ tag:
     - database
     - oracle
     - sql
+    - join
+    - example
 author: 1FeS
 toc: true
 toc_label: "Contents"

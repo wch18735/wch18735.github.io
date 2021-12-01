@@ -8,6 +8,7 @@ tag:
     - database
     - oracle
     - sql
+    - oracle operator
 author: 1FeS
 toc: true
 toc_label: "Contents"

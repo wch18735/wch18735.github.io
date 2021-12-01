@@ -9,6 +9,8 @@ category:
 tag:
     - java
     - jdbc
+    - jdbc install
+    - jdbc connection
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
