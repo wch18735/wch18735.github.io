@@ -14,12 +14,7 @@
         <ul> <!-- 카테고리 소분류: database -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "database" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul> <!-- 카테고리 소분류: database -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
@@ -52,27 +47,9 @@
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "javascript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "jsp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "jsp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
@@ -103,27 +80,9 @@
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <ul>
-            <!-- 카테고리 소분류 -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
