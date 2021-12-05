@@ -5,15 +5,15 @@ date: 2021-10-10
 layout: single
 classes: wide
 category:
-    - jsp
+ - jsp
 tag:
-    - java
-    - jsp
-    - servlet
-    - application
-    - session
-    - cookie
-	- redirect
+ - java
+ - jsp
+ - servlet
+ - application
+ - session
+ - cookie
+ - redirect
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

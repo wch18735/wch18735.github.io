@@ -5,12 +5,12 @@ date: 2021-07-19
 layout: single
 classes: wide
 category:
-    - jsp
+ - jsp
 tag:
-    - java
-    - jsp
-    - servlet
-	- set character
+ - java
+ - jsp
+ - servlet
+ - set character
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"

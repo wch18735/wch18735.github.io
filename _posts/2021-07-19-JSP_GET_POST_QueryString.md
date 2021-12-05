@@ -1,17 +1,17 @@
 ---
-title: "[JSP] GET 요청과 Query String"
-excerpt: "GET Request and query string"
+title: "[JSP] GET 요청과 POST 요청의 차이"
+excerpt: "GET & POST Requests"
 date: 2021-07-19
 layout: single
 classes: wide
 category:
-    - jsp
+ - network
 tag:
-    - java
-    - jsp
-    - servlet
-	- get
-	- post
+ - java
+ - jsp
+ - servlet
+ - get
+ - post
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
@@ -64,7 +64,7 @@ POST는 데이터가 Body로 전송되고 내용이 눈에 보이지 않아 GET�
 
 # GET 요청 예제
 
-이번 포스팅에서는 두 가지 메소드 중 GET 메소드를 사용하는 예제를 간략하게 다뤄보려고 합니다. 이전 실습 환경을 그대로 사용할 예정입니다.
+이번 포스팅에서는 두 가지 메소드 중 GET 메소드를 사용하는 예제를 간략하게 다뤄보려고 합니다.
 
 ## response.getParameter()
 

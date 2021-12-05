@@ -47,6 +47,7 @@ $workspace/ProjName
   - 자바 클래스 파일(.class) 위치
   - Project Exlorer 에서는 class 파일은 보이지 않는 것이 Default 설정이므로 내용물이 보이지 않음
 - **WebContent** 
+  - `@WebServlet("/")` 에 해당하는 곳
   - HTML(.html), CSS(.css), JavaScript(.js), JSP, 이미지 파일 등의 웹 콘텐츠 저장
   - 웹 어플리케이션 서버 배포 과정에서 해당 폴더의 내용물 복사
   - **WebContent/WEB-INF :** 웹 어플리케이션 설정 파일들이 위치하는 디렉토리

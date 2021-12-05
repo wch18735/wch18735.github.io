@@ -5,13 +5,13 @@ date: 2021-07-22
 layout: single
 classes: wide
 category:
-    - jsp
+ - jsp
 tag:
-    - java
-    - jsp
-    - servlet
-	- post
-	- post request
+ - java
+ - jsp
+ - servlet
+ - post
+ - post request
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
