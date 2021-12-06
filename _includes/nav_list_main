@@ -76,14 +76,25 @@
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------------->
+        <!--------------------------------- 카테고리 대분류: Language -------------------------------------->
+        <span class="nav__sub-title">Language</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "java" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "cpp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+         <!------------------------------------------------------------------------------------------------->
         <!--------------------------------- 카테고리 대분류: RECORD -------------------------------------->
         <span class="nav__sub-title">RECORD</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
