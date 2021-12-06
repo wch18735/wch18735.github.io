@@ -41,7 +41,7 @@
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------->
-        <!--------------------------------- 카테고리 대분류: Study -------------------------------------->
+        <!--------------------------------- 카테고리 대분류: Web -------------------------------------->
         <span class="nav__sub-title">WEB</span>
         <ul>
             <!-- 카테고리 소분류 -->
@@ -49,6 +49,7 @@
             {% if {{category[0]}} == "javascript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "jsp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "network" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}

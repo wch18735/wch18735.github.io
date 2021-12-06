@@ -1,6 +1,6 @@
 ---
-title: "[JSP] 파일 업로드 예제 (form 태그와 multipart/form-data)"
-excerpt: "jsp file upload"
+title: "[JSP] 파일 업로드 예제와 다운로드 (form 태그와 multipart/form-data)"
+excerpt: "jsp file upload, download"
 date: 2021-12-05
 layout: single
 classes: wide
@@ -80,19 +80,7 @@ form 태그는 아래와 같은 속성을 가진다.
 ```java
 package com.jsp_example.web;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+/* import ...*/
 
 @MultipartConfig(
 	// location="/tmp",
@@ -129,6 +117,8 @@ public class FileUpload extends HttpServlet{
 		// 파일 출력 스트림 (저장)
 		FileOutputStream fos = new FileOutputStream(filePath);
 		
+		// 1024byte 씩 버퍼에 담아 읽어오는 과정
+		// write(buffer, offset, length); 를 통해 읽어온 만큼만 쓰는 방법
 		byte[] buf = new byte[1024];
 		int size = 0;
 		while((size=fis.read(buf)) != -1)
@@ -142,4 +132,67 @@ public class FileUpload extends HttpServlet{
 }
 ```
 
-이렇게 작성하고 서버를 재시작 한 후 파일을 업로드하면 파일이 정상적으로 업로드되는 것을 확인할 수 있다.
+이렇게 작성하고 서버를 재시작 한 후 파일을 업로드하면 파일이 정상적으로 업로드되는 것을 확인할 수 있다. `@MultipartConfig` 어노테이션을 이용해 저장 위치와 최대 전송 용량을 지정하는 모습을 볼 수 있다.
+
+코드 내부 주석을 참고하면 어떤 과정을 거쳐 파일을 읽어오고, 정해진 위치로 업로드하는지 자세히 알 수 있다. 궁금한 점이 생길 것 같다. 위 코드는 단일 파일만 업로드하는 예제다. 다중 파일은 어떻게 전송할 수 있을까.
+
+간단하게 생각하면 두 가지 방법이 가능하다고 느낄 것 같다. 서로 다른 `name` 을 지정해 각각 받아오는 방법과 같은 `name` 을 지정해 배열로 받아오는 방법. 본문에서는 두 번째 예제를 살펴본다. `request.getParts()` 를 이용해 배열을 반환받는 예제다.
+
+```java
+package com.jsp_example.web;
+
+/* import ... */
+
+@MultipartConfig(
+	// location="/tmp",
+	fileSizeThreshold=1024*1024,
+	maxFileSize=1024*1024*10,
+	maxRequestSize=1024*1024*10*10
+)
+@WebServlet("/utils/fileUpload")
+public class FileUpload extends HttpServlet{
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Get Request!!");
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("Post Request!!");
+		
+		String realPath = req.getServletContext().getRealPath("/upload");
+
+		// request 객체 내부 getParts() 메소드 사용
+		Collection<Part> fileParts = req.getParts();
+		
+		for(Part filePart : fileParts) {		
+			// 요청의 여러 파트(Part)들 중 name 이 filename 으로 설정된 것
+			if(filePart.getName().equals("fileName")) continue;
+			if(filePart.getSize() == 0) continue;
+
+			String fileName = filePart.getSubmittedFileName();
+			InputStream fis = filePart.getInputStream();
+			String filePath = realPath + File.separator + fileName;
+			FileOutputStream fos = new FileOutputStream(filePath);
+			
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size=fis.read(buf)) != -1)
+				fos.write(buf, 0, size);
+			fos.close();
+			fis.close();
+		}
+		
+		PrintWriter out = resp.getWriter();
+		out.write("file uploaded to " + realPath +" successfully!");
+	}
+}
+```
+
+위에서 얻은 경로와 파일명을 이용해 업로드 수행과 동시에 연결된 데이터베이스에 경로를 저장하고, 추후에 이를 가져와 사용할 수 있게 만들 수 있다. 이 기능까지 구현하면 간단한 게시판을 *JSP* 와 *Java* 코드로 개발해 볼 수 있다.
+
+개발하다보면 다양한 정책들을 세워야 함을 느끼게 된다. 저장할 때, `게시글 ID` 등을 함께 삽입해 중복을 방지하는 방법 등이 예시가 될 수 있다. 이는 개발 경험을 쌓아나가며 하나씩 자기만의 방법을 터득해나가면 된다.
+
+## download
+
+다운로드는 간단하게 `<a download href="filepath"/>` 과 같이 태그 안에 `download` 키워드를 삽입해 다운로드를 활성화 시킬 수 있다. 옛날에는 다운로드 요청에 대해 동작하는 코드를 서버에서 개발했다고 한다.
