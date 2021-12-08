@@ -9,26 +9,20 @@
             <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold">전체 글 수</span> <span style="font-family: Arial, Helvetica, sans-serif; font-size: 16; font-weight: bold;">{{sum}} 개</span>
         </li>
         
-        <!--------------------------------- 카테고리 대분류: Database ---------------------------------------->
-        <span class="nav__sub-title">Database</span>
-        <ul> <!-- 카테고리 소분류: database -->
-            {% for category in site.categories %}
-            {% if {{category[0]}} == "database" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% endif %}
-            {% endfor %} 
-        </ul>
-        <!--------------------------------------------------------------------------------------------------->
-        <!--------------------------------- 카테고리 대분류: OS ---------------------------------------->
-        <span class="nav__sub-title">Operating System</span>
+        <!--------------------------------- 카테고리 대분류: Computer Science ---------------------------------------->
+        <span class="nav__sub-title">Computer Science</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "os" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "network" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "database" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------->
+        
         <!--------------------------------- 카테고리 대분류: Algorithms -------------------------------------->
         <span class="nav__sub-title">Algorithms</span>
         <ul>
@@ -41,6 +35,18 @@
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------->
+        
+         <!--------------------------------- 카테고리 대분류: DBMS ---------------------------------------->
+         <span class="nav__sub-title">DBMS</span>
+         <ul>
+             <!-- 카테고리 소분류 -->
+             {% for category in site.categories %}
+             {% if {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+             {% endif %}
+             {% endfor %} 
+         </ul>
+         <!--------------------------------------------------------------------------------------------------->
+        
         <!--------------------------------- 카테고리 대분류: Web -------------------------------------->
         <span class="nav__sub-title">WEB</span>
         <ul>
@@ -51,11 +57,12 @@
             {% elsif {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "network" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "maven" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
-        <!--------------------------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------->
+        
         <!--------------------------------- 카테고리 대분류: PROJECTS -------------------------------------->
         <span class="nav__sub-title">PROJECTS</span>
         <ul>
@@ -66,6 +73,7 @@
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------->
+        
         <!--------------------------------- 카테고리 대분류: MACHINE LEARNING -------------------------------------->
         <span class="nav__sub-title">MACHINE LEARNING</span>
         <ul>
@@ -76,6 +84,7 @@
             {% endfor %} 
         </ul>
         <!--------------------------------------------------------------------------------------------------------->
+        
         <!--------------------------------- 카테고리 대분류: Language -------------------------------------->
         <span class="nav__sub-title">Language</span>
         <ul>
@@ -89,13 +98,13 @@
             {% endfor %} 
         </ul>
          <!------------------------------------------------------------------------------------------------->
-        <!--------------------------------- 카테고리 대분류: RECORD -------------------------------------->
+        
+         <!--------------------------------- 카테고리 대분류: RECORD -------------------------------------->
         <span class="nav__sub-title">RECORD</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "history" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>

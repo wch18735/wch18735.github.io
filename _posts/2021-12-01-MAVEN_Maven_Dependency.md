@@ -1,11 +1,11 @@
 ---
-title: "[JSP] org.slf4j.Logger 에러 해결 방법"
+title: "[Maven] org.slf4j.Logger 에러 해결 방법"
 excerpt: "maven project import error org.slf4j.Logger"
 date: 2021-12-01
 layout: single
 classes: wide
 category:
-    - jsp
+    - maven
 tag:
     - java
     - jsp
