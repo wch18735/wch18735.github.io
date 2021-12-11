@@ -38,12 +38,8 @@ Eclipse 에서는 `<packaging>jar</packaging>` 에서 `<packaging>war</packaging
 
 이를 더 자세히 나타내면 아래와 같이 `Default LifeCycle`로 나타낼 수 있다.
 
-<html>
-<body>
-<!--StartFragment-->
-
+|---|---|
 validate | validate the project is correct and all necessary information is available.
--- | --
 initialize | initialize build state, e.g. set properties or create directories.
 generate-sources | generate any source code for inclusion in compilation.
 process-sources | process the source code, for example to filter any values.
@@ -66,7 +62,3 @@ post-integration-test | perform actions required after integration tests have be
 verify | run any checks to verify the package is valid and meets quality criteria.
 install | install the package into the local repository, for use as a dependency in other projects locally.
 deploy | done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
-
-<!--EndFragment-->
-</body>
-</html>
