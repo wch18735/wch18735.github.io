@@ -17,6 +17,11 @@ author: 1FeS
 comments: true
 ---
 
+<span style="font-sizs: 1.5em">Spring Bean 객체 생성</span>
+
+- Spring 에서는 사용할 Bean 객체를 bean configuration file 에 정의를 하고 필요할 때 객체를 가져와 사용하는 방법을 이용한다.
+- bean 태그 : 사용할 Bean 을 정의하는 태그
+
 *setting.xml 파일* 의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. 이 포스트에는 간단한 활용법을 정리해 추후 개발에 참고할 수 있도록 내용을 정리했다.
 
 먼저 `<bean/>` 태그를 사용하기 위한 setting.xml 가장 상단에 들어가는 내용은 다음과 같다.
