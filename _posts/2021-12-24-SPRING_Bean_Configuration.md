@@ -10,7 +10,6 @@ tag:
     - spring
     - dependency injection
     - bean
-	- constructor
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
