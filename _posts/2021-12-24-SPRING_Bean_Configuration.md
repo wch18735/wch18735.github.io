@@ -10,6 +10,7 @@ tag:
     - spring
     - dependency injection
     - bean
+	- constructor
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
@@ -17,14 +18,18 @@ author: 1FeS
 comments: true
 ---
 
-<span style="font-sizs: 1.5em">Spring Bean 객체 생성</span>
+<span style="font-size: 1.5em;">Spring Bean 객체 생성</span>
 
-- Spring 에서는 사용할 Bean 객체를 bean configuration file 에 정의를 하고 필요할 때 객체를 가져와 사용하는 방법을 이용한다.
-- bean 태그 : 사용할 Bean 을 정의하는 태그
+이번 포스팅에서 배울 내용을 간단하게 정리해보면 아래와 같다.
 
-*setting.xml 파일* 의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. 이 포스트에는 간단한 활용법을 정리해 추후 개발에 참고할 수 있도록 내용을 정리했다.
+- bean config xml file 사용법
+- bean 태그
+- ApplicationContext
+- bean 객체 property 활용
+- bean 객체 생성자 사용법 (index, type)
+- Collection 주입
 
-먼저 `<bean/>` 태그를 사용하기 위한 setting.xml 가장 상단에 들어가는 내용은 다음과 같다.
+*setting.xml 파일* 의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. 이 포스트에는 간단한 활용법을 정리해 추후 개발에 참고할 수 있도록 내용을 정리했다. `<bean/>` 태그를 사용하기 위한 setting.xml 가장 상단에 들어가는 내용은 다음과 같다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -102,9 +107,7 @@ public class SimpleEntity {
 
 참고로 *Eclipse IDE* 에서는 *Entity* 내부 Attribute 들만 선언한 다음 `Alt + Shift + S` 키를 눌러 *Getter & Setter* 생성이 가능하다. 나중가면 이게 더 편리하고 좋다.
 
-그리고 난 다음 원하는 위치에 *setting.xml* 을 작성해준다. 나중에 절대경로로 받아올 것이기 때문에 어디에 둬도 좋지만 되도록 *src 폴더 안쪽* 으로 정하는 것이 좋을 것 같다.
-
-생성한 세팅 문서에 아래와 같이 `<bean id="class" class="spring.di.entity.SimpleEntity"/>` 를 추가해보자.
+이후 원하는 위치에 *setting.xml* 을 작성해준다. 나중에 절대경로로 받아올 것이기 때문에 어디에 둬도 좋지만 되도록 *src 폴더 안쪽* 으로 정하는 것이 좋을 것 같다. 생성한 세팅 문서에 아래와 같이 `<bean id="class" class="spring.di.entity.SimpleEntity"/>` 를 추가해보자.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -116,16 +119,14 @@ public class SimpleEntity {
 </beans>
 ```
 
-보다시피 `bean` 을 만들었다. 이렇게 만든 `빈`을 가져다 써야되는데, 이것도 편리하게 구현되어있다. ApplicationContext 라는 인터페이스를 사용한다. 
-
-참고로 ApplicationContext 라는 Interface 는 네 가지로 구현되는데, XML 을 전달할 때 넘기는 방법에 따라 다음과 같이 나눠진다. 즉, XML 을 넘기는 방법이 이름 앞에 나타나있다.
+보다시피 `bean` 을 만들었다. 이 `bean`을 가져다 써야되는데 이것도 편리하게 구현되어있다. ApplicationContext 라는 인터페이스를 사용한다. 이 Interface 는 네 가지로 구현되는데, XML 을 전달할 때 넘기는 방법에 따라 다음과 같이 나눠진다. XML 을 넘기는 방법이 이름 앞에 나타나있다.
 
 - ClassPathXmlApplicationContext
 - FileSystemXmlApplicationContext
 - XmlWebApplicationContext
 - AnnotationConfigApplicationContext
 
-그러면 `main` 함수가 포함된 위치에서 기존에 작성한 빈을 꺼내는 코드를 작성해보자. 이렇게 된다.
+그러면 `main` 함수가 포함된 위치에서 기존에 작성한 빈을 꺼내는 코드를 작성해보자.
 
 ```java
 package spring.di;
@@ -161,7 +162,7 @@ public class Program {
 
 이렇게 작성하면 소스코드 외부에서 미리 초기화 한 빈을 전달할 수 있다. 실제로 아래 코드를 컴파일해서 실행시켜보면 `simple name` 이라는 문자열이 출력되는 것을 볼 수 있다.
 
-지금까지 보면 *setter* 를 이용해 값을 설정하는 것이 가능했다. 그러면 XML 파일 내에서 생성자를 정의해 객체를 만들 수 있을까? 역시 가능하다. `<constructor-arg>` 태그를 사용한다. *Constructor argument* 라는 뜻이다.
+지금까지는 클래스 내에 정의된 *setter* 메소드를 이용해 값을 설정했다. 그러면 XML 파일 내에서 생성자를 호출해 객체를 생성하고 전달할 수 있을까? 역시 가능하다. `<constructor-arg>` 태그를 사용한다. *Constructor argument* 라는 뜻이다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -191,9 +192,9 @@ public class Program {
 </beans>
 ```
 
-그럼... 자료형은...? 자료형이 다른 경우로 생성자 오버로드가 된 경우는 어떻게 처리할 수 있을까? 간단하게 `type="float"` 과 같이 자료형을 지정해 어떤 생성자를 실행시킬 것인지 결정할 수 있다.
+자료형이 다른 경우로 생성자 오버로드가 된 경우는 어떻게 처리할 수 있을까? 간단하게 `type="float"` 과 같이 자료형을 지정해 어떤 생성자를 실행시킬 것인지 결정할 수 있다.
 
-여기까지 *property* 를 지정해 만들어진 빈에 속성을 부여하는 방법을 알아봤다. 마지막으로 새로운 처리기를 불러와 코드를 간단하게 해보자. 한 줄로 끝난다.
+여기까지 *property* 또는 *constructor-arg* 를 활용해 만들어진 빈에 속성을 부여하는 방법을 알아봤다. 마지막으로 새로운 처리기를 불러와 코드를 간단하게 해보자. 여러 줄에 적었던 코드를 한 줄로 끝낼 수 있어 가독성을 높인다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -269,4 +270,4 @@ public class Program {
 </beans>
 ```
 
-util 처리기는 constant, list, map, set, properties, property-path 등을 지원한다. 검색해보면 다양한 예시를 살펴볼 수 있다. 다음은 어노테이션을 이용해 의존성을 주입하는 방법을 정리할 예정이다.
+util 처리기는 constant, list, map, set, properties, property-path 등을 지원한다. 검색해보면 다양한 예시를 살펴볼 수 있다. 다음은 어노테이션을 이용해 의존성을 주입하는 방법을 정리한다.
