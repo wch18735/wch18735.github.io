@@ -33,12 +33,19 @@ Spring Bean 은 IOC 컨테이너가 종료될 때 객체가 소멸된다. 즉, `
 ## init-method 사용법
 
 - 클래스에 생성 후 사용할 메소드를 정의한다
-- xml 파일에 메소드를 삽입한다
+- xml 파일 내부 bean 태그에 `init-method=" "` 에 객체의 메소드를 삽입한다
 
 ## destroy-method 사용법
 
 - 클래스에 소멸 후 사용할 메소드를 정의한다
-- xml 파일에 메소드를 삽입한다
+- xml 파일 내부 bean 태그에 `destroy-method=" "` 에 객체의 메소드를 삽입한다
+
+## default-init-method / default-destroy-method 사용법
+
+- 클래스에 소멸 후 사용할 메소드를 정의한다
+- xml 파일 내부 상단의 beans 태그에 default 값을 삽입한다
+- 같은 이름의 default-method를 가지지 않은 객체들은 무시된다
+- 중복되는 경우 init-method, destroy-method 메소드가 우선순위를 가진다
 
 ## 예제 코드
 
