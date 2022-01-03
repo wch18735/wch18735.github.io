@@ -23,7 +23,13 @@ comments: true
 이번 포스팅에서 배울 내용을 간단하게 정리해보면 아래와 같다.
 
 - bean config xml file 사용법
-- bean 태그
+- bean 태그 기본 속성
+  - class : 객체를 생성하기 위해 사용할 클래스를 지정
+  - id : Bean 객체를 가져오기 위해 사용하는 이름을 지정
+  - lazy-init : 싱글톤인 경우 xml 로딩할 때 객체 생성 여부 설정. True 옵션일 때 로딩 시 객체를 생성하지 않고 `getBean` 메소드로 호출할 때 객체를 생성
+  - scope : 객체 범위를 지정함
+    - singleton : 객체를 하나만 생성해서 사용
+	- prototype : 객체를 가져올 때 마다 생성해서 사용
 - ApplicationContext
 - bean 객체 property 활용
 - bean 객체 생성자 사용법 (index, type)

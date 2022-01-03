@@ -146,7 +146,7 @@ public class MainClass {
 
 <span style="font-size: 1.5em">ApplicationContext 활용 예제</span>
 
-다음은 ApplicationContext 활용 예제다. 위 코드와 비슷하지만 여러 가지 옵션이 가능하다는 점이 다르다. 로드와 동시에 객체를 생성한다는 점과 같은 `id` 로 클래스를 호출해도 다른 객체를 전닫받을 수 있도록 조절할 수 있다.
+다음은 ApplicationContext 활용 예제다. 위 코드와 비슷하지만 여러 가지 옵션이 가능하다는 점이 다르다. 로드와 동시에 객체를 생성한다는 점과 같은 `id` 로 클래스를 호출해도 다른 객체를 전닫받을 수 있도록 조절할 수 있다. 
 
 ```java
 package com.springpratice.main;
@@ -173,4 +173,45 @@ public class MainClass {
 }
 ```
 
-더 자세한 예시는 [여기](https://wch18735.github.io/spring/SPRING_Dependency_Injection/)에서 확인할 수 있다.
+위 코드를 실행하기만해도 생성자가 호출되는 것을 확인할 수 있다. 이를 BeanFactory 처럼 객체를 호출할 때 생성자가 호출되도록 바꾸고 싶다면 `lazy-init="true"` 옵션을 삽입해보자. 이외에도 다양한 bean 태그 기본 속성들과 이를 응용하는 방법들이 있다. 
+
+ctx 로부터 여러 번 bean 을 가져오는 `getBean` 을 호출하면 항상 같은 주소가 반환된다. 이를 바꿔주기 위해 xml 파일에 `<bean id='testBean' class='com.springpractice.beans.TestBean' scope="prototype"></bean>` 다음과 같이 선언해보자. `scope` 를 바꿔주는 것이다.
+
+그리고 아래 코드를 실행해보면 서로 다른 주소 값이 반환되는 것을 확인할 수 있다.
+
+```java
+package com.springpratice.main;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.springpractice.beans.TestBean;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		test3();
+	}
+
+	// ApplicationContext - 패키지 내부
+	public static void test3() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/springpractice/config/beans.xml");
+		TestBean tb1 = ctx.getBean("testBean", TestBean.class);
+		TestBean tb2 = ctx.getBean("testBean", TestBean.class);
+		
+		System.out.printf("tb1 : %s\n", tb1);
+		System.out.printf("tb2 : %s\n", tb2);
+		ctx.close();
+	}
+}
+
+/*
+02:01:41.662 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f5f2bb7
+02:01:41.952 [main] DEBUG org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 2 bean definitions from class path resource [com/springpractice/config/beans.xml]
+02:01:41.993 [main] DEBUG org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'com.springpractice.beans.TestBean#0'
+생성 완료
+생성 완료
+tb1 : com.springpractice.beans.TestBean@56de5251
+tb2 : com.springpractice.beans.TestBean@419c5f1a
+02:01:42.047 [main] DEBUG org.springframework.context.support.ClassPathXmlApplicationContext - Closing org.springframework.context.support.ClassPathXmlApplicationContext@f5f2bb7, started on Tue Jan 04 02:01:41 KST 2022
+*/
+```
