@@ -127,7 +127,7 @@ public class SimpleEntity {
 </beans>
 ```
 
-이렇게 소스코드가 아닌 XML 파일에서 생성한 빈은 자바 소스코드 어디에서든 가져다 사용할 수 있다. 이 때, <u>**ApplicationContext 라는 인터페이스를 사용한다.**</u> 이 Interface 는 XML 전달 방법에 따라 다음과 같이 네 가지로 나눠진다. 이름 앞에 붙은 클래스, 파일, XmlWeb, Annotation 등에서 전달 방법을 예상해 볼 수 있다.
+이렇게 소스코드가 아닌 XML 파일에서 생성한 빈은 자바 소스코드 어디에서든 가져다 사용할 수 있다. 이 때, <u>ApplicationContext 라는 인터페이스를 사용한다.</u> 이 Interface 는 XML 전달 방법에 따라 다음과 같이 네 가지로 나눠진다. 이름 앞에 붙은 클래스, 파일, XmlWeb, Annotation 등에서 전달 방법을 예상해 볼 수 있다.
 
 - ClassPathXmlApplicationContext
 - FileSystemXmlApplicationContext
