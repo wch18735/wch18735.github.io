@@ -17,9 +17,9 @@ author: 1FeS
 comments: true
 ---
 
-<span style="font-size: 1.5em;">Spring Bean 객체 생성</span>
+<span style="font-size: 1.5em;">Bean configuration 내용 정리</span>
 
-이번 포스팅에서 배울 내용을 간단하게 정리해보면 아래와 같다.
+이번 포스팅에서 정리할 내요을 간단하게 요약해봤다.
 
 - bean config xml file 사용법
 - bean 태그 기본 속성
@@ -34,18 +34,22 @@ comments: true
 - bean 객체 생성자 사용법 (index, type)
 - Collection 주입
 
-*setting.xml 파일* 의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. 이 포스트에는 간단한 활용법을 정리해 추후 개발에 참고할 수 있도록 내용을 정리했다. `<bean/>` 태그를 사용하기 위한 setting.xml 가장 상단에 들어가는 내용은 다음과 같다.
+<span style="font-size: 1.5em;">bean.xml 파일</span>
+
+XML 파일의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. `<bean/>` 태그를 사용하기 위해서 문서에 아래 내용을 삽입하고 시작한다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<beans/>
 ```
 
-자주 보이는 *xmlns* 란 해당 문서를 위한 XML 네임스페이스(namespace)를 명시한다. 이러한 XML 네임스페이스는 요소의 이름과 속성의 이름을 하나의 그룹으로 묶어주어 이름에 대한 충돌을 해결한다. 
+<span style="font-size: 1.5em;">XML namespace</span>
 
-XML 네임스페이스는 URI(Uniform Resource Identifiers)로 식별된다. xmlns 속성은 해당 문서가 XHTML 문서일 경우 반드시 명시되어야 하며, HTML 4.01에서는 유효하지 않으며, HTML5에서는 선택 사항이다.
+*xmlns* 란 XML 네임스페이스(namespace)를 뜻한다. XML 네임스페이스는 요소의 이름과 속성의 이름을 하나의 그룹으로 묶어 동일한 이름에 대해 발생하는 충돌을 회피할 수 있도록 해준다. 식별은 XML 네임스페이스의 URI(Uniform Resource Identifiers)를 사용한다.
 
 간단한 예시로 `resource` 라는 이름의 태그가 두 XML 파일 내부에 존재하는 상황을 가정하자. 서로 두 XML 파일을 네임스페이스를 이용해 구분하려면 다음과 같이 나타낼 수 있다.
 
@@ -73,9 +77,9 @@ XML 네임스페이스는 URI(Uniform Resource Identifiers)로 식별된다. xml
 
 끝으로 `xsi` 는 보다시피 *XMLSchema Instance* 를 타나내는 것이다. 여하튼 다시 Spring Dependency Injection 으로 돌아오자.
 
-*setting.xml* 에서는 객체를 만들 수 있다. 이제 만드는 방법을 예제를 통해 알아보려고 한다. 그 전에 준비해야 될 것들이 몇 개 있는데 코드를 복붙한 다음 자기가 직접 예제를 만들어보면 이해가 더 빠를 것 같다.
+<span style="font-size: 1.5em;">객체 생성 예제</span>
 
-`spring.di.entity` 라는 패키지 안에 간단한 *Entity* 를 만들어보자. 패키지는 사실 아무렇게나 만들어도 좋다. 자기가 원하는 패키지명과 구조를 가지면 된다.
+자바 소스코드 내부가 아닌 설정 파일에서 객체를 생성하고 전달하는 예제를 정리해보자. 먼저 `spring.di.entity` 라는 패키지를 만들고 간단한 *Entity* 클래스를 생성한다. *Eclipse IDE* 에서는 *Entity* 내부 Attribute 들만 선언한 다음 `Alt + Shift + S` 단축키로 편리하게 *Getter & Setter* 생성이 가능하다.
 
 ```java
 // SimpleEntity.java
@@ -110,9 +114,7 @@ public class SimpleEntity {
 }
 ```
 
-참고로 *Eclipse IDE* 에서는 *Entity* 내부 Attribute 들만 선언한 다음 `Alt + Shift + S` 키를 눌러 *Getter & Setter* 생성이 가능하다. 나중가면 이게 더 편리하고 좋다.
-
-이후 원하는 위치에 *setting.xml* 을 작성해준다. 나중에 절대경로로 받아올 것이기 때문에 어디에 둬도 좋지만 되도록 *src 폴더 안쪽* 으로 정하는 것이 좋을 것 같다. 생성한 세팅 문서에 아래와 같이 `<bean id="class" class="spring.di.entity.SimpleEntity"/>` 를 추가해보자.
+이후 원하는 위치에 XML을 작성해준다. `id` 는 `simple` 이고 `class` 는 `spring.di.entity.SimpleEntity` 를 참조하는 `bean` 을 이 파일에서 생성할 것이다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -120,18 +122,19 @@ public class SimpleEntity {
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+	<!-- 생성부 -->
 	<bean id="simple" class="spring.di.entity.SimpleEntity"/>
 </beans>
 ```
 
-보다시피 `bean` 을 만들었다. 이 `bean`을 가져다 써야되는데 이것도 편리하게 구현되어있다. ApplicationContext 라는 인터페이스를 사용한다. 이 Interface 는 네 가지로 구현되는데, XML 을 전달할 때 넘기는 방법에 따라 다음과 같이 나눠진다. XML 을 넘기는 방법이 이름 앞에 나타나있다.
+이렇게 소스코드가 아닌 XML 파일에서 생성한 빈은 자바 소스코드 어디에서든 가져다 사용할 수 있다. 이 때, <u>**ApplicationContext 라는 인터페이스를 사용한다.**</u> 이 Interface 는 XML 전달 방법에 따라 다음과 같이 네 가지로 나눠진다. 이름 앞에 붙은 클래스, 파일, XmlWeb, Annotation 등에서 전달 방법을 예상해 볼 수 있다.
 
 - ClassPathXmlApplicationContext
 - FileSystemXmlApplicationContext
 - XmlWebApplicationContext
 - AnnotationConfigApplicationContext
 
-그러면 `main` 함수가 포함된 위치에서 기존에 작성한 빈을 꺼내는 코드를 작성해보자.
+위에서 말 한 네 가지 클래스 중 ClassPathXmlApplicationContext 를 이용해 빈을 받아오는 한 가지 예제가 아래와 같다. 정의한 context 에서 `getBean` 메소드에 불러오려는 빈의 `id`를 전달해 전달하는 것을 확인할 수 있다. 이 때, `(SimpleEntity)` 로 타입 캐스팅을 해주는데, `getBean('simple', SimpleEntity.class)` 와 같이 뒤를 수정하면 타입 캐스팅을 따로 지정해주지 않아도 된다.
 
 ```java
 package spring.di;
@@ -149,9 +152,7 @@ public class Program {
 }
 ```
 
-에러? 안 난다. 간단하다. 이전 파일에서 *id* 로 설정했던 이름으로 불러오는 작업이 성공했다. 참고로 `context.getBean(SimpleEntity.class)` 와 같이 클래스를 전달해 받아오는 방법도 있다. 이러면 Casting 작업이 없어지긴 한다.
-
-하여튼 문제가 하나 있다. 지금 받아온 객체는 초기화가 안 되어있다. 어떻게 해결할 수 있을까. *setter* 가 있으니까 미리 사용해 볼 수 있을까? 당연히 가능하다. `<bean>` 태그 안에 `<property>` 태그를 사용해 빈이 가지는 여러 속성들을 정의할 수 있다.
+이렇게 작성된 코드에는 아직까지 문제가 하나 있다. 현재 받아온 객체는 초기화가 되어있지 않다. 이를 어떻게 해결할 수 있을까. 바로 클래스 내에 정의했던 setter 메소드를 사용한다. `<bean>` 태그 안에 `<property>` 태그를 사용해 빈이 가지는 여러 속성들을 사용할 수 있는데 그 중 하나인 setter 메소드를 사용하는 예제가 아래와 같다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -167,7 +168,7 @@ public class Program {
 
 이렇게 작성하면 소스코드 외부에서 미리 초기화 한 빈을 전달할 수 있다. 실제로 아래 코드를 컴파일해서 실행시켜보면 `simple name` 이라는 문자열이 출력되는 것을 볼 수 있다.
 
-지금까지는 클래스 내에 정의된 *setter* 메소드를 이용해 값을 설정했다. 그러면 XML 파일 내에서 생성자를 호출해 객체를 생성하고 전달할 수 있을까? 역시 가능하다. `<constructor-arg>` 태그를 사용한다. *Constructor argument* 라는 뜻이다.
+지금까지는 클래스 내에 정의된 setter 메소드를 이용해 값을 설정했다. 그러면 XML 파일 내에서 생성자를 호출해 객체를 생성하고 전달할 수 있을까? 역시 가능하다. `<constructor-arg>` 태그를 사용한다. *Constructor argument* 라는 뜻이다. 아래는 0 번부터 시작하는 인자들의 `index` 를 지정해 값을 전달하는 방법이다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -182,7 +183,7 @@ public class Program {
 </beans>
 ```
 
-이렇게 *0* 번부터 시작하는 `index` 를 이용해 값을 전달한다. 이것보다 더 편한 방법이 있다. 아예 기존에 인자로 지정된 입력들을 사용할 수 있다.
+또는 아래와 같이 매개변수로 지정된 이름을 지정해 줄 수 있다. 개발자에게 더 편한 방법으로 사용할 수 있으나 나는 개인적으로 아래 방법을 더 선호한다. 매개변수 명에서 예측할 수 있는 많은 정보를 index 만으로는 알 수 없기 때문이다. 혹시나 빈이 수정되는 경우 index 역시 수정해야 할 가능성이 큰 것도 이유가 될 수 있겠다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -197,7 +198,7 @@ public class Program {
 </beans>
 ```
 
-자료형이 다른 경우로 생성자 오버로드가 된 경우는 어떻게 처리할 수 있을까? 간단하게 `type="float"` 과 같이 자료형을 지정해 어떤 생성자를 실행시킬 것인지 결정할 수 있다.
+자료형이 다른 경우로 생성자 오버로드가 된 경우도 고려해볼 만한 문제다. 다행히 자료형을 지정하는 옵션이 존재한다. `type="float"` 과 같이 자료형을 지정해 어떤 생성자를 실행시킬 것인지 결정할 수 있다.
 
 여기까지 *property* 또는 *constructor-arg* 를 활용해 만들어진 빈에 속성을 부여하는 방법을 알아봤다. 마지막으로 새로운 처리기를 불러와 코드를 간단하게 해보자. 여러 줄에 적었던 코드를 한 줄로 끝낼 수 있어 가독성을 높인다.
 
@@ -212,7 +213,9 @@ public class Program {
 </beans>
 ```
 
-진짜 마지막으로 콜렉션 생성을 다뤄보자. SimpleEntity 배열을 외부에서 만들어 전달해본다. 생성되는 콜렉션 객체가 사용자가 설정하는 초기 값을 가지는지 확인하기 위해 아래와 같이 코드를 작성한다.
+<span style="font-size: 1.5em;">XML 에서 Collection 생성</span>
+
+콜렉션 생성을 다뤄보자. SimpleEntity 배열을 외부에서 만들어 전달해본다. 생성되는 콜렉션 객체가 사용자가 설정하는 초기 값을 가지는지 확인하기 위해 아래와 같이 코드를 작성한다.
 
 ```java
 package spring.di;
@@ -275,4 +278,4 @@ public class Program {
 </beans>
 ```
 
-util 처리기는 constant, list, map, set, properties, property-path 등을 지원한다. 검색해보면 다양한 예시를 살펴볼 수 있다. 다음은 어노테이션을 이용해 의존성을 주입하는 방법을 정리한다.
+util 처리기는 constant, list, map, set, properties, property-path 등을 지원한다. 검색해보면 다양한 예시를 살펴볼 수 있다. 다음은 어노테이션을 이용해 의존성을 주입하는 방법을 정리해 볼 것이다.
