@@ -34,6 +34,7 @@ comments: true
 - bean 객체 생성자 사용법 (index, type)
 - Collection 주입
 
+<br/>
 <span style="font-size: 1.5em;">bean.xml 파일</span>
 
 XML 파일의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 주입할 수 있도록 흐름을 제어하는 기능을 한다. `<bean/>` 태그를 사용하기 위해서 문서에 아래 내용을 삽입하고 시작한다.
@@ -47,6 +48,7 @@ XML 파일의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 �
 <beans/>
 ```
 
+<br/>
 <span style="font-size: 1.5em;">XML namespace</span>
 
 *xmlns* 란 XML 네임스페이스(namespace)를 뜻한다. XML 네임스페이스는 요소의 이름과 속성의 이름을 하나의 그룹으로 묶어 동일한 이름에 대해 발생하는 충돌을 회피할 수 있도록 해준다. 식별은 XML 네임스페이스의 URI(Uniform Resource Identifiers)를 사용한다.
@@ -77,6 +79,7 @@ XML 파일의 *bean 태그* 는 소스코드 외부에서 객체를 생성해 �
 
 끝으로 `xsi` 는 보다시피 *XMLSchema Instance* 를 타나내는 것이다. 여하튼 다시 Spring Dependency Injection 으로 돌아오자.
 
+<br/>
 <span style="font-size: 1.5em;">객체 생성 예제</span>
 
 자바 소스코드 내부가 아닌 설정 파일에서 객체를 생성하고 전달하는 예제를 정리해보자. 먼저 `spring.di.entity` 라는 패키지를 만들고 간단한 *Entity* 클래스를 생성한다. *Eclipse IDE* 에서는 *Entity* 내부 Attribute 들만 선언한 다음 `Alt + Shift + S` 단축키로 편리하게 *Getter & Setter* 생성이 가능하다.
@@ -213,6 +216,7 @@ public class Program {
 </beans>
 ```
 
+<br/>
 <span style="font-size: 1.5em;">XML 에서 Collection 생성</span>
 
 콜렉션 생성을 다뤄보자. SimpleEntity 배열을 외부에서 만들어 전달해본다. 생성되는 콜렉션 객체가 사용자가 설정하는 초기 값을 가지는지 확인하기 위해 아래와 같이 코드를 작성한다.
