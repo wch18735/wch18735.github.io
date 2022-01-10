@@ -9,8 +9,8 @@ category:
 tag:
     - spring
     - dependency injection
-    - jsr-250 annotation
     - annotation
+	- component
 author: 1FeS
 comments: true
 ---

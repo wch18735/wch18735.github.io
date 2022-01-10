@@ -37,3 +37,7 @@ author: 1FeS
 
 - **F + 12 :** 웹 브라우저
 
+## vscode
+
+- **ctrl + ` :** Terminal 열기
+ 
