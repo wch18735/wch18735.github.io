@@ -1,6 +1,6 @@
 ---
-title: "[Spring] Spring Framework 기반 Oracle JDBC 사용 예제"
-excerpt: "oracle jdbc practical example based on spring framework"
+title: "[Spring] MyBatis 활용 예제"
+excerpt: "Spring MyBatis practice example"
 date: 2022-01-11
 layout: single
 classes: wide
