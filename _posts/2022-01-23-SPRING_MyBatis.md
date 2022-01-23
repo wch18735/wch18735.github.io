@@ -23,12 +23,12 @@ MyBatis(마이바티스)는 Spring Framework 에서 제공하는 JDBC 라이브�
 
 다음과 같은 순서로 사용한다.
 
-1) Bean 객체 정의
-2) BeanConfigurationClass.java 파일에 
-    2-1) BasicDataSource Bean 생성
-    2-2) BasicDataSource Bean 주입해 SqlSessionFactory Bean 생성
-    2-3) SqlSessionFactory Bean 주입해 MapperFactoryBean Bean 생성
-3) MapperInterface 만들기 (`@Results`, `@Result`, `@Select`, `@Delete`, `@Update` 활용)
+1. Bean 객체 정의
+2. BeanConfigurationClass.java 파일에 
+    2-1. BasicDataSource Bean 생성
+    2-2. BasicDataSource Bean 주입해 SqlSessionFactory Bean 생성
+    2-3. SqlSessionFactory Bean 주입해 MapperFactoryBean Bean 생성
+3. MapperInterface 만들기 (`@Results`, `@Result`, `@Select`, `@Delete`, `@Update` 활용)
 
 ## Bean 객체 정의
 
