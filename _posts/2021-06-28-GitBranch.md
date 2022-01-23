@@ -29,6 +29,15 @@ Git의 브랜치는 매우 가볍고, 생성 및 삭제가 쉽습니다. 이러�
 3. 원격 저장소의 브랜치 삭제
 4. 로컬에서 브랜치 삭제
 
+## 정리
+
+- `git branch` : 현재 어떤 branch 에 작업하고 있는지 확인
+- `git branch -r` : 해당 Repository 에 어떤 branch 들이 있는지 원격으로 확인
+- `git checkout [branch 이름]` : 특정 branch 로 전환 (생성되지 않은 branch 로는 이동 불가)
+- `git checkout -b [branch 이름]` : 특정 branch 를 생성하며 전환 **→ Local 저장소에 branch 생성**
+  - `git push -u origin [branch 이름]`  **→ Remote 저장소에 branch 생성**
+  - `git branch --set-upstream-to [remote 이름]/[branch 이름]` 으로 push 설정 가능
+
 ## Log
 
 ```bash
