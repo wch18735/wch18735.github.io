@@ -1,6 +1,6 @@
 ---
 title: "Vue.js"
-permalink: /categories/vue/
+permalink: /categories/vue.js/
 layout: category
 author_profile: true
 sidebar_main: true
