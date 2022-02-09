@@ -1,5 +1,5 @@
 ---
-title: "[Spring] Component"
+title: "[Spring] 컴포넌트(Component)"
 excerpt: "component"
 date: 2022-01-07
 layout: single
@@ -10,7 +10,10 @@ tag:
     - spring
     - dependency injection
     - annotation
-	- component
+    - component
+toc: true
+toc_label: "Contents"
+toc_icon: "heart"
 author: 1FeS
 comments: true
 ---
