@@ -103,28 +103,32 @@ Spring MVC 설정은 아래와 같이 진행된다.
 - 스프링 빈 설정 파일 (WEB-INF/spring/spring-context.xml)
   - `<context:component-scan .. >`
   - `<mvc:annotation-driven />`
-  - viewResolver 설정
+  - `viewResolver` 설정
 
 WEB-INF/web.xml 파일도 아래와 같이 간단하게 설정하면 된다. 먼저 dispatcherServlet 이름으로 스프링 프레임워크에서 지원하는 DispatcherServlet 클래스를 바인딩한다. 해당 서블릿 설정 정보가 담긴 위치를 그 아래 파라미터로 전달한다. 끝으로 전달되는 URL에 대해 어떤 서블릿으로 전달할 것인가를 매핑한다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
 
-  <servlet>
-  	<servlet-name>dispatcherServlet</servlet-name>
-  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  	<init-param>
-  		<param-name>contextConfigLoaction</param-name>
-  		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
-  	</init-param>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>dispatcherServlet</servlet-name>
-  	<url-pattern>/</url-pattern>
-  </servlet-mapping>
-</web-app>`
+	<servlet>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<!-- Map all requests to the DispatcherServlet for handling -->
+	<servlet-mapping>
+		<servlet-name>springDispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+</web-app>
 ```
 
 다음으로는 앞에서 지정한 servlet-context.xml 세부 내용을 채운다.
