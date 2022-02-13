@@ -105,7 +105,7 @@ Spring MVC 설정은 아래와 같이 진행된다.
   - `<mvc:annotation-driven />`
   - `viewResolver` 설정
 
-WEB-INF/web.xml 파일도 아래와 같이 간단하게 설정하면 된다. 먼저 dispatcherServlet 이름으로 스프링 프레임워크에서 지원하는 DispatcherServlet 클래스를 바인딩한다. 해당 서블릿 설정 정보가 담긴 위치를 그 아래 파라미터로 전달한다. 끝으로 전달되는 URL에 대해 어떤 서블릿으로 전달할 것인가를 매핑한다.
+spring-mvc 라이브러리는 maven central repository 를 사용한다. WEB-INF 에 위치한 web.xml 설정 역시 간단하다. 먼저 dispatcherServlet 이름으로 스프링 프레임워크에서 지원하는 DispatcherServlet 클래스를 바인딩한다. 그리고 초기화 파라미터 `<init-param>` 내부에 해당 서블릿 설정 정보가 담긴 파일 위치를 `<param-value>` 값에 기재한다. 서블릿 매핑 태그 내부 `<url-pattern>` 태그에는 전달되는 특정 서블릿으로 전달할 대상이 되는 URL을 매핑한다.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -131,9 +131,7 @@ WEB-INF/web.xml 파일도 아래와 같이 간단하게 설정하면 된다. 먼
 </web-app>
 ```
 
-다음으로는 앞에서 지정한 servlet-context.xml 세부 내용을 채운다.
-
-viewResolver 는 설정 방법이 생소하지 않다. 컨트롤러는 모델에서 반환받은 데이터 정보를 View 로 전달한다. 이 때, 동적 페이지 생성을 위한 jsp 파일들을 특정해야 하는데 이름 만으로 식별할 수 있도록 `prefix` 와 `suffix` 를 지정한다.
+다음으로는 앞에서 지정한 servlet-context.xml 에서 viewResolver 빈을 기재해준다. 컨트롤러는 모델에서 반환받은 데이터 정보를 **모두** View 로 전달한다. 이 때, 동적 페이지 생성을 위한 jsp 파일들을 특정해야 하는데 이름 만으로 식별할 수 있도록 `prefix` 와 `suffix` 를 지정한다. 이렇게 설정해두면 컨트롤러에서 반환하는 값을 view 파일 리소스 이름으로 해석해 해당 파일을 찾아 전달한다. 예를 들어 `return "hello"` 가 넘어오면 이는 자동적으로 `/WEB-INF/views/hello.jsp` 를 찾아 반환한다. 나아가 `ModelAndView` 객체를 전달할 때도 단순히 전달하려는 뷰 이름만 기재하면 되어 훨씬 쉽게 응답을 구현할 수 있다.
 
 ```xml
 <!-- servlet-context.xml -->

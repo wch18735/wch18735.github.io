@@ -112,15 +112,6 @@ public class BbsController{
 아래와 같이 컨트롤러를 작성한다. 그리고 서버를 재시작한 후 POSTMAN에서 서버로 요청을 날려보자.
 
 ```java
-package com.example.hello.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.example.hello.service.BbsService;
-import com.example.hello.vo.Article;
-
 @Controller
 @RequestMapping("/bbs")
 public class BbsControlloer {
@@ -146,16 +137,6 @@ public class BbsControlloer {
 위의 컨트롤러에 `@RequestParam` 을 사용해 파라미터를 통해 전달되는 값을 받아와 사용할 수 있다. 이 때, 설정한 `@RequestParam` 값이 전해지지 않으면 null 이 전달된다. 아래 컨트롤러를 실행시킨 뒤 요청을 보내보면 콘솔에 정상적으로 `author` 값이 전달되는 것을 확인할 수 있다.
 
 ```java
-package com.example.hello.controller;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.example.hello.service.BbsService;
-import com.example.hello.vo.Article;
-
 @Controller
 @RequestMapping("/bbs")
 public class BbsControlloer {
