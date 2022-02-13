@@ -46,6 +46,39 @@ public class BbsControlloer {
 
 Spring 에서는 파일 업로드를 위해 MultipartResolver 라는 빈을 제공한다. MultipartResolver 는 encType 이 multipart/form-data 형식으로 데이터가 전송되었을 경우 해당 데이터를 Spring MVC에서 사용할 수 있도록 변환해준다. 최대 크기, 최대 메모리 사이즈, 기본 인코딩 등 `<property>` 태그를 통해 정해줄 수 있다. pom.xml 에 Apache Commons Dependecy 를 받아주면 사용할 수 있다. 서버에서는 일반적인 `@RequestParam` 을 사용하거나 Command 객체 내부에 `MultipartFile` 객체를 선언해 활용할 수 있다.
 
+아래는 MultipartResolver 를 등록한 servlet-context.xml 전문이다. 해당 빈은 앞서 설명한대로 multpart/form-data 형식 데이터를 자동으로 변환해주는 역할을 한다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:component-scan base-package="com.example.hello"></context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<!-- resource -->
+	<mvc:resources location="/WEB-INF/resources/" mapping="resources/**"></mvc:resources>
+	
+	<!-- Multipart Resolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="104857600"></property> <!-- 10MB -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+	</bean>
+	
+	<!-- jsp 파일의 이름만 적으면 /WEB-INF/views/ 내부에서 이름만 가지고 jsp 파일 요청 -->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>
+
+```
+
 파일 저장 시 주의할 점으로 보안 사항을 지켜야 한다는 것이 있다. 업로드 된 파일 이름을 그대로 사용해서 저장하게 되면, 추후 파일 다운로드 및 보안사항에 문제가 발생한다. 때문에 파일 이름은 숨기고 실제 파일명은 난수화 시켜서 저장한다. 이런 보안 사항을 지키기 위해 일반적으로 `String fileRandomName = UUID.randomUUID().toString()` 을 사용해 파일 이름과 난수가 매칭되는 테이블을 따로 설정해준다.
 
 먼저 파일 업로드 컨트롤러를 작성한다. C드라이브 Temp 폴더에 저장되도록 파일 객체를 생성했다. 
