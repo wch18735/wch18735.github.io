@@ -6,7 +6,7 @@ author_profile: true
 sidebar_main: true
 ---
 
-Algorithms and Solved Algorithm Problems
+Software Engineering
 
 {% assign posts = site.categories['software engineering'] %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
