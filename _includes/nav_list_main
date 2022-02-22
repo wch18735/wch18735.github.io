@@ -23,6 +23,16 @@
         </ul>
         <!--------------------------------------------------------------------------------------------------->
         
+        <!--------------------------------- 카테고리 대분류: Software Engineering ---------------------------------------->
+        <span class="nav__sub-title">Software Engineering</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "software engineering" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endfor %} 
+        </ul>
+        <!--------------------------------------------------------------------------------------------------->
+
         <!--------------------------------- 카테고리 대분류: Algorithms -------------------------------------->
         <span class="nav__sub-title">Algorithms</span>
         <ul>
