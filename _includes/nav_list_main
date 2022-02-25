@@ -17,7 +17,6 @@
             {% if {{category[0]}} == "os" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "network" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "database" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
@@ -29,6 +28,19 @@
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "software engineering" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+        <!--------------------------------------------------------------------------------------------------->
+
+        <!--------------------------------- 카테고리 대분류: CI/CD ---------------------------------------->
+        <span class="nav__sub-title">CI/CD</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "maven" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
@@ -58,21 +70,30 @@
          </ul>
          <!--------------------------------------------------------------------------------------------------->
         
-        <!--------------------------------- 카테고리 대분류: Web -------------------------------------->
-        <span class="nav__sub-title">WEB</span>
+        <!--------------------------------- 카테고리 대분류: Backend -------------------------------------->
+        <span class="nav__sub-title">BACKEND</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "jsp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "maven" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "vue.js" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
         <!------------------------------------------------------------------------------------------------->
+         
+        <!--------------------------------- 카테고리 대분류: FRONT -------------------------------------->
+        <span class="nav__sub-title">FRONT</span>
+        <ul>
+            <!-- 카테고리 소분류 -->
+            {% for category in site.categories %}
+            {% if {{category[0]}} == "vue.js" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% endif %}
+            {% endfor %} 
+        </ul>
+        <!------------------------------------------------------------------------------------------------->
+
+
         
         <!--------------------------------- 카테고리 대분류: PROJECTS -------------------------------------->
         <span class="nav__sub-title">PROJECTS</span>
@@ -102,9 +123,9 @@
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "cpp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "java" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "cpp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
