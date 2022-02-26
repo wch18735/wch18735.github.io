@@ -77,6 +77,7 @@
             {% for category in site.categories %}
             {% if {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "spring boot" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
