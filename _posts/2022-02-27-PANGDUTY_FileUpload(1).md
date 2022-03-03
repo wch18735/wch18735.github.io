@@ -1,6 +1,6 @@
 ---
 title: "[Pangtudy-web] File Upload Issue"
-excerpt: "Jenkins to EC2"
+excerpt: "file upload implementation"
 date: 2022-02-27
 category:
     - pangtudy-web
