@@ -1,7 +1,7 @@
 ---
 title: "[Oracle] Troubleshoot for executing sqldeveloper"
 excerpt: "troubleshooting for executing sqldeveloper"
-date: 2021-11-05
+date: 2022-03-06
 category:
     - oracle
 tag:
@@ -74,3 +74,6 @@ $ exec dbms_xdb.setlistenerlocalaccess(false);
   - 테이블 스페이스에 Data-file, Log-file 생성
   - 보안 탭에서 계정 생성하고 만들어 준 테이블과 연결
 
+### 무한대기 (not COMMIT)
+
+sqldeveloper 열어놓고 작업할 때, 같은 테이블을 킨 상태로 `COMMIT;` 안 해주면 이클립스에서 하는 작업이 무한 대기에 빠지는 수가 있다.

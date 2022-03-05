@@ -1,7 +1,7 @@
 ---
 title: "[Spring] Mapper XML File"
 excerpt: "mapper xml file"
-date: 2022-02-19
+date: 2022-03-06
 layout: single
 classes: wide
 category:
@@ -16,6 +16,8 @@ comments: true
 ---
 
 # Mapper XML File
+
+매퍼(Mapper)가 무엇인지 모른다면 [[Spring] MyBatis 소개](https://wch18735.github.io/spring/SPRING_MyBatis/) 를 먼저 읽어보면 좋을 것 같다.
 
 MyBatis 의 가장 큰 특징은 매핑 파일이라고 생각한다. SQL문을 저장하고 매핑 Bean 입력, 반환하는 빈과의 대응 관계가 정의되어 있어 기존 SQL 문자열로 관리했던 JDBC 코드보다 훨씬 파악이 용이하다. JDBC 코드에 비하면 최대 95% 이상 감소한다고 한다. 이렇게까지 극적인 대비를 아직 느껴보진 못 했지만 멋모르고 쓸 때도 편리하다는 느낌을 받을 수 있었다.
 
