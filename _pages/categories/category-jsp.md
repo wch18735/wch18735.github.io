@@ -1,5 +1,5 @@
 ---
-title: "JSP Categories"
+title: "JSP"
 permalink: /categories/jsp/
 layout: category
 author_profile: true

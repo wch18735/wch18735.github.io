@@ -1,5 +1,5 @@
 ---
-title: "JDBC Categories"
+title: "JDBC"
 permalink: /categories/jdbc/
 layout: category
 author_profile: true

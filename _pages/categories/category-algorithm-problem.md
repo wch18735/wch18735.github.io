@@ -1,5 +1,5 @@
 ---
-title: "Algorithm Categories"
+title: "Algorithm Problems"
 permalink: /categories/algorithm problem/
 layout: category
 author_profile: true

@@ -1,6 +1,6 @@
 ---
-title: "Javascript Categories"
-permalink: /categories/spring-boot/
+title: "Spring Boot"
+permalink: /categories/spring boot/
 layout: category
 author_profile: true
 sidebar_main: true

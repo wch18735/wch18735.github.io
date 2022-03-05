@@ -1,5 +1,5 @@
 ---
-title: "Algorithm Categories"
+title: "Software Engineering"
 permalink: /categories/software engineering/
 layout: category
 author_profile: true
