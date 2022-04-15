@@ -17,7 +17,24 @@ toc_icon: "heart"
 
 # AWS Ubuntu EC2 위에 Jenkins 설치 및 Github 연동
 
-고난의 연속이다. 생각보다 많이 복잡하다.
+고난의 연속이다. 생각보다 많이 복잡하다. 먼저 사전 작업이다.
+
+<span style="font-weight: bold; font-size: 1.2em">java 11 jdk 설치</span>
+
+```cmd
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install openjdk-11-jdk
+```
+
+<span style="font-weight: bold; font-size: 1.2em">java 이전 버전 삭제</span>
+
+```cmd
+sudo apt-get purge openjdk*
+```
+
+<span style="font-weight: bold; font-size: 1.2em">jenkins 설치</span>
+
+[https://pkg.jenkins.io/debian-stable/](https://pkg.jenkins.io/debian-stable/) 참조
 
 ## Jenkins EC2에 설치
 
