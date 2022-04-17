@@ -97,7 +97,7 @@ netstat -n -a -p
 
 예를들어 spring boot application 을 8080 포트로 받기로 했는데 열려있지 않은 경우에 `ERROR: connect ETIMEOUT IP` 가 나타날 수 있다.
 
-AWS 인스턴스는 콘솔에서 보안 그룹을 편집하는 작업을 직접 수행한다고 생각하면 되겠다.
+AWS 인스턴스는 콘솔에서 보안 그룹을 편집하는 작업을 직접 수행한다고 생각하면 되겠다. Ubuntu 에서는 `iptables` 작업을 `ufw` 를 통해 더 쉽게 할 수 있다.
 
 ```sh
 # 추가
@@ -114,6 +114,13 @@ iptables -D INPUT 1 -p tcp --dport 9090 -j ACCEPT
 ```sh
 # 방화벽 정책 확인
 iptables -nL
+```
+
+변경사항이 적용됐다면 아래와 같이 변경사항을 저장하고 재시작해준다.
+
+```sh
+service iptables save
+/etc/init.d/iptables restart
 ```
 
 마지막으로 wsl2 에서 실행하고 있다면 아무리 머신 방화벽을 열어줘도 Windows 설정이 막혀있다면 접속이 불가능하다. 먼저 안전한 포트로 바꿔준다.
