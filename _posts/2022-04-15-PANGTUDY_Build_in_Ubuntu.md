@@ -42,7 +42,37 @@ sudo chmod -x mvnw
 
 <span style="font-weight: bold; font-size: 1.2em">5. 빌드 지정 경로 내부로 이동 후 실행</span>
 
-```cmd
+nohup (no hang up) 을 통한 백그라운드 실행을 해보자.
+
+백그라운드에서 실행시킬 때, `nohup` 명령을 위해서는 실행 파일의 권한은 755 이상이어야 한다. 
+
+```sh
+sudo chmod 755 [builded jar file]
+```
+
+그리고 아래 명령어로 동작시켜본다.
+
+```sh
 cd target/
 nohup java -jar [builded jar file] &
+```
+
+`nohup: ignoring input and appending output to nohup out` 이라는 메시지가 나타날 것이다.
+
+```sh
+cat nohup.out
+```
+
+위 명령어로 메시지를 확인해보자. 이들이 백그라운드에서 잘 돌아가고 있는지 확인하려면 아래 명령어로 확인 가능하다.
+
+```sh
+bg
+jobs
+ps -ef | grep [builded file name]
+```
+
+끝으로 프로세스 종료는 위 `ps -ef | grep [builded file name]` 명령어로 알아낸 프로세스 번호를 통해 수행한다.
+
+```sh
+kill -9 [pid]
 ```
