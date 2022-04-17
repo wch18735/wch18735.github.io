@@ -47,33 +47,53 @@ mysql 에 관리자 권한으로 접속
 sudo mysql -u root -p
 ```
 
-이후 계정 생성.
+이후 계정 생성을 해준다.
 
 ```sql
 # CREATE USER 'USER_ID'@'ACCESS_ADRESS' IDENTIFIED BY 'PASSWORD'
 CREATE USER 'pangtudy'@'%' IDENTIFIED BY 'Qwerasdf!'
 ```
 
+생성된 사용자 정보는 아래 쿼리로 확인해 볼 수 있다.
+
 ```sql
 # 사용자 정보 확인
 SELECT USER, HOST, AUTHENTICATION_STRING FROM MYSQL.USER;
 ```
 
-참고로 기존에 생성된 계정의 비밀번호도 바꿀 수 있다.
+생성된 계정의 비밀번호도 바꿀 수 있다. 이를 꼭 수행해주는 것이 중요하다. `application.properties` 값에 저장된 비밀번호로 바꿔주어야 access denied 에러를 피할 수 있다.
 
 ```sql
-# 비밀번호 변경
-ALTER USER 'pangtudy'@'%' IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY '1234'
+# 비밀번호 변경 (8.x 기준)
+ALTER USER 'pangtudy'@'%' IDENTIFIED WITH MYSQL_NATIVE_PASSWORD BY '1234';
+
+# 변경 사항 적용
+FLUSH PRIVILEGES;
+```
+
+적용된 사항을 확인하기 위해 아래 쿼리로 가장 최근에 변경된 내용이 현재 시간과 일치하는지 확인한다.
+
+```sql
+# password 가 최근 언제 변경되었는지 확인
+# authentication_string 은 암호화되어 저장되었음
+select host, user, plugin, authentication_string, password_last_changed from mysql.user;
 ```
 
 <span style="font-weight: bold; font-size: 1.2em">권한 부여</span>
 
+계정 생성 후에는 해당 계정에 접근 권한과 명령 권한을 부여해야 한다.
 
-끝으로 생성한 계정에 권한을 부여할 수 있다. 아래 명령어로 mysql 데이터베이스에 접속해 사용자 목록을 확인해본다.
+생성한 계정에 권한을 부여하는 방법을 살펴보자. 아래 명령어로 mysql 데이터베이스에 접속해 사용자 목록을 확인해본다.
 
-```cmd
-mysql > use mysql;
-mysql > select host, user, password from user;
+```sql
+# mysql 스키마를 사용함을 명시 (mysql.[] 으로 쓰기 가능)
+use mysql;
+
+# mysql 5.x 에서는 password 가능
+select host, user, password from user;
+
+# mysql 8.x 에서는 authentication_string 대체
+select host, user, authentication_string from user;
 ```
 
 위에서 생성한 사용자에게 아래 쿼리를 통해 권한을 부여할 수 있다.
@@ -175,7 +195,7 @@ Conn. characterset: utf8
 alter table 'PANGTUDY' convert to character set utf8;
 ```
 
-간혹 `utf8mb4` 가 초기 값으로 잡혀있는 경우가 있다. 결론부터 얘기하자면 utf8mb4는 emoji 값까지 입력 가능하다.
+간혹 `utf8mb4` 가 초기 값으로 잡혀있는 경우가 있다. 결론부터 얘기하자면 `utf8mb4`는 emoji 값까지 입력 가능하다.
 
 <span style="font-weight: bold; font-size: 1.2em">데이터베이스 및 테이블 인코딩 정보 확인</span>
 
@@ -208,3 +228,4 @@ SELECT *
  WHERE TABLE_SCHEMA='PANGTUDY'  
    AND TABLE_NAME='테이블명';
 ```
+
