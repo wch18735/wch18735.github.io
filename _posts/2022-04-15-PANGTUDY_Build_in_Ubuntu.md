@@ -71,8 +71,51 @@ jobs
 ps -ef | grep [builded file name]
 ```
 
+<span style="font-weight: bold; font-size: 1.2em">6. 프로세스 종료</span>
+
 끝으로 프로세스 종료는 위 `ps -ef | grep [builded file name]` 명령어로 알아낸 프로세스 번호를 통해 수행한다.
 
 ```sh
 kill -9 [pid]
 ```
+
+<span style="font-weight: bold; font-size: 1.2em">7. 포트 개방</span>
+
+모든 세팅이 완료된 뒤 postman 으로 요청을 보냈을 때, 닿지 않는 경우가 있다.
+
+이는 방화벽을 확인해봐야 한다. 포트를 개방해줘야 한다.
+
+```sh
+sudo apt install net-tools
+```
+
+먼저 `net-tools` 를 설치한다. 그리고 열려있는 포트들을 확인해보자.
+
+```sh
+netstat -n -a -p
+```
+
+예를들어 spring boot application 을 8080 포트로 받기로 했는데 열려있지 않은 경우에 `ERROR: connect ETIMEOUT IP` 가 나타날 수 있다.
+
+AWS 인스턴스는 콘솔에서 보안 그룹을 편집하는 작업을 직접 수행한다고 생각하면 되겠다.
+
+```sh
+# 추가
+iptables -I INPUT 1 -p tcp --dport 9090 -j ACCEPT
+iptables -I INPUT 1 -p udp --dport 9090 -j ACCEPT
+
+# 삭제
+iptables -D INPUT 1 -p tcp --dport 9090 -j ACCEPT
+iptables -D INPUT 1 -p tcp --dport 9090 -j ACCEPT
+```
+
+이렇게 추가한 방화벽은 아래 명령어로 확인 가능하다.
+
+```sh
+# 방화벽 정책 확인
+iptables -nL
+```
+
+마지막으로 wsl2 에서 실행하고 있다면 아무리 머신 방화벽을 열어줘도 Windows 설정이 막혀있다면 접속이 불가능하다. 먼저 안전한 포트로 바꿔준다.
+
+`application.properties` 에 `server.port=9090` 등을 잡아준다. 그리고 윈도우 방화벽에서 해당 포트를 열어준다.
