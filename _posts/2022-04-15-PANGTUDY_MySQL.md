@@ -31,13 +31,15 @@ sudo systemctl start mysql
 sudo systemctl enable mysql
 ```
 
-접속 에러가 날 때는
+가장 먼저 아래 세팅이 필요할 것이다. 계정 설정, 권한 설정이 모두 완료되어도 access denied 가 발생할 수 있다. 
+
+접속 에러가 날 때는 아래 명령어로 `mysqld.cnf` 설정 파일을 연다.
 
 ```cmd
-sudo vim /etc/mysql/mysql.conf.d/mysqld/cnf
+sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 
-에서 `bind-address=0.0.0.0` 으로 바꾸거나 주석처리를 한다.
+이곳에서 `bind-address=0.0.0.0` 으로 바꾸거나 주석처리를 한다.
 
 <span style="font-weight: bold; font-size: 1.2em">계정 생성 및 확인 쿼리</span>
 
