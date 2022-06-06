@@ -61,7 +61,7 @@ public class PangtudyBackendBootApplication {
 }
 ```
 
-물론 `.xml` 타입으로 관리되는 설정 파일에도 동일하게 활용할 수 있다. 아래는 DataSource 정보가 기재된 `database.properties` 파일에 미리 기재된 값을 전달하는 방법이다. 
+물론 `.xml` 타입으로 관리되는 설정 파일에도 동일하게 활용할 수 있다. 아래는 DataSource 정보가 기재된 `database.properties` 파일에 미리 기재된 값을 전달하는 방법이다.
 
 ```xml
 <!-- DataSource : Bean 형태 -->
@@ -77,3 +77,20 @@ public class PangtudyBackendBootApplication {
 ```
 
 Spring Boot 에서 공통으로 관리되는 값들은 [공식 사이트](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties)에서 확인 할 수 있다.
+
+## 다양한 빌드 설정 관리
+
+application.properties 를 이용하면 서로 다른 개발 설정을 만들 수 있다. 예를들어, 로컬에서 개발한 어플리케이션을 서버에서 동작시키기 위해서는 많은 변수들이 달라져야한다. 간단히만 생각해도 local DB 에서 remote DB 로의 변경과 이에 따른 URL, 계정 정보 변경이 필요하고 파일 저장소의 위치 역시 운영체제가 다른 경우 경로 정보를 수정해야 한다.
+
+매번 vim 으로 application.properties 를 열어서 바꿔주기엔... 우린 시간이 없다. 아래는 그 번잡하고 귀찮은 작업을 조금 더 쉽게 할 수 있는 방법이다. 회사에서 몇 번의 삽질과 에러를 찾아가며 정리한 것이라 두서가 없을 수 있다는 점 참고☆
+
+1. application-{ env }.properties 로 빌드 환경을 설정
+  - data source
+  - database connection
+  - file server property
+  - etc
+2. Eclipse 기준 run > run configuration > argument 에 `-Dspring.profiles.active={ env  }` 작성
+  - 기본적으로 application.properties 만 읽기 때문에 안 해주면 data source 만드는데 url 없다고 에러 남
+  - 계정권한과 함께 Database 에 대한 권한도 함께 설정해줘야 에러 나지 않음
+3. Project 별 build 컴파일러 설정
+  - 프로젝트 속성 > Java Build Path > JRE 클릭 > Edit > Execution Environment 에서 알맞은 버전 설정
