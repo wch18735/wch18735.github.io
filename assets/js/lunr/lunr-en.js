@@ -48,10 +48,10 @@ $(document).ready(function() {
             '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
               '<h2 class="archive__item-title" itemprop="headline">'+
                 '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
+              '</h2>'+ /*
               '<div class="archive__item-teaser">'+
-                '<img src="'+store[ref].teaser+'" alt="">'+
-              '</div>'+
+                '<img src="'+store[ref].teaser+'" alt="" style="width: 1.5em"/>'+
+              '</div>'+ */
               '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
             '</article>'+
           '</div>';
