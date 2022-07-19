@@ -113,7 +113,8 @@
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "audio signal processing" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "preprocess" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "deep learning" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>

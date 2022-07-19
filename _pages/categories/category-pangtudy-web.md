@@ -13,5 +13,5 @@ This posts contain
 - Vue.js
 - RDBMS
 
-{% assign posts = site.categories.pangtudy-web %}
+{% assign posts = site.categories.['pangtudy-web'] %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
