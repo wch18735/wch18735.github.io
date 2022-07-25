@@ -19,7 +19,9 @@ comments: true
 
 # JUnit 사용한 DI 클래스 테스트
 
-Junit 은 Java에서 독립된 단위테스트(Unit Test)를 지원해주는 프레임 워크다. 어디까지 쓰이냐면 Low-code solution 인 Mendix platform 에서도 Java 소스 코드로 표현된 Microflow를 Junit 으로 테스트 할 수 있다. 여기서 단위테스트(Unit Test)란 소스 코드의 특정 모듈이 의도된 대로 정확히 작동하는지 검증하는 절차를 말한다. 모든 함수, 메소드에 대한 테스트 케이스(Test Case)를 작성하는 절차라고도 설명할 수 있다. Junit은 보이지 않고 숨겨진 단위 테스트를 끌어내 정형화시켜 단위테스트를 쉽게 해주는 테스트 지원 프레임워크다.
+Junit 은 Java에서 독립된 단위테스트(Unit Test)를 지원해주는 프레임 워크 또는 보이지 않고 숨겨진 단위 테스트를 끌어내 정형화시켜 단위테스트를 쉽게 해주는 테스트 지원 프레임워크로 불린다. 어디까지 쓰이냐면 Low-code solution 인 Mendix platform 에서도 Java 소스 코드로 표현된 Microflow 를 Junit 으로 테스트 할 수 있다. 
+
+여기서 단위테스트(Unit Test)란 소스 코드의 특정 모듈이 의도된 대로 정확히 작동하는지 검증하는 절차를 말한다. 모든 함수, 메소드에 대한 테스트 케이스(Test Case)를 작성하는 절차라고도 설명할 수 있다.
 
 Junit 에 대한 기본적인 정보는 아래와 같다.
 
