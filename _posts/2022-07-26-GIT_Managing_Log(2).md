@@ -114,12 +114,79 @@ Date:   Tue Jul 19 00:31:53 2022 +0900
 :
 ```
 
-`--since` 와 `--before` 를 동시에 사용하거나 `[from]..[to]` 와 같은 형태로 커밋 이력을 확인할 수 있다. 위 처럼 시간뿐만 아니라 날짜, 태그를 이용해서도 지정할 수 있으니 다양한 예시들은 직접 확인해보도록 하자.
+`--since` 와 `--before` 를 동시에 사용하거나 `[from]..[to]` 와 같은 형태로 커밋 이력을 확인할 수 있다. 주의할 점으로는 항상 오래된 로그 형식을 먼저 지정해줘야 동작한다는 것이다.
+
+```bash
+$ git log --oneline
+e9d64c1 (HEAD -> master, origin/master) merged
+a70d63e (contact) modified in contact branch
+da6bd44 modified in master
+54e5956 cherry-pick
+88f062a cherry-pick
+ff78ab2 cherry-pick
+34184f6 add email
+fafb1e2 add contact file
+cf1fc94 alternate
+c57865d about.txt hello.txt
+
+$ git log 34184f6..da6bd44 --oneline
+da6bd44 modified in master
+54e5956 cherry-pick
+ff78ab2 cherry-pick
+```
+
+이 방식으로 특정 커밋부터 지금까지 커밋을 모두 확인할 수 있다. `[to]` 부분을 비워두거나 `HEAD` 로 나타내면 현재 커밋 헤드를 기준으로 지정된 커밋까지의 기록을 보여준다.
+
+```bash
+$ git log 34184f6..HEAD --oneline
+e9d64c1 (HEAD -> master, origin/master) merged
+a70d63e (contact) modified in contact branch
+da6bd44 modified in master
+54e5956 cherry-pick
+88f062a cherry-pick
+ff78ab2 cherry-pick
+```
+
+끝으로 `~N` 또는 `^` 을 사용하여 가장 최근 커밋부터 5번째 이전 커밋까지를 확인하는 에시로 마무리해보자.
+
+```bash
+$ git log HEAD~5..HEAD --oneline
+e9d64c1 (HEAD -> master, origin/master) merged
+a70d63e (contact) modified in contact branch
+da6bd44 modified in master
+54e5956 cherry-pick
+88f062a cherry-pick
+ff78ab2 cherry-pick
+34184f6 add email
+```
+
+## 커밋에서 달라진 저 확인하기
+
+특정 커밋 ID를 알고있으면 `diff` 명령어를 사용해 현재 상태로부터 해당 커밋까지 어떤 것이 바뀌었는지 확인할 수 있다. 여기서 `--stat` 을 추가하면 각 파일들에 대한 변경점들을 통계내어 출력해준다.
+
+```bash
+$ git diff e9d64c1
+diff --git a/about.txt b/about.txt
+index 240e963..8497055 100644
+--- a/about.txt
++++ b/about.txt
+@@ -1 +1,2 @@
+ about.txt
++change here
+```
 
 ## 누구 책임인지 찾기
 
 동사 blame 은 `~을 탓하다` 또는 `~를 비난하다` 등의 뜻을 가지고 있다. 실제로 우리는 누가 커밋을 했는지, 언제 했는지 등을 찾아야 할 때가 있다. 물론 누군가에게 책임을 전가하기 위해서가 아니라 담당자에게 수정 또는 조언을 구하기 위함이다. 예를 들어, hello.html 파일에 대한 커밋 이력을 확인하려면 `git blame hello.html` 명령을 사용한다.
 
+```bash
+$ git blame hello.txt
+^c57865d (wch18735 2022-07-18 23:45:06 +0900 1) hello.txt
+e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 2) <<<<<<< HEAD
+da6bd443 (wch18735 2022-07-19 00:49:11 +0900 3) modified in master
+e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 4) =======
+a70d63e9 (wch18735 2022-07-19 00:50:04 +0900 5) modified in contact branch
+e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 6) >>>>>>> contact
+```
 
-
-[... 2022/07/28 작성 중 ...]
+`blame` 을 이용하면 파일 내용에 대한 추적도 가능하다. 실제로 같은 내용을 반복시킨 파일에서 `git blame -M [filename]` 명령을 수행하면 가장 처음 원본 내용을 작성한 커밋ID로 모두 바뀌는 것을 확인할 수 있다. 또한, 파일 내용뿐만 아니라 파일 복사를 확인하는 방법으로는 `git blame -C -C [filename]` 을 사용할 수 있다.
