@@ -32,9 +32,9 @@ comments: true
 
 아주 세부적이고 명확한 설명은 [이곳](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Reset-%EB%AA%85%ED%99%95%ED%9E%88-%EC%95%8C%EA%B3%A0-%EA%B0%80%EA%B8%B0) 에서 확인할 수 있다. 정리하자면 git reset 동작은 HEAD 의 이동으로 설명할 수 있다.
 
-- `git reset --soft HEAD~` : 특정 지점으로 HEAD 만 이동
-- `git reset --mixed HEAD~` : 특정 지점으로 HEAD 이동 후 Index 까지 변경
-- `git reset --hard HEAD~` : 특정 지점으로 HEAD 이동 후 Working Directory 까지 변경
+- `git reset --soft HEAD~N` : 특정 지점으로 HEAD 에서부터 `N만큼` 이동
+- `git reset --mixed HEAD~N` : 특정 지점으로 HEAD 에서부터 `N만큼` 이동 후 Index 까지 변경
+- `git reset --hard HEAD~N` : 특정 지점으로 HEAD 에서부터 `N만큼` 이동 후 Working Directory 까지 변경
 
 ## 활용 예
 
