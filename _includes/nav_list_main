@@ -108,13 +108,16 @@
         </ul>
         <!--------------------------------------------------------------------------------------------------->
         
-        <!--------------------------------- 카테고리 대분류: MACHINE LEARNING -------------------------------------->
-        <span class="nav__sub-title">MACHINE LEARNING</span>
+        <!--------------------------------- 카테고리 대분류: DATA SCIENCE -------------------------------------->
+        <span class="nav__sub-title">DATA SCIENCE</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "preprocess" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "deep learning" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "numpy" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "pandas" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "matplotlib" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
