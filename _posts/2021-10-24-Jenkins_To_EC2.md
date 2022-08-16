@@ -19,14 +19,24 @@ toc_icon: "heart"
 
 고난의 연속이다. 생각보다 많이 복잡하다. 먼저 사전 작업이다.
 
-<span style="font-weight: bold; font-size: 1.2em">java 11 jdk 설치</span>
+## SSH 연결 방법
+
+1. ssh-keygen 수행
+2. 다 Enter 누르기
+3. default 경로에 id_rsa 파일을 cat 으로 열기
+4. private key 를 복사(ctrl + insert)해 첨부 
+5. ssh 로 접근 테스트
+
+※ 안 되는 경우 : /etc/ssh/ssh_config 에서 설정 확인
+
+## java 11 jdk 설치
 
 ```cmd
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install openjdk-11-jdk
 ```
 
-<span style="font-weight: bold; font-size: 1.2em">java 이전 버전 삭제</span>
+## java 이전 버전 삭제
 
 ```cmd
 sudo apt-get purge openjdk*

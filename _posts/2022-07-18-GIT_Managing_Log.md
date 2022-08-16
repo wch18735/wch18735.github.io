@@ -75,3 +75,10 @@ $ git log --pretty=oneline
 60b08de71d045bfdfc4a631799191b3462cd74d4 test
 c2a8f484802b8112bf969cf2d921cb2b02a0425c first commit
 ```
+
+실제로 며칠 전 기존에 push 된 commit 을 rollback 하는 일이 있었다. 영원한 선생님 구글에 검색한 뒤, 두근두근대며 진행했던 롤백은 다행히 잘 진행되었다. 그 때 진행했던 순서는 대략 아래와 같이 요약할 수 있다.
+
+ 1. 해당 repository 를 pull 받은 후 `git reset --mixed HEAD^` 로 상태를 변경한다.
+ 2. `git add .` 로 스테이징 저장
+ 3. `git commit -m "rollback"` 커밋
+ 4. `git push -u origin master -f` 원격 저장소에 반영
