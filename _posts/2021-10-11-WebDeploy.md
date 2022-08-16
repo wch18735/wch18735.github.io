@@ -2,6 +2,8 @@
 title: "[Pangtudy-web] Web Deployment to EC2"
 excerpt: "web deployment on ubuntu server "
 date: 2021-10-11
+layout: single
+classes: wide
 category:
     - pangtudy-web
 tag:
@@ -11,6 +13,8 @@ author: 1FeS
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
+author: 1FeS
+comments: true
 ---
 
 # EC2 인스턴스에 웹 배포
@@ -18,44 +22,44 @@ toc_icon: "heart"
 ## 환경 세팅 과정
 
 자바 설치
-```cmd
+```bash
 java -version
 > Command 'java' not found, but can be installed with:
 ```
 
-```cmd
+```bash
 sudo apt install default-jre
 ```
 
 깃 레포지토리 설치
-```cmd
+```bash
 sudo mkdir app
 sudo mkdir app/git
 ```
 
 깃 계정 설정
-```cmd
+```bash
 git config --global user.name "wch18735"
 git config --global user.email "wch18735@naver.com"
 ```
 
 깃 레포지토리 Clone (관리자 권한으로)
-```cmd
+```bash
 sudo git clone repo-url
 ```
 
 npm 설치
-```cmd
+```bash
 sudo install npm
 ```
 
 Vue 설치
-```cmd
+```bash
 sudo npm install vue
 ```
 
 Vue CLI 설치 (3.x Version)
-```cmd
+```bash
 npm install @vue/cli -g
 ```
 

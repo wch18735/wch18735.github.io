@@ -2,6 +2,8 @@
 title: "[Pangtudy-web] Install Jenkins to EC2"
 excerpt: "Jenkins to EC2"
 date: 2021-10-24
+layout: single
+classes: wide
 category:
     - pangtudy-web
 tag:
@@ -13,6 +15,8 @@ author: 1FeS
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
+author: 1FeS
+comments: true
 ---
 
 # AWS Ubuntu EC2 위에 Jenkins 설치 및 Github 연동
