@@ -1,6 +1,6 @@
 ---
 title: "[Algorithms] Trie"
-excerpt: "한 점으로부터 연결된 모든 점까지의 최단 거리를 구하는 알고리즘"
+excerpt: "trie structure"
 date: 2022-08-18
 layout: single
 classes: wide
