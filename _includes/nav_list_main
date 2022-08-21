@@ -10,7 +10,7 @@
         </li>
         
         <!--------------------------------- 카테고리 대분류: Computer Science ---------------------------------------->
-        <span class="nav__sub-title">Basic C/S</span>
+        <span class="nav__sub-title">COMPUTER SCIENCE</span>
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}

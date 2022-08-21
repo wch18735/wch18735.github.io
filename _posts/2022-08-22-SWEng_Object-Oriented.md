@@ -1,7 +1,7 @@
 ---
 title: "[SW Engineering] Object-Oriented Programming"
 excerpt: "object oriented programming introduction"
-date: 2022-08-22
+date: 2022-08-22 09:00:00
 layout: single
 classes: wide
 category:
