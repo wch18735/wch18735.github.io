@@ -1,5 +1,5 @@
 ---
-title: "[SW Engineering] Structural Analysis"
+title: "[SW Engineering] SASD (Structural Analysis Structural Design)"
 excerpt: "structural analysis and structural design"
 date: 2022-02-24
 layout: single

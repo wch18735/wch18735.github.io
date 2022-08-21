@@ -1,5 +1,5 @@
 ---
-title: "[SW Engineering] OOAD"
+title: "[SW Engineering] OOAD (Object Oriented Analysis and Design)"
 excerpt: "design and implementation for object-oriented system"
 date: 2022-02-24
 layout: single
@@ -13,8 +13,6 @@ comments: true
 ---
 
 # Object-Oriented Design Using UML
-
-내용을 시작하기 전에, 포스트에 굳이 한국어로 표기할 수 있는걸 왜 영어로 써놓냐는 질문을 받아서.. Architectural 이라는 단어랑 Structural 이라는 단어가 자주 등장하는데, 안타깝게도 나는 이 둘을 모두 **구조적**이라고 해석한다. 근데 둘은 꽤 다른 얘기다. Architectural Design은 소프트웨어의 외형적인, 예를 들자면 패턴 등을 설계하지만 Structural Design은 컴포넌트들 사이의 관계나 동작 명세 등을 기술한다. 아직 문맥상 *구조적 설계* 를 정확히 파악하지 못하는 소프트웨어 삐약이니까.. 양해를 구하는 바...
 
 객체 지향 시스템을 설계하기 위한 프로세스는 SASD 와는 조금 다르다. 다양한 설계 프로세스가 있지만 객체 지향 설계 프로세스는 아래와 같은 공통 과정을 가진다고 한다.
 
