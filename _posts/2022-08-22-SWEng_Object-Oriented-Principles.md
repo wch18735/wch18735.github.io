@@ -1,7 +1,7 @@
 ---
 title: "[SW Engineering] Object-Oriented Principles"
 excerpt: "basic principles of Object-Oriented"
-date: 2022-08-22 10:00:00
+date: 2022-08-22
 layout: single
 classes: wide
 category:
