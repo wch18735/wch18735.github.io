@@ -1,5 +1,5 @@
 ---
-title: "[이모저모] Why English"
+title: "[끄적끄적] Why English"
 excerpt: "Samsung B-type coding test"
 date: 2022-08-21
 category:

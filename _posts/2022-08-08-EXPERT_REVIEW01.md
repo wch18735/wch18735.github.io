@@ -1,5 +1,5 @@
 ---
-title: "[이모저모] 7/16 C형 시험 후기..."
+title: "[후기] Samsung C형 시험 후기 (2022-07-16)"
 excerpt: "Samsung C-type coding test"
 date: 2022-07-16
 category:
