@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning"
-permalink: /categories/deep-learning/
+permalink: /categories/deep learning/
 layout: category
 author_profile: true
 sidebar_main: true
