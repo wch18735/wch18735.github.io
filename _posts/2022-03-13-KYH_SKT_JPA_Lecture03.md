@@ -1,6 +1,6 @@
 ---
-title: "[JPA] JPA 기초(3)"
-excerpt: "jpa 기초 (3) : 양방향 매핑"
+title: "[JPA][토크ON세미나] JPA 프로그래밍 기본기 다지기 정리(3)"
+excerpt: "[토크ON세미나] JPA 프로그래밍 기본기 다지기 정리(3)"
 date: 2022-03-13
 category:
     - jpa

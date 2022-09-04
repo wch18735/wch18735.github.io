@@ -1,6 +1,6 @@
 ---
-title: "[JPA] JPA 기초(2)"
-excerpt: "jpa 기초 (2)"
+title: "[JPA][토크ON세미나] JPA 프로그래밍 기본기 다지기 정리(2)"
+excerpt: "[토크ON세미나] JPA 프로그래밍 기본기 다지기 정리(2)"
 date: 2022-03-06
 category:
     - jpa
