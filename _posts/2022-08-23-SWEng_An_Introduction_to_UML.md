@@ -24,9 +24,9 @@ UML과 관련된 더욱 자세한 내용은 [http://www.uml.org/](http://www.uml
 
 <img src="/_img/2022-08-23/uml_diagram_types.png">
 
-위 사진에서 *글자체가 기울어진* 것은 Abstract Class 를 뜻한다. Diagram, Structure Diagram, Behaviour Diagram, Interaction Diagram 등이 Abstract Diagram 으로 하위 다이어그램들의 공통적인 속성을 지니고 있다.
+위 사진에서 *글자체가 기울어진* 것은 Abstract Class 를 뜻한다. Diagram, Structure Diagram, Behavior Diagram, Interaction Diagram 등이 Abstract Diagram 으로 하위 다이어그램들의 공통적인 속성을 지니고 있다.
 
-소프트웨어 구조를 설명하는 Structure Diagram 아래에는 Class Diagram, Component Diagram, Object Diagram, Composite Structure Diagram, Deployment Diagram, Package Diagram 이 있다. 반면, 소프트웨어 동작을 모식화하는 Behaviour Diagram 아래는 Activity Diagram, Use Case, Diagram, State Machine Diagram 이 있고, 한 개의 Abstract Digram 인 Interaction Diagram 이 붙어있는데, 소프트웨어의 상호작용을 설명하는 Sequence Diagram, Communication Diagram, Interaction Overview Diagram, Triming Diagram 이 이를 구현하고 있다.
+소프트웨어 구조를 설명하는 Structure Diagram 아래에는 Class Diagram, Component Diagram, Object Diagram, Composite Structure Diagram, Deployment Diagram, Package Diagram 이 있다. 반면, 소프트웨어 동작을 모식화하는 Behavior Diagram 아래는 Activity Diagram, Use Case, Diagram, State Machine Diagram 이 있고, 한 개의 Abstract Digram 인 Interaction Diagram 이 붙어있는데, 소프트웨어의 상호작용을 설명하는 Sequence Diagram, Communication Diagram, Interaction Overview Diagram, Triming Diagram 이 이를 구현하고 있다.
 
 OOAD 개발 방법론에 따라 소프트웨어를 개발할 때는 기본적으로 Class Diagram, Sequence Diagram, Use Case Diagram 을 사용한다. 먼저 Use Case Diagram 을 통해 Domain Model 을 도출하고, Sequence Diagram 을 통해 해당 Domain Model 의 Attribute / Method 를 채워가며 Class Diagram 을 완성해 나간다. 이 때, Domain Model 은 Class Diagram Notation 을 사용하기 때문에 위 다이어그램 그래프에 나타나진 않았다.
 
