@@ -20,7 +20,7 @@ Use Case Diagram 은 사용자가 시스템을 사용하는 시나리오인 Use 
 
 > Use cases are test stories of some actors using a system to meet goals. It is a mechanism to capture, identify and analyze requirements.
 
-UP 에서는 Use Case 가 Functional Requirement 를 대체할만큼 중요한 역할을 수행한다. 이러한 Use Case 는 글로 작성되며, 작성된 상세함의 정도에 따라 Brief → Casual → Fully Dressed 단계로 나누어진다. 예를들어 *마우스 왼쪽 버튼을 누르면 마우스 포인터가 기리키는 컴포넌트를 누른다* 라는 문장은 마우스 클릭이라는 Use Case 를 Brief Format 으로 나타낸 것이다.
+UP 에서는 Use Case 가 Functional Requirement 를 대체할만큼 중요한 역할을 수행하며, 각 Phase 와 Iteration 에 따라 다양한 수준으로 개발된다. 작성된 상세함의 정도에 따라 Brief → Casual → Fully Dressed 단계로 나누어 글로 작성된다는 뜻이다. 예를들어 *마우스 왼쪽 버튼을 누르면 마우스 포인터가 기리키는 컴포넌트를 누른다* 라는 문장은 마우스 클릭이라는 Use Case 를 Brief Format 으로 나타낸 것이다.
 
 처음 Use Case 를 작성할 때는 Brief Format 으로 두 세 줄 정도로 기재한다. 이후, 특정 Iteration 에 작성했던 Use Case 를 구현하기로 했다면 조금 더 구체화된 형태인 Casual Format 으로 작성해 요구동작을 상세히 나타낸다. 예를 들어, Casual Format 부터 Main Success Scenario, Alternative Scenario, Exceptional Scenario 가 나타나는데 단순히 어떻게 동작했으면 좋겠다는 것을 넘어 예외상황이나 정상동작하지 않을 때의 행위까지 구체화하게 된다. 마지막 Fully Dressed Format 에서는 주로 시스템이 실행되기 전 Preconditions 를 정의하고, Extentions 라는 메인 시나리오 외 다른 확장된 시나리오들을 상세히 정의한다.
 
