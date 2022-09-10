@@ -16,7 +16,7 @@ header:
 
 # Class Diagram
 
-아래 그림은 Class Diagram 에 나오는 모든 Notation 을 한 곳에 그린 예제다. 간단히 클래스 이르만 작성된 다이어그램인 Coarse-grained 부터 Attribute, Operation 모두 작성된 Fine-grained 스타일까지 모두 나타나있다. 또한 클래스 사이 다양한 Relationship 까지 확인할 수 있기 때문에 복습에 용이할 것이다. 각 항목들이 어떤 의미를 지니는지 확인해보자.
+아래 그림은 Class Diagram 에 나오는 모든 Notation을 한 곳에 그린 예제다. 클래스 이름만 표기된 Coarse-grained 스타일부터 Attribute, Operation 모두 작성된 Fine-grained 스타일까지 모두 나타나있다. 뿐만 아니라 클래스 사이 다양한 Relationship 까지 확인할 수 있기 때문에 복습에 매우 용이하다. 지금부터는 각 항목들이 어떤 의미를 지니는지 확인해보자.
 
 <img src="/_img/2022-09-09/common class diagram notation.png">
 
