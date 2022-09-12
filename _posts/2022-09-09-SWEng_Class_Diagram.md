@@ -104,7 +104,7 @@ Operation 이란 기본적으로 클래스가 제공하는 기능을 표현한�
 
 Operation 의 오른쪽에는 반환 값이 적힌다는 것을 알 수 있다. 만약 아무것도 반환되지 않으면 void 값을 적어준다. 그 아래 getPersonNumber 아래 밑줄은 Class Variable 이나 Class Operation 을 나타내기 위해 사용되었다. 설명을 쉽게 하자면 클래스를 만들 때 static 으로 표현되는 Variable 또는 Operation 이 예시가 될 수 있다.
 
-<img src="/_img/2022-09-09/operation syntax - parameters.png">
+<img src="/_img/2022-09-09/operation syntax - parameters01.png">
 
 ## Operations and Methods
 
@@ -174,7 +174,7 @@ Composition 역시 전체와 부분이라는 집합적인 관계를 표현하는
 
 Active Class 는 추후 Main Program 과 독립적으로 프로세스 또는 쓰레드를 할당받아 인스턴스 생성되는 것을 뜻한다. 아래 그림과 같이 클래스 양쪽에 실선을 그어 표현한다. 여기서 Clock 클래스가 Runnable Interface 를 Realization 하고 있다는 것까지 알아두면 좋다.
 
-<img src="/_img/2022-09-09/active class.png">
+<img src="/_img/2022-09-09/active class01.png">
 
 ## Conclusions
 
