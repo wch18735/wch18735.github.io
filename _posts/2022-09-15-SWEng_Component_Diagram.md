@@ -1,6 +1,6 @@
 ---
 title: "[SW Engineering] Component Diagram"
-excerpt: "component diagram"
+excerpt: "uml component diagram"
 date: 2022-09-15
 layout: single
 classes: wide

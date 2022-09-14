@@ -65,7 +65,7 @@ S3 -> S1 : e2
 ## Orthogonal State
 
 State가 동시에 진행되는 것을 표현해주는 방법도 있다. Parallelization Node, Synchronization Node 두 가지를 이용해 동시에 진행되는 상황을 연출 할 수 있다. 동시에 상태가 변화하는 경우 Synchronization Node로 분기가 합쳐진 후에 다음 단계로 진행되는데, 만약 아래 그림에서 State3 내부 동작 후 Synchronization Node로 상태가 변경되지 않는 경우에는 Deadlock이 발생해 프로그램이 멈추게 된다.
-`
+
 <img src="/_img/2022-09-14/orthogonal state.png">
 
 ```java
