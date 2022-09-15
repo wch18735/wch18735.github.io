@@ -1,7 +1,7 @@
 ---
 title: "[SW Engineering] UP - Elaboration (OOA / OOD / OOI)"
 excerpt: "united process elaboration ooa"
-date: 2022-09-15 18:00:00
+date: 2022-09-15
 layout: single
 classes: wide
 category:
