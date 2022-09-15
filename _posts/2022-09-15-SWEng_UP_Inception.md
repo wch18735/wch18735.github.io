@@ -43,3 +43,20 @@ UP에서는 이러한 요구사항을 **iteratively and skillfuly** 하게 분�
 ## Use Cases
 
 도메인에 대한 이해와 시스템을 설계하기 위해 Use Case를 작성하게 되는데 [Use Case Diagram - 1FeS Study Note](https://wch18735.github.io/software%20engineering/SWEng_Use_Case_Diagram/)에 잘 정리해 놓았다. 참고로 Inception에서는 Brief Format까지만 작성되며 Elaboration Phase나 Construction Phase에서 Fully Dressed Format까지 진행한다.
+
+## What Happend in Inception?
+
+결론적으로 Inception Phase에서 얻을 수 있는 정보와 산출물을 아래와 같이 정리한다.
+
+- A short requirements workshop
+- Most actors, goals, and use cases named
+- Most use cases written in brief format (10~20% are written in fully dressed detail)
+- Most influential and risky requirements identified
+- Version one of the vision and specification written
+- Risk list
+- Technical POC(Proof-Of-Concept) prototypes and other investigations to explore the technical feasibility of special requirements
+- User interface-oriented prototypes to clarify the vision of functional requirements
+- Recommendations on what components to buy/build/reuse, to be refined in elaboration
+- High-level candidate architecture and components proposed
+- Plan for the first iteration
+- Candidate tools list
