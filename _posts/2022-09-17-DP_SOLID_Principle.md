@@ -8,6 +8,9 @@ category:
     - design pattern
 tag:
     - software engineering
+toc: true
+toc_label: "Contents"
+toc_icon: "heart"
 author: 1FeS
 comments: true
 header:

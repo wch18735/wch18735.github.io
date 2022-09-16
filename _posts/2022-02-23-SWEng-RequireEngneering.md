@@ -8,8 +8,13 @@ category:
     - software engineering
 tag:
     - software engineering
+toc: true
+toc_label: "Contents"
+toc_icon: "heart"
 author: 1FeS
 comments: true
+header:
+    teaser: "/_img/thumb-nail/software-engineering.png"
 ---
 
 # Requirements Engineering
