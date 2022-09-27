@@ -1,6 +1,6 @@
 ---
 title: "[Design Pattern] Builder Pattern (빌더 패턴)"
-excerpt: "mediator pattern"
+excerpt: "builder pattern"
 date: 2022-09-28
 layout: single
 classes: wide
