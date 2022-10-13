@@ -1,7 +1,7 @@
 ---
 title: "[Design Pattern] Bridge Pattern (브릿지 패턴)"
 excerpt: "bridge pattern"
-date: 2022-10-09
+date: 2022-10-12
 layout: single
 classes: wide
 category:
