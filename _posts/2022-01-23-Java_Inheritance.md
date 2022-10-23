@@ -1,18 +1,19 @@
 ---
-title: "[Java] 상속 (Inheritance)"
-excerpt: "inheritance example"
+title: "[Java] implements and extends examples"
+excerpt: "implements and extends examples"
 date: 2022-01-23
 layout: single
 classes: wide
 category:
     - java
 tag:
-    - inheritance
+    - implements
+    - extends
 author: 1FeS
 comments: true
 ---
 
-<span style="font-size:1.5em; font-weight:bold;">인터페이스 (Interface) 예제</span>
+# implements example
 
 ```java
 interface Animal {
@@ -59,8 +60,7 @@ class Test_Interface {
 }
 ```
 
-<br/>
-<span style="font-size:1.5em; font-weight:bold;">상속 (Inheritance) 예제</span>
+# extends example
 
 ```java
 import PP.Imported;
@@ -124,8 +124,7 @@ C print!
 
 즉, `클래스 C` 생성자를 가장 상위 `클래스 A` 변수에 대입할 때, `클래스 C` 가 `클래스 A` 를 상속하고 있기에 자동으로 `doSomething()` 메소드 주소가 `C 클래스.doSomething()` 을 가리킨다. 반대 경우는 Error 가 발생한다.
 
-<br/>
-<span style="font-size:1.5em; font-weight:bold;">Package 활용</span>
+## Package 활용
 
 - 폴더 이름을 PP 로 지정 (Package 명)
 - 해당 폴더 내 소스파일에 `package PP;` 이용해 어떤 패키지에 포함되는 소스인지 명시

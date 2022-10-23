@@ -13,7 +13,7 @@ toc_label: "Contents"
 toc_icon: "heart"
 ---
 
-Component.. Vue.js 핵심 요소! 기존에는 HTML 내부에 화면 요소를 개발했다면 Vue.js 에서는 Component 를 따로 개발해 가져다 붙일 수 있다. Like a 레고. 아래는 활용 예제다. 감만 익혀두자.
+Component는 Vue.js 핵심 요소이다. 기존에는 HTML 내부에 화면 요소를 개발했다면 Vue.js 에서는 Component를 따로 개발해 가져다 붙일 수 있다. 아래는 Component를 사용한 예제 코드이다.
 
 ```html
 <!DOCTYPE html>

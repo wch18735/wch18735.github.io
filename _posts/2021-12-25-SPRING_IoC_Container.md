@@ -20,10 +20,13 @@ comments: true
 
 # IoC 컨테이너
 
-- IoC (Inversion of Contrl) : 제어 역전
-- 일반적으로 프로그램을 작성할 때 프로그램이 흘러가는 흐름이나 생성되는 객체에 대한 제어권을 개발자가 가지는 것과 달리 프레임 워크가 가지는 것을 의미함.
-- 개발자가 코드의 흐름이나 객체 생성에 관련된 코드를 소스에 직접 작성하는 것이 아닌 프레임워크가 사용하는 파일에 작성하면 이를 토대로 프레임워크가 객체를 생성하여 반환하고 코드가 동작하는 순서를 결정하게 된다는 것.
-- Spring Framework 에서는 xml 또는 자바 어노테이션을 이용해 이를 지원한다.
+- IoC Container는 IoC를 관장하는 컨테이너이다.
+- IoC (Inversion of Contrl)
+	- 제어 역전을 뜻하는 것으로 Framework이 제공하는 성질 중 하나이다
+	- 일반적으로 프로그램을 작성할 때 프로그램이 흘러가는 흐름이나 객체 제어권은 개발자에게 있으나, 이를 프레임 워크에 위임하는 것을 뜻함
+	- 프레임워크 사용자(개발자)는 정해진 틀(Frame) 안에서 동작이나 방법들을 상세화하는 방법으로 소프트웨어를 구축하게 된다
+- Spring Framework 에서는 xml 또는 자바 어노테이션을 이용해 이를 지원한다
+
 
 ## POJO Class
 
@@ -44,29 +47,8 @@ IoC 컨테이너의 종류는 BeanFactory 와 ApplicationContext 두 가지로 �
 - 상속 등 객체 간의 관계를 형성하고 관리한다.
 - Bean에 관련된 설정을 위한 xml 파일은 즉시 로딩되지만 객체는 개발자가 요구할 때 생성한다.
 - 옛날에 쓰이던 기술로 현재는 많이 사용되지 않음
-
-**사용 형태**
-
-- XmlBeanFactory
-
-### ApplicationContext
-
-- 클래스를 통해 객체를 생성하고 객체의 주소값을 반환하는 방식으로 전달한다.
-- 상속 등 객체 간의 관계를 형성하고 관리한다.
-- 국제화 지원 등 문자열에 관련된 다양한 기능을 제공한다.
-- 리스너로 등록된 Bean에 이벤트를 발생시킬 수 있다.
-- Bean 에 관련된 설정을 위한 xml 파일은 즉시 로딩하면서 객체를 미리 생성해 가지고 있다.
-
-**사용 형태**
-
-- ClassPathXmlApplicationContext
-- FileSystemXmlApplicationContext
-- XmlWebApplicationContext
-- AnnotationConfigApplicationContext
-
-## 예제 코드
-
-<span style="font-size: 1.5em">BeanFactory 활용 예제</span>
+- 사용 형태
+	- XmlBeanFactory
 
 먼저 BeanFactory 활용 예제를 알아보자. 다음과 같이 TestBean 클래스를 작성하고 간단한 생성자를 만든다.
 
@@ -144,9 +126,20 @@ public class MainClass {
 }
 ```
 
-<span style="font-size: 1.5em">ApplicationContext 활용 예제</span>
+### ApplicationContext
 
-다음은 ApplicationContext 활용 예제다. 위 코드와 비슷하지만 여러 가지 옵션이 가능하다는 점이 다르다. 로드와 동시에 객체를 생성한다는 점과 같은 `id` 로 클래스를 호출해도 다른 객체를 전닫받을 수 있도록 조절할 수 있다. 
+- 클래스를 통해 객체를 생성하고 객체의 주소값을 반환하는 방식으로 전달한다.
+- 상속 등 객체 간의 관계를 형성하고 관리한다.
+- 국제화 지원 등 문자열에 관련된 다양한 기능을 제공한다.
+- 리스너로 등록된 Bean에 이벤트를 발생시킬 수 있다.
+- Bean 에 관련된 설정을 위한 xml 파일은 즉시 로딩하면서 객체를 미리 생성해 가지고 있다.
+- 사용 형태
+	- ClassPathXmlApplicationContext
+	- FileSystemXmlApplicationContext
+	- XmlWebApplicationContext
+	- AnnotationConfigApplicationContext
+
+다음은 ApplicationContext 활용 예제다. 앞서 보았던 BeanFactory 예제 코드와 비슷하지만 여러 가지 옵션이 가능하다는 점에서 차이를 보인다. 로드와 동시에 객체를 생성하며, 같은 **id**로 클래스를 호출해도 다른 객체를 전닫받을 수 있도록 조절할 수 있다. 
 
 ```java
 package com.springpratice.main;
@@ -175,17 +168,9 @@ public class MainClass {
 
 위 코드를 실행하기만해도 생성자가 호출되는 것을 확인할 수 있다. 이를 BeanFactory 처럼 객체를 호출할 때 생성자가 호출되도록 바꾸고 싶다면 `lazy-init="true"` 옵션을 삽입해보자. 이외에도 다양한 bean 태그 기본 속성들과 이를 응용하는 방법들이 있다. 
 
-ctx 로부터 여러 번 bean 을 가져오는 `getBean` 을 호출하면 항상 같은 주소가 반환된다. 이를 바꿔주기 위해 xml 파일에 `<bean id='testBean' class='com.springpractice.beans.TestBean' scope="prototype"></bean>` 다음과 같이 선언해보자. `scope` 를 바꿔주는 것이다.
-
-그리고 아래 코드를 실행해보면 서로 다른 주소 값이 반환되는 것을 확인할 수 있다.
+ctx로부터 여러 번 bean을 가져오는 `getBean` 을 호출하면 항상 같은 주소가 반환된다. 이를 바꿔주기 위해 xml 파일에 `<bean id='testBean' class='com.springpractice.beans.TestBean' scope="prototype"></bean>` 다음과 같이 선언해보자. `scope` 를 바꿔주는 것이다. 그리고 아래 코드를 실행해보면 서로 다른 주소 값이 반환되는 것을 확인할 수 있다.
 
 ```java
-package com.springpratice.main;
-
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.springpractice.beans.TestBean;
-
 public class MainClass {
 
 	public static void main(String[] args) {
