@@ -15,6 +15,13 @@ author: 1FeS
 
 # Binary search algorithm (이분 탐색 알고리즘)
 
+설명에 앞서 이분 탐색 알고리즘의 핵심은 **while** 안에 선언되어야 할 변수는 아래 네 가지라는 것입니다. 여기서 가장 중요한 것이 Temporary Answer이며, 반환되는 값은 보통 Index라는 사실입니다.
+
+- Left
+- Right
+- Middle
+- Temporary Answer
+
 탐색 알고리즘 중 하나인 **binary search**는 **half-interval search**, **logarithmic search** 등으로도 불리는 탐색 방법입니다. 이는 검색 대상인 배열이 
 1. **정렬되어 있을 때** 
 2. **인덱스로 접근 가능할 때**
