@@ -5,7 +5,7 @@ date: 2021-06-02
 layout: single
 classes: wide
 category:
-    - frontend
+    - frontend-basic
 tag:
     - css
     - grid

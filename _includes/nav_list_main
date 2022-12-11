@@ -103,7 +103,7 @@
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "pangtudy-web" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "frontend" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "frontend-basic" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
