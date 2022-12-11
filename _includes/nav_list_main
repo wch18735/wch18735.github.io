@@ -95,7 +95,6 @@
         </ul>
         <!------------------------------------------------------------------------------------------------->
 
-
         
         <!--------------------------------- 카테고리 대분류: PROJECTS -------------------------------------->
         <span class="nav__sub-title">PROJECTS</span>
@@ -104,6 +103,7 @@
             {% for category in site.categories %}
             {% if {{category[0]}} == "pangtudy-web" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "frontend-basic" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "todo app" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
