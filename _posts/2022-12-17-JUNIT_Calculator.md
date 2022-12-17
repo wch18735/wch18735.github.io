@@ -84,7 +84,7 @@ public class CalculatorTest {
 
 **org.junit.jupiter.params.provider.Arguments**를 통해 전달되는 Arguments interface는 접근성을 제공하는데 사용된다. @ParameterizedTest 메소드에서 사용되는 인자들이 메소드의 매개변수에 대입되도록 하려면, 그리고 그런 인자들이 여러 배열로 존재할 때 Arguments 배열을 Stream으로 제공해 순회하도록 한다.
 
-## calculate() 리팩토링
+## calculate() 계산 방법 결정 과정 리팩토링
 
 테스트를 통과시키고 나면 마음껏 리팩토링을 할 수 있다. 일종의 안정감이 생긴다. if-else 분기를 통한 코드는 calculate()에서만 사용할 수 있으며, 비슷한 기능을 동작시키기 위해서는 if-else로 작성된 부분을 복사해 붙여 넣는 번거로운 과정을 거쳐야 한다.
 
@@ -132,3 +132,26 @@ public enum ArithmeticOperator {
     }
 }
 ```
+
+## calculate() 계산 방법 확장을 위한 리팩토링
+
+위에서는 Enum 안에서 전달되는 문자열에 따라 추상메소드를 Override해 연산에 맞도록 동작하는 코드를 작성했다. 그런데 여기서 계산 방법이 20개 정도로 늘어난다고 가정해보면, 코드 길이가 길어질 것이며 한 개의 ArithmeticOperator 소스 안에서 이를 관리하기는 어려워질 것임을 자연스럽게 예상할 수 있다.
+
+이를 방지하기 위해, 전략 패턴의 핵심인 알고리즘 자체를 인터페이스 구현체로 만들어 관리하고 적절하게 사용하도록 리팩토링한다. 먼저 StrategyArithmeticOperator Interface를 만들고 이를 구현하는 사칙연산 클래스를 각각 정의한다. 그리고 이를 Calculator에서 리스트로 관리하며, 주어지는 Operator 문자열에 따라 알맞게 사용하도록 한다.
+
+```java
+public class Calculator {
+    private static final List<StrategyArithmeticOperator> arithmeticOperatorList
+            = List.of(new AdditionOperator(), new SubtractionOperator(), new MultiplicationOperator(), new DivisionOperator());
+
+    public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
+        return arithmeticOperatorList.stream()
+                .filter(arithmeticOperator -> arithmeticOperator.supports(operator))
+                .map(arithmeticOperator -> arithmeticOperator.calculate(operand1, operand2))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("올바른 사칙연산이 아닙니다"));
+    }
+}
+```
+
+이렇게 코드를 작성해 놓으면 추후 sqrt, square 등의 계산 알고리즘을 적용하기 위한 요구사항에도 유연한 대응을 기대할 수 있다.
