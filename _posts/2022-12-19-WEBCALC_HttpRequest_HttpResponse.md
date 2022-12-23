@@ -19,6 +19,8 @@ comments: true
 
 HttpRequest와 HttpResponse를 직접 구현하고, 서버에서 활용하는 과정을 직접 구현해보며 실제 WAS가 무엇을 어떻게 수행해주는지 알 수 있다. 먼저 결과부터 살펴보면 Custom Web Application Server는 아래와 같이 구현 할 수 있다.
 
+참고로, URL 인코딩을 통해 URL로 사용할 수 없는 문자를 사용할 수 있도록 해야 정확하게 연산이 수행되는 것을 확인할 수 있다. 가령, 곱하기(*) 기호는 예약어이기 때문에 퍼센트 인코딩을 수행해 붙여야 한다.
+
 <img src="/_img/2022-12-19/code explanation.png">
 
 실제로 서버를 구동한 다음 `GET http://localhost:8080/calculate?operand1=11&operator=*&operand2=55` 테스트를 수행해 보았다. 결과는 아래와 같이 나타난다. 응답이 정상적으로 전달되었음을 알 수 있다.

@@ -17,6 +17,8 @@ comments: true
 
 # 서블릿 프로그래밍
 
+서블릿은 동적 웹 페이지를 생성하는 근본 기술이다.
+
 ## CGI (Common Gateway Interface)
 
 CGI(Common Gateway Interface)란 웹 서버와 애플리케이션 사이에 데이터를 주고받는 **규약**이다. 이름에서 알 수 있듯이, CGI는 어디까지나 인터페이스이기 때문에 특정 플랫폼에 의존하지 않고, 웹 서버 등으로부터 외부 프로그램을 호출하는 조합 자체를 가리킨다. 그렇기 때문에 CGI 프로그램은 컴파일 방식(C, C++, Java 등)과 인터프리터 방식(PHP, Python 등) 모두 구현될 수 있다.
@@ -39,3 +41,38 @@ CGI(Common Gateway Interface)란 웹 서버와 애플리케이션 사이에 데�
 
 한 가지 주의할 점으로 서블릿 컨테이너는 서블릿 객체를 인스턴스 하나만 생성하여 공유하는 방식인 싱글톤으로 관리한다는 것이다. 잘 알겠지만, 싱글톤 객체는 Thread와 함께 사용될 때는 상태를 유지(stateful)하게 설계하면 안 된다. 왜냐하면 공유되는 영역에 Race condition이 형성되기 때문이다. 그렇기 때문에 Thread safety를 위해 서블릿 객체 내부에는 static 변수를 설계하지 않는 것이 가장 바람직하다.
 
+### Singleton 클래스에서 Thread Unsafety 확인
+
+Singleton 클래스에서 상태를 유지하는 경우를 확인해보려고 한다. 그러기 위해 Counter 객체에 count 변수를 0으로 초기화한다.
+
+<img src="/_img/2022-12-20/counter.png">
+
+이를 아래와 같이 Race condition을 유발하도록 세 개의 스레드에서 공유하여 사용하도록 바꿔보자. 그러면 스레드 실행 순서를 특정할 수 없기 때문에 예상했던 것과 다른 출력이 나타나는 것을 확인할 수 있다.
+
+<img src="/_img/2022-12-20/thread result.png">
+
+## 계산기 서블릿 만들기
+
+### Servlet 인터페이스 활용하기
+
+servlet은 Javax.servlet.Servlet 인터페이스로 제공된다. 이를 구현하는 abstract class인 javax.servlet.GenericServlet이 있고, 다시 한 번 이를 구현하는 javax.servlet.http.HttpServlet이 있다. 이전 개발자들은 이 추상 클래스를 상속하여 본인만의 서블릿을 작성하였다.
+
+<img src="/_img/2022-12-20/servlet relation.png">
+
+서블릿 컨테이너는 서블릿에 정의된 메소드만을 호출한다. 다형성에 의해 인터페이스에 정의된 init(), service(), destroy()를 호출하면, 사용자가 구현한 실제 메소드가 실행된다. 예를 들어, 아래와 같이 Servlet 인터페이스를 구현하는 CalculatorServlet을 만들어 볼 수 있다.
+
+<img src="/_img/2022-12-20/CalculatorServlet.png">
+
+여기에 아래와 같이 Logger를 추가하고, HTTP GET 메소드를 요청해보면 service 메소드가 요청마다 호출되는 것을 볼 수 있다. 한 가지 유심히 봐야 할 것은 init() 메소드는 생성될 때 단 한 번만 호출된다는 것이다. 끝으로, destroy()는 확인하지 않았지만 할당된 자원을 해제하는 등의 역할을 수행한다.
+
+<img src="/_img/2022-12-20/servlet execution.png">
+
+### GenericServlet 추상 클래스 활용하기
+
+위에서 Servlet 인터페이스를 통해 구현한 기능들을 GenericServlet 추상 클래스를 사용해 동일하게 구현해보려고 한다. 방법은 간단하게, implements를 extends로 바꿔주고 GenericServlet을 상속해 구현한다. GenericServlet은 init(), destroy(), getServletConfig(), getServletInfo() 메소드들이 모두 작성되어 있기 때문에 사용자는 service() 메소드만을 구현하면 된다.
+
+### HttpServlet 추상 클래스 활용하기
+
+마지막으로 HttpServlet을 사용할 수 있다. GenericServlet 추상 클래스는 여전히 service() 메소드를 호출하지만, 그 안에서 METHOD에 따라 다른 동작을 수행하기 위해 사용자가 직접 분기 처리를 수행해야 한다. 이러한 불편함을 해결하기 위해 HttpServlet은 service() 메소드 내부에 METHOD에 따라 분기 처리가 되어있고, doGet(), doPost(), doDelete() 등의 추상 메소드가 정의되어 있다.
+
+<img src="/_img/2022-12-20/HttpServlet if.png">
