@@ -20,36 +20,15 @@ comments: true
 
 # JDBC란 무엇인가?
 
-JDBC는 Java 개발자라면, 특정 프로그램을 만들겠다고 하면 언제나 한 번쯤 들어보는 단어다. 애석하게도 나는 일을 시작하면서 그 개념을 처음 익혀가는 중.
+JDBC(Java Database Connectivity)는 자바 애플리케이션에서 DB 프로그래밍을 할 수 있도록 도와주는 표준 인터페이스를 말한다. Java 개발자라면 반드시 한 번쯤 들어보는 단어이지만 최근엔 다양한 Database 관련 구현체들이 많아져 직접 사용하는 경우는 없는 경우가 많다. 
 
-우리는 데이터베이스를 이용하면서 아래 작업을 수행한다.
+우리는 데이터베이스를 이용하면서 연결과 인증, 문장 실행, 결과 패치 등의 작업을 통해 영속성을 유지하고자 한다. 이를 위해서는 Database를 사용해야 하며, Java 개발자는 데이터베이스를 사용하기 위해 데이터베이스와 통신하는 표준 인터페이스인 JDBC를 활용한다. 이 표준 인터페이스 구현체는 각 데이터베이스 벤더 사에서 JDBC Driver 형태로 제공해준다.
 
-- 연결/인증
-- 문장실행
-- 결과패치
+실제로 데이터베이스 벤더 회사와 솔루션은 다양하다. 그러나 궁극적으로 우리는 **Oracle**, **MS SQL**과 같은 DBMS에 접속해 정보를 저장하고, 불러오기 위해 이들을 사용한다. 여기서 한 가지 문제가 생기는데, 똑같은 기능을 하더라도 회사마다 서로 다른 SQL 표준을 가지고 있다.
 
-그 중 문장실행은 SQL을 말한다. **너 이거 해!** 라고 명령하는 것.
+이는 곧 **DBC(Database Connectivity)** 불연속성으로 이어진다. 즉, DBMS와 연결 또는 접속하기 위한 방법이 모두 달라지게 된다는 것인데, 가령, 라이센스 계약 기간이 만료되어 다른 DBMS를 사용하게 된다면 이와 연동된 코드 베이스를 모두 변경해줘야 하는 경우가 생기게 된다.
 
-> **Oracle**, **MS SQL**과 같은 DBMS에 접속해 정보를 저장하고, 불러오기 위해서 우리는 SQL을 사용한다.
-
-그런데 문제가 있다. 똑같은 기능을 하더라도 Oracle에 먹히는 SQL문과 MS SQL에 먹히는 SQL은 다르다. 아주 다르다. 
-
-SQL이 같아도 서로 다른 회사의 API 이름은 다를 수밖에 없다.
-
-**DBC(Database Connectivity)**. 즉, DBMS와 연결 또는 접속하기 위한 방법이 모두 다르다는 뜻이다. 기간이 만료되어 다른 DBMS를 사용하게 된다면 이는 분명 문제가 된다. 
-
-그래서 등장한 것이 JDBC이다.
-
-DBMS를 구동하기 위한 코드는 각각 따로 개발되어있다. 이렇게 DBMS를 제어하는 것을 **드라이버**라고 한다. 
-
-Java는 각각의 드라이버를 제어하는 JDBC를 지원한다. 그래서! JDBC로 아래 기능을 구현해놓으면?
-
-1. 드라이버 로드하기
-2. 연결 생성하기
-3. 문장 실행하기
-4. 결과집합 사용하기
-
-예를들어, Oracle에서 MS SQL로 DBMS를 바꿔도 이전처럼 모든 코드를 수정할 필요가 없다. 개발자가 드라이버를 직접 제어할 필요없이, 각 DBMS가 제공하는 드라이버만 로드해주면 되는 것!
+이러한 문제를 해결하기 위해 JDBC가 사용된다. DBMS를 구동하기 위한 코드와 DBMS를 제어하기 위한 JDBC 구현체를 따로 두는 것이다. JDBC Driver를 제공해 드라이버 로드, 연결 생성, 문장 실행, 결과집합 사용 등의 작업을 미리 작성해 두었다고 가정해보자. 그럼 Oracle에서 MS SQL로 DBMS를 바꿔도 이전처럼 모든 코드를 수정할 필요가 없이, 개발자가 드라이버를 직접 제어할 필요없이, 각 DBMS가 제공하는 드라이버만 로드해주면 된다.
 
 ## DBMS와 JDBC Driver 준비하기
 
@@ -57,9 +36,7 @@ DBMS는 Oracle을 설치하려고 한다. 같이 공부하는 많은 개발자�
 
 ### Oracle Database 설치
 
-Oracle 21c Express를 다운 받아서 사용하려고 한다. [이곳](https://www.oracle.com/database/technologies/xe-downloads.html)에서 다운받을 수 있다.
-
-오라클 데이터베이스는 세 가지 종류가 있다고 한다.
+Oracle 21c Express를 다운 받아서 사용하려고 한다. [이곳](https://www.oracle.com/database/technologies/xe-downloads.html)에서 다운받을 수 있다. 오라클 데이터베이스는 세 가지 종류가 있다고 한다.
 
 - Oracle Enterprise Edition (큰 기업용)
 - Oracle Standard Edition (작은 기업용)
@@ -71,17 +48,11 @@ Oracle 21c Express를 다운 받아서 사용하려고 한다. [이곳](https://
 - 2 GB of RAM
 - 12 GB of user data
 
-다운받아서 압축풀고 **관리자 권한으로 설치**하자.
-
-설치가 끝나면 `1) 어떤 포트로 접속할 수 있는지`, `2) 웹 기반 관리 어플리케이션 접속 주소` 가 나타난다. 잘 정리해두자.
+다운받아서 압축풀고 **관리자 권한으로 설치**하자. 설치가 끝나면 `1) 어떤 포트로 접속할 수 있는지`, `2) 웹 기반 관리 어플리케이션 접속 주소` 가 나타나는데, 이 정보를 잘 정리해두자.
 
 ### Oracle JDBC 다운로드
 
-[여기](https://www.oracle.com/database/technologies/appdev/jdbc-ucp-21-3-downloads.html)에서 자기 버전에 맞는 JDBC를 설치할 수 있다.
-
-다운받은 jar 파일을 본인이 원하는 경로에 둔다. 나는 eclipse 폴더에 따로 jdbc 폴더를 만들어 넣었다.
-
-그 다음 Java 프로젝트를 생성하기 위해 먼저 **Perspective**를 Java로 바꿔준다.
+[여기](https://www.oracle.com/database/technologies/appdev/jdbc-ucp-21-3-downloads.html)에서 자기 버전에 맞는 JDBC를 설치할 수 있다. 다운받은 jar 파일을 본인이 원하는 경로에 둔다. 나는 eclipse 폴더에 따로 jdbc 폴더를 만들어 넣었다. 그 다음 Java 프로젝트를 생성하기 위해 먼저 **Perspective**를 Java로 바꿔준다.
 
 <br/>
 <img src="/_img/2021-10-21/perspective.jpg" style="margin: auto auto; display: block;"/>
@@ -154,3 +125,4 @@ SQL문을 실행하고, 결과를 **받아 올 수 있는** 객체로 만든다.
 ## References
 - [newlec: 자바 JDBC 프로그래밍](https://www.youtube.com/watch?v=c0s7g7iVtwc&list=PLq8wAnVUcTFWxwoc41CqmwnO-ZyRDL0og)
 - [newlec](https://www.newlecture.com/index)
+- FastCampus 기업 강의
