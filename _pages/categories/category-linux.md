@@ -1,12 +1,12 @@
 ---
-title: "Web Calculator"
-permalink: /categories/web calculator/
+title: "Linux"
+permalink: /categories/linux/
 layout: category
 author_profile: true
 sidebar_main: true
 ---
 
-Web calculator API
+Linux related category
 
-{% assign posts = site.categories['web calculator'] %}
+{% assign posts = site.categories['linux'] %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
