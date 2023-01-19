@@ -26,11 +26,12 @@ comments: true
 ## SSH 연결 방법
 
 1. ssh-keygen 수행
-2. 다 Enter 누르기
-3. default 경로에 id_rsa 파일을 cat 으로 열기
+2. 단계 별 입력 (Default: 전부 Enter 눌러서 통과)
+3. **default 경로**에 id_rsa 파일을 cat 으로 열기
 4. private key 를 복사(ctrl + insert)해 첨부 
 5. ssh 로 접근 테스트
 
+※ defalut 경로 : /[account]/.ssh/id_rsa
 ※ 안 되는 경우 : /etc/ssh/ssh_config 에서 설정 확인
 
 ## java 11 jdk 설치
