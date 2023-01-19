@@ -1,7 +1,7 @@
 ---
 title: "[Git] .gitignore가 적용되지 않을 때"
 excerpt: "how to apply .gitignore"
-date: 2021-06-28
+date: 2023-01-20
 layout: single
 classes: wide
 category:

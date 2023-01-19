@@ -1,7 +1,7 @@
 ---
-title: "파일 백업을 위한 Shellscript"
+title: "[Shell] 파일 백업을 위한 Shellscript"
 excerpt: "existence check for file backup"
-date: 2021-11-19
+date: 2023-01-19
 layout: single
 classes: wide
 category:
