@@ -13,6 +13,7 @@ author: 1FeS
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
+comments: true
 ---
 
 # 파일 백업을 위한 shellscript
