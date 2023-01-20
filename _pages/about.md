@@ -3,9 +3,8 @@ permalink: /about/
 layout: single
 ---
 
-# About Me
-
-60이 넘어도 필드에서 개발할 수 있는 엔지니어가 되기 위해 노력하고 있습니다. (I am trying to become an engineer who can develop in the field even if I am over 60.)
+60이 넘어도 필드에서 개발할 수 있는 엔지니어가 되기 위해 노력하고 있습니다. 
+I am trying to become an engineer who can develop in the field over 60.
 
 - **Familiar:** Java, Spring Boot, Spring MVC, JPA, Maven, Gradle, Oracle, MySQL, Python, C++, Jenkins, PlantUML
 - **Using:** GitHub, Eclipse, IntelliJ, Jira, Confluence, Microsoft Teams
