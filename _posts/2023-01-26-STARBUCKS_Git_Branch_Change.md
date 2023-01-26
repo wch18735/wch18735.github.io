@@ -33,3 +33,23 @@ git fetch origin
 git branch -u origin/main main
 git remote set-head origin -a
 ```
+
+로컬에서 결과는 아래와 같다.
+
+```sh
+user@DESKTOP MINGW64 ~/Desktop/Starbucks-Project (master)
+$ git branch -m master main
+
+user@DESKTOP MINGW64 ~/Desktop/Starbucks-Project (main)
+$ git fetch origin
+From https://github.com/wch18735/Starbucks-mocking-vanilla-project
+ * [new branch]      main       -> origin/main
+
+user@DESKTOP MINGW64 ~/Desktop/Starbucks-Project (main)
+$ git branch -u origin/main main
+branch 'main' set up to track 'origin/main'.
+
+user@DESKTOP MINGW64 ~/Desktop/Starbucks-Project (main)
+$ git remote set-head origin -a
+origin/HEAD set to main
+```
