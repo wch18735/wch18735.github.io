@@ -133,6 +133,7 @@
             {% if {{category[0]}} == "cpp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "java" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "python" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "javascript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "shellscript" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
