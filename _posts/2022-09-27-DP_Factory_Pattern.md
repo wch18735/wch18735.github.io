@@ -1,5 +1,5 @@
 ---
-title: "[Design Pattern] Factory Pattern"
+title: "[Design Pattern] Factory Pattern (팩토리 메소드 패턴)"
 excerpt: "factory method pattern & abstract factory pattern"
 date: 2022-09-27
 layout: single
