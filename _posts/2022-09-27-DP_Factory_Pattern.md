@@ -1,5 +1,5 @@
 ---
-title: "[Design Pattern] Factory Pattern (팩토리 메소드 패턴)"
+title: "[Design Pattern] Factory Pattern (팩토리 메소드, 추상 팩토리 패턴)"
 excerpt: "factory method pattern & abstract factory pattern"
 date: 2022-09-27
 layout: single
@@ -99,11 +99,167 @@ public abstract class PizzaStore {
 
 참고하자면, 위와 같이 Inheritance를 사용하기 때문에 어떤 클래스를 사용할 것인지 Run-time이 아닌 Compile-time에 결정한다고 얘기할 수 있다.
 
-## Abstract Factory Method Pattern
+## Abstract Factory Pattern
 
-Abstract Factory Pattern은 Families of products를 생성할 때, 연관된 Family가 특정한 테마를 가질 때 유용하게 사용할 수 있다. Abstract Factory Pattern은 대상 Product와 이를 사용하는 클라이언트를 분리할 수 있으며, Product들 관계의 일관성을 유지할 수 있고, Concrete Factory들(새로운 제품군)을 쉽게 추가할 수 있다는 장점이 있다. 그러나 AbstractFactory 안에 새로운 제품을 추가하는 것은 어렵다는 단점이 있다.
+Abstract Factory Pattern은 관련된 객체들의 집합을 생성하기 위해 사용되는 인터페이스를 제공한다. Families of products를 생성하거나 연관된 Family가 특정한 테마를 가질 때 유용하게 사용할 수 있다. 위 예시에 대입하자면 피자(Product)는 Family(도우, 소스)을 가지는데, 이들이 특정한 테마(이탈리안 피자, 아메리칸 피자)에 종속되어 종류가 바뀌는 경우(얇음/두꺼움, 토마토/크림) 사용할 수 있다.
 
-그렇기 때문에 처음은 생성의 유용성을 주면서 동시에 구현도 간단한 Factory Method 패턴을 시작으로 하고 Abstract Factory, Prototype, Builder 패턴으로 넘어가는 것을 권장하고 있다.
+
+### Example of abstract factory pattern with pizza stores
+
+아래는 간단히 피자를 이용한 Abstract Factory Pattern 적용 예시이다. 먼저 도우와 소스 인터페이스를 정의한다.
+
+```java
+public interface Dough {
+    String getDescription();
+}
+
+public interface Sauce {
+    String getDescription();
+}
+```
+
+그리고 이를 구현하는 클래스들을 정의한다.
+
+```java
+public class ThinCrustDough implements Dough {
+    public String getDescription() {
+        return "Thin Crust Dough";
+    }
+}
+
+public class ThickCrustDough implements Dough {
+    public String getDescription() {
+        return "Thick Crust Dough";
+    }
+}
+
+public class TomatoSauce implements Sauce {
+    public String getDescription() {
+        return "Tomato Sauce";
+    }
+}
+
+public class CreamySauce implements Sauce {
+    public String getDescription() {
+        return "Creamy Sauce";
+    }
+}
+```
+
+그 다음, PizzaStore를 위한 Abstract Factory 인터페이스를 정의한다. 이 인터페이스는 도우와 소스 인터페이스를 반환하도록 정의한다.
+
+```java
+public interface PizzaIngredientFactory {
+    Dough createDough();
+    Sauce createSauce();
+}
+```
+
+이렇게 Factory가 만들어졌다면, 구체적인 팩토리를 구현한다. 아래 코드에서 이탈리안, 아메리칸 피자 타입에 맞춰 재료를 생성하는 클래스들이 구현된 것을 확인할 수 있다. 이렇게 만들어진 **구체적인 팩토리 클래스**는 추후 **추상적인 팩토리 인터페이스**를 내부 속성으로 가진 클래스가 초기화 될 때 전달되어, 특성에 맞는 값들을 반환해주게 된다.
+
+```java
+public class ItalianPizzaIngredientFactory implements PizzaIngredientFactory {
+    public Dough createDough() {
+        return new ThinCrustDough();
+    }
+
+    public Sauce createSauce() {
+        return new TomatoSauce();
+    }
+}
+
+public class AmericanPizzaIngredientFactory implements PizzaIngredientFactory {
+    public Dough createDough() {
+        return new ThickCrustDough();
+    }
+
+    public Sauce createSauce() {
+        return new CreamySauce();
+    }
+}
+```
+
+여기까지 만든 다음 Pizza 클래스와 이를 상속하는 치즈 피자를 정의한다. `PizzaIngredientFactory` 라는 추상 팩토리가 치즈 피자 안에 존재하는 것에 주목하자. 이것이 Abstract Factory의 핵심으로, 종류에 따라 구체화된 추상 팩토리를 전달 받기만 하면, 언제든 같은 행위에 대해서도 서로 다른 속성을 부여할 수 있게 된다. 가령, 전달되는 `ingredientFactory`가 이탈리안인지 아메리칸인지에 따라 서로 다른 종류의 도우와 소스를 전달받을 수 있다는 것이다.
+
+가령 치즈 피자 클래스가 처음 생성될 때, 아메리칸 재료를 반환하는 클래스를 인자로 받아 팩토리에 설정해 놓으면, 아래 `ingredientFactory.createDough()`, `ingredientFactory.createSource()`는 구현에 맞게 항상 두껍고, 크리미한 소스를 반환해준다.
+
+```java
+public abstract class Pizza {
+    String name;
+    Dough dough;
+    Sauce sauce;
+
+    public abstract void prepare();
+
+    public void bake() {
+        System.out.println("Baking " + name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public abstract class Pizza {
+    String name;
+    Dough dough;
+    Sauce sauce;
+
+    public abstract void prepare();
+
+    public void bake() {
+        System.out.println("Baking " + name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+```
+
+마지막으로 위에서 배웠던 팩토리 메소드 패턴을 적용한다. 피자 스토어에서는 `orderPizza(String type)`에 따라 서로 다른 종류의 피자를 제공한다. 이전에는 모두 같은 재료를 사용한다고 가정했으나, 피자 스토어가 다양해지며 재료도 다양해졌다. 그래서 재료의 다양성을 적용하기 위해 Abstract Factory 패턴을 적용해 서로 다른 재료를 전달할 수 있게 되었다.
+
+```java
+public abstract class PizzaStore {
+    public Pizza orderPizza(String type) {
+        Pizza pizza = createPizza(type);
+        pizza.prepare();
+        pizza.bake();
+        return pizza;
+    }
+
+    protected abstract Pizza createPizza(String type);
+}
+
+public class ItalianPizzaStore extends PizzaStore {
+    protected Pizza createPizza(String type) {
+        Pizza pizza = null;
+        PizzaIngredientFactory ingredientFactory = new ItalianPizzaIngredientFactory();
+        if (type.equals("cheese")) {
+            pizza = new CheesePizza(ingredientFactory);
+            pizza.setName("Italian Cheese Pizza");
+        }
+        return pizza;
+    }
+}
+
+public class AmericanPizzaStore extends PizzaStore {
+    protected Pizza createPizza(String type) {
+        Pizza pizza = null;
+        PizzaIngredientFactory ingredientFactory = new AmericanPizzaIngredientFactory();
+        if (type.equals("cheese")) {
+            pizza = new CheesePizza(ingredientFactory);
+            pizza.setName("American Cheese Pizza");
+        }
+        return pizza;
+    }
+}
+
+```
+
+이로써, 다른 지역에 PizzaStore가 생기게 된다면, 단순히 해당 지역의 재료를 제공하는 재료 팩토리만을 만들면 된다. 그치만 한 가지 변경에 취약한 부분으로는 재료가 추가되는 경우 상위 인터페이스부터 변경이 발생한다는 점이다.
+
+그렇기 때문에 처음은 생성의 유용성을 주면서 동시에 구현도 간단한 Factory Method 패턴을 시작으로 하고, 시스템 요구사항을 분석하며 필요에 따라 Abstract Factory, Prototype, Builder 패턴으로 넘어가는 것을 권장하고 있다.
 
 - Purpose
   - Provide an interface that delegates creation calls to one or more concrete classes in order to deliver specific objects
