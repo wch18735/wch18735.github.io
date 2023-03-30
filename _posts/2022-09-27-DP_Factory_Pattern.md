@@ -200,19 +200,17 @@ public abstract class Pizza {
     }
 }
 
-public abstract class Pizza {
-    String name;
-    Dough dough;
-    Sauce sauce;
+public class CheesePizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
 
-    public abstract void prepare();
-
-    public void bake() {
-        System.out.println("Baking " + name);
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void prepare() {
+        System.out.println("Preparing " + name);
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
     }
 }
 ```
