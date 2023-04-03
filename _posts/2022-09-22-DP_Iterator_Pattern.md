@@ -35,7 +35,7 @@ Iterator는 Cursor라는 다른 이름을 가지고 있다. 이는 Aggregate Obj
     - A uniform interface for traversal is needed
     - Subtle difference exist between the implementation details of various iterators
 
-## Iterator pattern discovery
+## The Objectvile Diner and Pancake House
 
 Iterator Pattern을 적용하는 예시로 Head First Design Pattern에 실린 The Objectvile Diner and Pancake House를 들어보려고 한다.
 
