@@ -1,11 +1,11 @@
 ---
-title: "[Todo App] REST API 인증"
+title: "[Network] REST API 인증"
 excerpt: "jwt: json web token"
 date: 2022-12-11
 layout: single
 classes: wide
 category:
-    - todo app
+    - network
 tag:
     - java
     - rest api

@@ -1,11 +1,12 @@
 ---
-title: "[WEB Calculator] Thread를 활용한 응답"
+title: "[Java] Thread를 활용한 응답"
 excerpt: "mini server with thread"
 date: 2022-12-21
 category:
-    - web calculator
+    - java
 tag:
     - http
+    - thread
     - side project
 author: 1FeS
 toc: true

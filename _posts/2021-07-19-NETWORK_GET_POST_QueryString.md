@@ -1,5 +1,5 @@
 ---
-title: "[NETWORK] GET 요청과 POST 요청의 차이"
+title: "[Network] GET 요청과 POST 요청의 차이"
 excerpt: "GET & POST Requests"
 date: 2021-07-19
 layout: single

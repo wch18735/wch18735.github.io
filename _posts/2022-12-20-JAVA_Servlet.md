@@ -1,9 +1,9 @@
 ---
-title: "[WEB Calculator] Servlet"
+title: "[Java] Servlet"
 excerpt: "servlet"
 date: 2022-12-20
 category:
-    - web calculator
+    - java
 tag:
     - http
     - side project

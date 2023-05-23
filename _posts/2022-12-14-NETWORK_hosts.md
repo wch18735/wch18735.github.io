@@ -1,11 +1,11 @@
 ---
-title: "[Todo App] hosts 파일"
+title: "[Network] hosts 파일"
 excerpt: "hosts file for web development"
 date: 2022-12-14
 layout: single
 classes: wide
 category:
-    - todo app
+    - network
 tag:
     - hosts
     - web development

@@ -1,9 +1,9 @@
 ---
-title: "[WEB Calculator] HttpRequest, HttpResponse 구현"
+title: "[Java] HttpRequest, HttpResponse 구현"
 excerpt: "HttpRequest and HttpResponse implementation"
 date: 2022-12-19
 category:
-    - web calculator
+    - java
 tag:
     - http
     - side project
