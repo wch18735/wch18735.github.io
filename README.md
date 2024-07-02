@@ -53,7 +53,7 @@ This theme comes in nine different skins (in addition to the default one).
 
 ## Demo pages
 
-| Name                                        | Description                                           |
+| Name                        ¡               | Description                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
 | [Post with Header Image][header-image-post] | A post with a large header image. |
 | [HTML Tags and Formatting Post][html-tags-post] | A variety of common markup showing how the theme styles them. |
@@ -134,6 +134,10 @@ To install:
 ## Usage
 
 For detailed instructions on how to configure, customize, add/migrate content, and more read the [theme's documentation](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/).
+
+### Local
+
+`bundle exec jekyll serve;`
 
 ---
 
