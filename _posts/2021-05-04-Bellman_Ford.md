@@ -38,13 +38,17 @@ comments: true
 
 ![image](/_img/2021-05-04/bellman-ford.gif){: .align-center}
   
-이를 이용해서 풀어볼 수 있는 문제가 두 가지 있습니다. [백준 11657번: 타임머신](https://www.acmicpc.net/problem/11657)과 [백준 1865: 웜홀](https://www.acmicpc.net/problem/1865) 입니다. 저는 항상 {% highlight python %} float('inf') {% endhighlight %} 를 사용했었으나 {% highlight python %} 2<<31 {% endhighlight %} 을 이용해서도 최대값을 설정할 수 있음을 배웠습니다. 전자에서는 음수 간선이 존재해도 무한의 값이 변화하지 않아 출발지점을 지정하지 않으면 그래프 변화가 유발되지 않습니다. 따라서 **웜홀** 문제를 풀 때 *Negative cycle*을 확인하기 위해 정수 값을 가지는 **INF**를 따로 선언하는 것이 좋습니다. 아래는 해당 문제들의 소스코드입니다.
+이를 이용해서 풀어볼 수 있는 문제가 두 가지 있습니다. [백준 11657번: 타임머신](https://www.acmicpc.net/problem/11657)과 [백준 1865: 웜홀](https://www.acmicpc.net/problem/1865) 입니다. 저는 항상 `float('inf')` 를 사용했었으나 `2<<31`을 이용해서도 최대값을 설정할 수 있음을 배웠습니다. 
+
+전자에서는 음수 간선이 존재해도 무한의 값이 변화하지 않아 출발지점을 지정하지 않으면 그래프 변화가 유발되지 않습니다. 따라서 **웜홀** 문제를 풀 때 *Negative cycle*을 확인하기 위해 정수 값을 가지는 **INF**를 따로 선언하는 것이 좋습니다. 아래는 해당 문제들의 소스코드입니다.
 
 ## 소스코드
+
+아래는 문제 풀이에 사용한 소스코드입니다.
+
 ### 백준 11657번: 타임머신
-{% highlight python %}
 
-
+```python
 # 도시 개수, 간선 개수
 N, M = map(int, input().split(' '))
 
@@ -129,4 +133,4 @@ for test_case in range(1, T + 1):
         print('YES')
     else:
         print('NO')
-{% endhighlight %}
+```
