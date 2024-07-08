@@ -92,11 +92,11 @@ def main():
 
 if __name__=="__main__":
     main()
-
-{% endhighlight %}
+```
 
 ### 백준 1865번: 웜홀
-{% highlight python %}
+
+```python
 # 테스트 케이스
 T = int(input())
 
