@@ -141,3 +141,45 @@ after init-method
 ## 어디에 쓸 수 있을까?
 
 Spring Boot 을 사용할 때, 이를 직접 건드리며 설정할 일은 크게 없을 것 같다. 그럼에도 만약 소프트웨어 신뢰성을 위해 반드시 특정 조건하에만 생성할 수 있도록 정책을 강제해야 하는 경우가 있다면 이같은 설정 Bean 도입을 고려해 볼 필요가 있겠다.
+
+## 어노테이션으로 쉽게 정의하기
+
+Java 에서는 다양한 어노테이션이 존재하며 위에서 구현한 기능을 수행하는 어노테이션 역시 존재한다. 이를 사용하기 위해 먼저 `pom.xml` 에 annotation 을 처리하는 자바 플랫폼 공통 어노테이션 JSR-250 라이브러리를 의존성을 추가한다.
+
+```xml
+<properties>
+	<javax.annotation-version>1.3.2</javax.annotation-version>
+</properties>
+
+<!-- javax.annotation-api -->
+<dependency>
+    <groupId>javax.annotation</groupId>
+    <artifactId>javax.annotation-api</artifactId>
+    <version>${javax.annotation-version}</version>
+</dependency>
+```
+
+해당 라이브러리에서 제공하는 `@PostConstruct`과 `@PreDestroy` 어노테이션을 이용하면 `@Bean` 에서 정의하던 `initMethod`, `destroyMethod`를 객체에 직접 선언할 수 있다. 아래 코드에서 간단한 사용 방법을 확인해보자.
+
+```java
+package com.springpractice.beans;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+public class TestBean1 {
+	public TestBean1() {
+		System.out.println("TestBean1 생성자");
+	}
+	
+	@PostConstruct
+	public void init1() {
+		System.out.println("TestBean1 init");
+	}
+	
+	@PreDestroy
+	public void destroy1() {
+		System.out.println("TestBean1 destroy");
+	}
+}
+```
