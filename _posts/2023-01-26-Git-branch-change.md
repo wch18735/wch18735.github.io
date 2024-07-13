@@ -1,13 +1,14 @@
 ---
-title: "[Starbucks] Git Branch master 에서 main 으로 변경하기"
+title: "[Git] Git Branch master 에서 main 으로 변경하기"
 excerpt: "how to change git branch name master to main"
 date: 2023-01-26
 layout: single
 classes: wide
 category:
-    - starbucks
+    - git
 tag:
-    - html
+    - git
+    - github
 toc: true
 toc_label: "Contents"
 toc_icon: "heart"
