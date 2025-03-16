@@ -5,7 +5,7 @@ date: 2022-06-07
 layout: single
 classes: wide
 category:
-    - spring boot
+    - spring
 tag:
     - spring
     - interceptors

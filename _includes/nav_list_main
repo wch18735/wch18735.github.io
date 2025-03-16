@@ -41,7 +41,6 @@
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
             {% if {{category[0]}} == "git" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "maven" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "kubernetes" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "container" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
@@ -71,12 +70,10 @@
         <ul>
             <!-- 카테고리 소분류 -->
             {% for category in site.categories %}
-            {% if {{category[0]}} == "jdbc" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "jsp" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
-            {% elsif {{category[0]}} == "spring boot" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% if {{category[0]}} == "spring" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "oracle" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% elsif {{category[0]}} == "jpa" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
+            {% elsif {{category[0]}} == "junit" %} <li><a href="/categories/{{category[0]}}" class="">{{category[0]}} ({{category[1].size}})</a></li>
             {% endif %}
             {% endfor %} 
         </ul>
