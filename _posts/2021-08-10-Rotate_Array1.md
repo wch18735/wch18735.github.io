@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 배열 돌리기 1  (BAEKJOON: 17070)"
+title: "[Problems] 배열 돌리기 1 (BAEKJOON: 17070)"
 excerpt: "rotate array 1"
 date: 2021-08-10
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - Beakjoon

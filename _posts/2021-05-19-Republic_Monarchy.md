@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 군주제와 공화제 (SWEA: 10993번)"
+title: "[Problems] 군주제와 공화제 (SWEA: 10993번)"
 excerpt: "Implemenataion problem"
 date: 2021-05-19
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - C++
     - Brute Force

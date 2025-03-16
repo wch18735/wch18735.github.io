@@ -7,7 +7,7 @@ sidebar_main: true
 classes: wide
 ---
 
-Coding Test Problems and Implementation techniques, TIL(Today I Learned)
+Coding Test Technique and Implementation techniques, TIL(Today I Learned)
 
 {% assign posts = site.categories['coding test'] %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}

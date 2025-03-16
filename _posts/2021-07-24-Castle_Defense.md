@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 캐슬 디펜스  (BAEKJOON: 17135번)"
+title: "[Problems] 캐슬 디펜스  (BAEKJOON: 17135번)"
 excerpt: "Castle Defense"
 date: 2021-07-24
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - Beakjoon

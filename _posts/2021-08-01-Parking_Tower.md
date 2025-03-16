@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 진용이네 주차타워 (SWEA: 9280)"
+title: "[Problems] 진용이네 주차타워 (SWEA: 9280)"
 excerpt: "priority queue, queue in cpp"
 date: 2021-08-01
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - cpp
     - SWEA

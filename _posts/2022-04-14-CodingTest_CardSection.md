@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 카드섹션"
+title: "[Problems] 카드섹션"
 excerpt: ""
 date: 2022-04-14
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - cpp
     - baekjoon 

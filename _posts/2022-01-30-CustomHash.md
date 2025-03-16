@@ -1,5 +1,5 @@
 ---
-title: "[Coding Test] Hash 구현"
+title: "[Coding Test] 단순 Hash 구현"
 excerpt: "implementation hash"
 date: 2022-01-30
 layout: single

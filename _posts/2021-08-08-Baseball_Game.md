@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 야구 (BAEKJOON: 17281)"
+title: "[Problems] 야구 (BAEKJOON: 17281)"
 excerpt: "baseball game implementation: brute force"
 date: 2021-08-08
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - baekjoon

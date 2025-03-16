@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 제곱수 만들기 (SWEA: 10965번)"
+title: "[Problems] 제곱수 만들기 (SWEA: 10965번)"
 excerpt: "Implemenataion problem"
 date: 2021-05-19
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - C++
     - Software Expert Academy

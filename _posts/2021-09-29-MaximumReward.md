@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 최대 상금 (SWEA: 1244)"
+title: "[Problems] 최대 상금 (SWEA: 1244)"
 excerpt: "brute force with dynamic programming memoization"
 date: 2021-09-29
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - c++
     - software expert academy

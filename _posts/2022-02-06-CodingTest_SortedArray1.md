@@ -1,5 +1,5 @@
 ---
-title: "[Coding Test] SortedList 구현 (1)"
+title: "[Coding Test] SortedList 구현"
 excerpt: "sorted list implementation"
 date: 2022-02-06
 layout: single

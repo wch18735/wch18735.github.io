@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 색종이 붙이기 (BAEKJOON: 17136)"
+title: "[Problems] 색종이 붙이기 (BAEKJOON: 17136)"
 excerpt: "paper paste by dfs"
 date: 2021-08-02
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - baekjoon

@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 색종이"
+title: "[Problems] 색종이"
 excerpt: "paper paste by simple for loop"
 date: 2022-03-20
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - cpp
     - jungol 

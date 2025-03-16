@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 게리맨더링 (BAEKJOON: 17471)"
+title: "[Problems] 게리맨더링 (BAEKJOON: 17471)"
 excerpt: "gerrymandering implementation by using combinations and bfs"
 date: 2021-08-09
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - baekjoon

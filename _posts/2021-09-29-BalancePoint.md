@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 균형점 (SWEA: 1245)"
+title: "[Problems] 균형점 (SWEA: 1245)"
 excerpt: "approximation by binary searching in margin of error"
 date: 2021-09-29
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - c++
     - software expert academy

@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 관리 난항"
+title: "[Problems] 관리 난항"
 excerpt: ""
 date: 2022-04-14
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - cpp
     - baekjoon 

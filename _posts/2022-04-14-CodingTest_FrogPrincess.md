@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 개구리 공주"
+title: "[Problems] 개구리 공주"
 excerpt: ""
 date: 2022-04-14
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - cpp
     - baekjoon 

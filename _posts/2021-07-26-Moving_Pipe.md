@@ -1,11 +1,11 @@
 ---
-title: "[Coding Test] 파이프 옮기기1  (BAEKJOON: 17070)"
+title: "[Problems] 파이프 옮기기1  (BAEKJOON: 17070)"
 excerpt: "Moving pipe"
 date: 2021-07-26
 layout: single
 classes: wide
 category:
-    - coding test
+    - problems
 tag:
     - python
     - Beakjoon
