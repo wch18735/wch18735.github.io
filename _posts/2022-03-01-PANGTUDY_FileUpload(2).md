@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] File Upload Issue (2)"
+title: "[Pangtudy Web] File Upload Issue (2)"
 excerpt: "file upload implementation"
 date: 2022-03-01
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

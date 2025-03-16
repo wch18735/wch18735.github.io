@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] WSL2 에 MySQL 설치"
+title: "[Pangtudy Web] WSL2 에 MySQL 설치"
 excerpt: "mysql install in wsl2"
 date: 2022-04-17
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

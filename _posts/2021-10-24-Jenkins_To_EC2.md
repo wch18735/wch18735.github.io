@@ -1,11 +1,11 @@
 ---
-title: "[Pangtudy-web] Install Jenkins to EC2"
+title: "[pangtudy web] Install Jenkins to EC2"
 excerpt: "Jenkins to EC2"
 date: 2021-10-24
 layout: single
 classes: wide
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - ubuntu

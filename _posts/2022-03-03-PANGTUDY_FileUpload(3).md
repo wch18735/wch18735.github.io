@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] File Upload Issue (3)"
+title: "[Pangtudy Web] File Upload Issue (3)"
 excerpt: "pnagtudy 개발 일지"
 date: 2022-03-03
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

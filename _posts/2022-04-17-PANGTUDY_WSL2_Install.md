@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] WSL2 설치"
+title: "[Pangtudy Web] WSL2 설치"
 excerpt: "wsl2 install"
 date: 2022-04-17
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

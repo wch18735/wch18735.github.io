@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] MySQL 설치 및 DB 생성, 외부 접속 계정 설정"
+title: "[Pangtudy Web] MySQL 설치 및 DB 생성, 외부 접속 계정 설정"
 excerpt: "ubuntu ec2 mysql install"
 date: 2022-04-15
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

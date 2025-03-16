@@ -1,11 +1,11 @@
 ---
-title: "[Pangtudy-web] Web Deployment to EC2"
+title: "[pangtudy web] Web Deployment to EC2"
 excerpt: "web deployment on ubuntu server "
 date: 2021-10-11
 layout: single
 classes: wide
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - ubuntu

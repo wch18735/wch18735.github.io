@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] 외부에서 WSL2 서버 연결"
+title: "[Pangtudy Web] 외부에서 WSL2 서버 연결"
 excerpt: "build remote connection to wsl2 server"
 date: 2022-04-18
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot

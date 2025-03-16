@@ -1,9 +1,9 @@
 ---
-title: "[Pangtudy-web] Ubuntu 에서 Maven Build"
+title: "[Pangtudy Web] Ubuntu 에서 Maven Build"
 excerpt: "build in ubuntu server"
 date: 2022-04-15
 category:
-    - pangtudy-web
+    - pangtudy web
 tag:
     - web development
     - spring boot
