@@ -1,7 +1,7 @@
 ---
 title: "[Java] Thread를 활용한 응답"
 excerpt: "mini server with thread"
-date: 2022-12-21
+date: 2025-03-19
 category:
     - java
 tag:
