@@ -39,25 +39,25 @@ comments: true
 ```bash
 commit e9d64c1a4ff52c9c81ef86fdc8c4b68e919bc722 (HEAD -> master, origin/master)
 Merge: da6bd44 a70d63e
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 01:01:51 2022 +0900
 
     merged
 
 commit a70d63e9376e8a89e45d316b77711eba4a0baafd (contact)
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:50:04 2022 +0900
 
     modified in contact branch
 
 commit da6bd4430f55a78365814a8dd5c636120d42045e
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:49:11 2022 +0900
 
     modified in master
 
 commit 54e5956e700a8686a5b7fd6b3b9e212d3d2d39a4
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:31:53 2022 +0900
 
 :
@@ -90,25 +90,25 @@ $ git log --since="5 hours"
 $ git log --before="5 hours"
 commit e9d64c1a4ff52c9c81ef86fdc8c4b68e919bc722 (HEAD -> master, origin/master)
 Merge: da6bd44 a70d63e
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 01:01:51 2022 +0900
 
     merged
 
 commit a70d63e9376e8a89e45d316b77711eba4a0baafd (contact)
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:50:04 2022 +0900
 
     modified in contact branch
 
 commit da6bd4430f55a78365814a8dd5c636120d42045e
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:49:11 2022 +0900
 
     modified in master
 
 commit 54e5956e700a8686a5b7fd6b3b9e212d3d2d39a4
-Author: wch18735 <wch18735@naver.com>
+Author: sample-account <sample-account@naver.com>
 Date:   Tue Jul 19 00:31:53 2022 +0900
 
 :
@@ -181,12 +181,12 @@ index 240e963..8497055 100644
 
 ```bash
 $ git blame hello.txt
-^c57865d (wch18735 2022-07-18 23:45:06 +0900 1) hello.txt
-e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 2) <<<<<<< HEAD
-da6bd443 (wch18735 2022-07-19 00:49:11 +0900 3) modified in master
-e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 4) =======
-a70d63e9 (wch18735 2022-07-19 00:50:04 +0900 5) modified in contact branch
-e9d64c1a (wch18735 2022-07-19 01:01:51 +0900 6) >>>>>>> contact
+^c57865d (sample-account 2022-07-18 23:45:06 +0900 1) hello.txt
+e9d64c1a (sample-account 2022-07-19 01:01:51 +0900 2) <<<<<<< HEAD
+da6bd443 (sample-account 2022-07-19 00:49:11 +0900 3) modified in master
+e9d64c1a (sample-account 2022-07-19 01:01:51 +0900 4) =======
+a70d63e9 (sample-account 2022-07-19 00:50:04 +0900 5) modified in contact branch
+e9d64c1a (sample-account 2022-07-19 01:01:51 +0900 6) >>>>>>> contact
 ```
 
 `blame` 을 이용하면 파일 내용에 대한 추적도 가능하다. 실제로 같은 내용을 반복시킨 파일에서 `git blame -M [filename]` 명령을 수행하면 가장 처음 원본 내용을 작성한 커밋ID로 모두 바뀌는 것을 확인할 수 있다. 또한, 파일 내용뿐만 아니라 파일 복사를 확인하는 방법으로는 `git blame -C -C [filename]` 을 사용할 수 있다.

@@ -87,16 +87,16 @@ Specific git-branch actions:
 또한, `git checkout [변경할 브랜치]` 를 사용해 작업할 브랜치를 변경할 수 있다. 
 
 ```bash
-wch18735@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (master)
+sample-account@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (master)
 $ git branch
   RB_1.0.1
 * master
 
-wch18735@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (master)
+sample-account@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (master)
 $ git checkout RB_1.0.1
 Switched to branch 'RB_1.0.1'
 
-wch18735@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (RB_1.0.1)
+sample-account@DESKTOP MINGW64 ~/Desktop/WCH/Github/[REPO] GitFirst (RB_1.0.1)
 $ git branch
 * RB_1.0.1
   master
@@ -168,16 +168,16 @@ Changes to be committed:
 지금까지는 변경된 모든 내용 전체를 반영하는 방법을 알아보았다. 그러나 때로는 브랜치 간에 전체를 합치는 대신 오직 하나 또는 몇 개의 커밋만 합칠 필요가 있다. 대표적으로 **브랜치들 사이에 수정된 버그나 새로 추가한 클래스를 공유하는 경우**가 있다.
 
 ```bash
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (contact)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (contact)
 $ git commit -m "cherry-pick"
 [contact 88f062a] cherry-pick
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (contact)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (contact)
 $ git checkout master
 Switched to branch 'master'
 
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master)
 $ git cherry-pick 88f062a
 [master 54e5956] cherry-pick
  Date: Tue Jul 19 00:31:53 2022 +0900
@@ -224,12 +224,12 @@ modified in contact branch
 끝으로 변경된 사항을 add 한 뒤 commit 을 수행한다. 그러면 아래와 같이 MERGING 과정이 종료된다.
 
 ```bash
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master|MERGING)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master|MERGING)
 $ git add .
 
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master|MERGING)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master|MERGING)
 $ git commit -m "merged"
 [master e9d64c1] merged
 
-wch18735@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master)
+sample-account@DESKTOP-NA583NG MINGW64 ~/Desktop/WCH/GitHub/[REPO] GitFirst (master)
 ```
