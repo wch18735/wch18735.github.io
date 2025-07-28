@@ -35,9 +35,9 @@ Trying to become an engineer who can stand over 60s in this field.
         - FMOD Library, C++ based Multi-thread
         - 2018.03 ~ 2018.06
 
-## Hornors & Awards
+## Honors & Awards
 
-Hornors
+Honors
 
 - 2019, National Science & Technology Scholarship, Ministry of Science and ICT
 - 2015, Academic Excellence Scholarship, Kwangwoon University
